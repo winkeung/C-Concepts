@@ -24,10 +24,10 @@ some basic built-in type(s) (+ rule(s))
 
 In C, there are only 2 main categories of numbers (whole number and floating point number) and under these 2 categories they are sub-divided by their sizes and whether they support sign(positive/negative) or not:
 
-### **C Basic Data Type -- Number:**
+## **C Basic Data Type -- Number:**
 
 1. Whole Number
-**e.g. long long, signed int, unsigned int, short...**
+**e.g. <code>long long, signed int, unsigned int, short...</code>**
 
 2. Floating Point Number ** **
 **e.g. float,double**...
