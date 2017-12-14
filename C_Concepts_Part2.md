@@ -154,29 +154,25 @@ Analysis of the above examples:
 
 Rewrite it to:
 
-<code>char (*(*((var[12])[3])));</code>
+<code>char (\*(\*((var[12])[3])));</code>
 
-to emphasize the order of evaluation. Then evaluate it starting from the inner most bracket:
-<code>char (*(*(**(var[12])**[3]))); //var is an 12-element array (of what?)</code>
-<code>char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of what?))</code>
-<code>char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to what?)))</code>
-<code>char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to what?))))</code>
-<code>char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to char))))</code>
-
+to emphasize the order of evaluation. Then evaluate it starting from the inner most bracket:<br>
+<code>char (\*(\*(**(var[12])**[3]))); //var is an 12-element array (of what?)</code><br>
+<code>char (\*(\***((var[12])[3])**)); //var is an 12-element array (of 3-element arrays (of what?))</code><br>
+<code>char (\***(\*((var[12])[3]))**); //var is an 12-element array (of 3-element arrays (of pointers (to what?)))</code><br>
+<code>char **(\*(\*((var[12])[3])))**; //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to what?))))</code><br>
+<code>**char (\*(\*((var[12])[3])))**; //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to char))))</code><br>
 Done.
-
 
 2. <code>struct my\_struct \*var[2][3][4];</code>
 
-Rewrite it to:
-<pre>
-struct my_struct (*(((var[2])[3])[4]));
-</pre>
+Rewrite it to:<br>
+<code>struct my_struct (\*(((var[2])[3])[4]));</code><br>
 Evaluation starts from the variable identifier <code>var</code>&#39;s first operation which is caused by the array index operator&#39;<code>[2]</code>&#39; right next to it.
 
  ![Alt text](declaration.jpg)
 
-1. <code>var</code> is acted upon by an array index operator &#39;**[2]**&#39;. That means **var** is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39; **obj1**&#39;. So expression **(var[2])** is evaluated to an **obj1**.
+1. <code>var</code> is acted upon by an array index operator &#39;<code>[2]</code>&#39;. That means **var** is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39; **obj1**&#39;. So expression **(var[2])** is evaluated to an **obj1**.
 2. Rewrite **(var[2])[3]** to **obj1[3]**. It tells us **obj1** is an 3-element array of something. Let&#39;s call this &#39;something&#39; **obj2**. So expression **(obj1[3])** is evaluated to an **obj2**.
 3. Rewrite **(obj1[3])[4]** to **obj2[4]**. It tells us obj2 is an 4-element array of something. Let&#39;s call it this &#39;something&#39; &#39; **obj3**&#39;. So expression **(obj2[4])** is evaluated to an **obj3**.
 4. Rewrite **\*(obj2[4])** to **\*obj3**. A dereference operator is acted on it which suggests that **obj3** is a pointer to something. Let&#39;s call this &#39;something&#39; &#39; **obj4**&#39;.  So expression **(\*obj3)** is evaluated to an **obj4**.
