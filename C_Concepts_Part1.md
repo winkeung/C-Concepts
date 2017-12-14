@@ -29,7 +29,7 @@ In C, there are only 2 main categories of numbers (whole number and floating poi
 1. Whole Number
 **e.g. <code>long long, signed int, unsigned int, short...</code>**
 
-2. Floating Point Number ** **
+2. Floating Point Number
 **e.g. <code>float,double...</code>**
 
   **Warning: Numeric** literal constants **appeared in C statements also get data types mentioned above associated with them too. The rules that apply to variables of a certain type also apply to constants of the same type.** For example:
@@ -44,17 +44,17 @@ printf(&quot;%lld %lld\n&quot;, v, v1);
 program output:
 
 <code>4294967296 0</code>
-<pre>
-if (1/2&gt;0) 
+**<pre>
+if (1/2 &gt; 0) 
   printf(&quot;yes\n&quot;);
 else
   printf(&quot;no\n&quot;);
 
-if (1.0/2&gt;0)
+if (1.0/2 &gt; 0)
   printf(&quot;yes&quot;\n);
 else
   printf(&quot;no\n&quot;);
-</pre>
+</pre>**
 program output:
 no
 yes
