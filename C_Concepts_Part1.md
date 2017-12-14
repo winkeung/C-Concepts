@@ -16,7 +16,7 @@ It can be said that C only have one kind of built-indata types which are NUMBERs
 2. Treating the memory location(the address) of data as a kind of data (pointer).
 3. Applying  rule no.1 or 2 to also the new data types (arrays, structures, unions and pointers) just created.
 
-Because of rule no.3 (which can be applied repeatedly on new data type just created), things can be made really complicated. And the counter-intuitive way C declare this things make it confusing for beginners (e.g. <pre>char **var[12][3]</pre> -- it will be shown how to decode things like this later)
+Because of rule no.3 (which can be applied repeatedly on new data type just created), things can be made really complicated. And the counter-intuitive way C declare this things make it confusing for beginners (e.g. <code>char **var[12][3]</code> -- it will be shown how to decode things like this later)
 
 In other words, all data type in C is of the form:
 
