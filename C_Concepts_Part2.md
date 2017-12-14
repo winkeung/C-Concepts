@@ -58,11 +58,11 @@ void *v;
 int *pi;
 pi = (int*)v;// type cast v to (int *)
 </pre>
-and that&#39;s why they wrongly think that the &#39;<code>\*</code>&#39; belongs to the &lt;<code>Type</code>&gt; part. The correct syntax is:
+and that&#39;s why they wrongly think that the &#39;<code>\*</code>&#39; belongs to the <code>&lt;Type&gt;</code> part. The correct syntax is:
 <pre>
 &lt;Type&gt; &lt;variable expression&gt;, &lt;variable expression&gt;;
 </pre>
-The <code>&lt;variable expression&gt;</code> is an expression showing how the variable can be evaluated to a object of <code>&lt;Type&gt;</code>. And <code>&lt;Type&gt;</code> can be any built-in type keyword( <code>int</code> , <code>unsigned char</code> , <code>long</code>...), <code>typedef name</code>, <code>struct name</code> or <code>union name</code>.
+The <code>&lt;variable expression&gt;</code> is an expression showing how the variable can be evaluated to a object of <code>&lt;Type&gt;</code>. And <code>&lt;Type&gt;</code> can be any built-in type keywords (<code>int</code>, <code>unsigned char</code>, <code>long</code>...), <code>**typedef** name</code>, <code>struct name</code> or <code>union name</code>.
 e.g.
 <pre>
 unsigned char **ppc, c;
