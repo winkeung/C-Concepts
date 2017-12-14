@@ -153,17 +153,16 @@ Analysis of the above examples:
 1.  <code>char \*\*var[12][3];</code>
 
 Rewrite it to:
-<pre>
-char (*(*((var[12])[3])));
-</pre>
+
+<code>char (*(*((var[12])[3])));</code>
+
 to emphasize the order of evaluation. Then evaluate it starting from the inner most bracket:
-<pre>
-char (*(*((var[12])[3]))); //var is an 12-element array (of what?)
-char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of what?))
-char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to what?)))
-char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to what?))))
-char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to char))))
-</pre>
+<code>char (*(*(**(var[12])**[3]))); //var is an 12-element array (of what?)</code>
+<code>char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of what?))</code>
+<code>char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to what?)))</code>
+<code>char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to what?))))</code>
+<code>char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to char))))</code>
+
 Done.
 
 
