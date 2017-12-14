@@ -91,7 +91,7 @@ Visualizing **<code>a3d[2][3][4]</code>**:
 
 The memory layout for the 3-D array **a3d** will look like this, the integer on the top will be located at low memory address:
 
-<table cellspacing="0" cellpadding="4" border="1">
+<table cellspacing="0" cellpadding="4">
  <colgroup><col width="32*">
  <col width="36*">
  <col width="52*">
