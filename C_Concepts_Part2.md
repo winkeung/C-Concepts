@@ -5,13 +5,13 @@
 
 The simplest C pointer variable declaration:
 
-**<code>int* pi;</code>**
+**<code>int\* pi;</code>**
 
 which means pi is a pointer to **int**.
 
 Then do you know what does the following means?
 
-**<pre>int* pi, var;</pre>**
+**<code>int\* pi, var;</code>**
 
 If you think that both **pi** and **var** are of the same type -- pointer to **int** , then your are **WRONG**!
 
