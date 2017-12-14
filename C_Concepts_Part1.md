@@ -1,15 +1,13 @@
-
-## **Tuesday, 15 January 2013**
-
-### [**C Concepts**](https://ctatsujin.blogspot.hk/2013/01/c-concepts-most-of-books-wont-tell-you.html)
+# **C Concepts**
 
 I found that most of the books or web sites teaching C to beginners doesn&#39;t explain the subtle part of  the concepts in C clearly enough or put enough emphasis/warning on them. Those concepts will usually trap beginners. Once you mastered all these subtle concepts then you will suddenly realize that actually C is a language with just a small number of  keywords and concepts to remember. And then you will also start to appreciate the minimalist design of C. This series of posts is not intended to be a complete tutorial of the C language but it can be used as supplementary materials to those tutorials.  Lets&#39; talk about data type first...
 
 ## **C Data Types:**
 
 Do you know what this means?
-**char \*\*var[12][3];**
-
+<pre>
+char **var[12][3];
+</pre>
 If you know the answer, then skip this section, if not, after finish reading this section, you will find it very easy to decode it.
 
 ** **
