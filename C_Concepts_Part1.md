@@ -79,7 +79,7 @@ or
 - ...
 - Converting **<code>int a3d[2][3][4]</code>** into English: 4 integers get together to form an array and 3 instances of this array get together to form an nested array and 2 instances of this nested array get together to form a multi-layer nested array and lets&#39; call it **<code>a3d</code>**.
 
-(This web site can convert your C declaration into English [http://www.lemoda.net/c/cdecl/index.cgi?text=explain+int+a[3]%3B](http://www.lemoda.net/c/cdecl/index.cgi?text=explain+int+a%5b3%5d%3B))
+(This web site can convert your C declaration into English [https://cdecl.org/](https://cdecl.org/))
 
 Visualizing **<code>a3d[2][3][4]</code>**:
 
