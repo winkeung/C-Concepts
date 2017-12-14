@@ -113,7 +113,7 @@ Visualizing <code>pppi</code>:
 
 ![Alt text](pppi.jpg)
 
-The 3 arrows in the picture correspond to the 3 &#39;<code>\*</code>&#39; operators. These 2 styles of declaration: the &#39; **<code>int \*\*\*pppi</code>**&#39; one and the **<code>typedef</code>**  one are that the former one is describing this picture from right to left (from pointer to pointee) and the later one is from left to right (from pointee to pointer).
+The 3 arrows in the picture correspond to the 3 &#39;<code>\*</code>&#39; operators. These 2 styles of declaration: the &#39;**<code>int \*\*\*pppi</code>**&#39; one and the **<code>typedef</code>**  one are that the former one is describing this picture from right to left (from pointer to pointee) and the later one is from left to right (from pointee to pointer).
 
 ## **Variable Declaration Involving Both Pointer Dereference Operators &#39;<code>\*</code>&#39; and Array Index Operator &#39;<code>[]</code>&#39;**
 
@@ -139,12 +139,12 @@ The resulting object evaluated from the expression will get assigned the type of
 
 For example:
 
-1. **<code>char \*\*var[12][3];</code>**
+1. <code>char \*\*var[12][3];</code>
 
-2. **<code>struct my\_struct \*var[2][3][4];</code>**
+2. <code>struct my\_struct \*var[2][3][4];</code>
 
 3. <pre>typedef int int32;
-**int32 \*(\*var)[4];</pre>
+int32 *(*var)[4];</pre>
 
 Analysis of the above examples:
 
