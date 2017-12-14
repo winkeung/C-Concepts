@@ -143,7 +143,7 @@ For example:
 
 2. <code>struct my\_struct \*var[2][3][4];</code>
 
-3. <code>typedef int int32;</code>
+3. <code>typedef int int32;</code><br>
 <code>int32 *(*var)[4];</code>
 
 Analysis of the above examples:
