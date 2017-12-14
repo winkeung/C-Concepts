@@ -338,7 +338,7 @@ some_variable2 = a[0][1];
 </pre>
 **In C, the syntax for (nested) array declaration make use of the syntax for accessing (nested) array element  in normal C statement**. For example, to analyze **<code>int a[2][3][4]</code>**, first re-write it as **<code>int ((a[2])[3])[4]</code>** to emphasize the order of evaluation. And then, the expression **<code>int ((a[2])[3])[4]</code>** can be analyzed starting from the inner most bracket like this:
 
-1. **<code>a[2]</code>**: the **&#39;</code>[2]</code>&#39;** array index operator operating on **<code>a</code>** means object **<code>a</code>** is an array of **<code>2</code>** objects, the expression  **<code>(a[2])</code>** is evaluated as one such object.
+1. **<code>a[2]</code>**: the **&#39;</code>[2]</code>&#39;** array index operator operating on **<code>a</code>** means object **<code>a</code>** is an array of **2** objects, the expression  **<code>(a[2])</code>** is evaluated as one such object.
 2. **<code>(a[2])[3]</code>**: object **<code>(a[2])</code>** is an array of **3** objects, the expression **<code>((a[2])[3])</code>** is evaluated as one such object.
 3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4** objects, the expression **<code>((a[2])[3])[4]</code>** is evaluated as one such object.
 4. **<code>int ((a[2])[3])[4]</code>**: object **<code>((a[2])[3])[4]</code>** is an integer.
@@ -346,7 +346,7 @@ some_variable2 = a[0][1];
 By substituting no.4 into no.3, we get:
 1. ...
 2. ...
-3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4** **`object`** integers.
+3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4**  ~~object~~ integers.
 
 By substituting no.3 into no.2, we get:
 1...
