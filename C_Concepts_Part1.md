@@ -10,14 +10,13 @@ char **var[12][3];
 </pre>
 If you know the answer, then skip this section, if not, after finish reading this section, you will find it very easy to decode it.
 
-** **
 It can be said that C only have one kind of built-indata types which are NUMBERs. User can define new data types using number types as basic building blocks according to some rules which I summarize them into three rules:
 
 1. Grouping data together in some ways (array, structure and union).
 2. Treating the memory location(the address) of data as a kind of data (pointer).
 3. Applying  rule no.1 or 2 to also the new data types (arrays, structures, unions and pointers) just created.
 
-Because of rule no.3 (which can be applied repeatedly on new data type just created), things can be made really complicated. And the counter-intuitive way C declare this things make it confusing for beginners (e.g. **char \*\*var[12][3]** -- it will be shown how to decode things like this later)
+Because of rule no.3 (which can be applied repeatedly on new data type just created), things can be made really complicated. And the counter-intuitive way C declare this things make it confusing for beginners (e.g. <pre>char **var[12][3]</pre> -- it will be shown how to decode things like this later)
 
 In other words, all data type in C is of the form:
 
