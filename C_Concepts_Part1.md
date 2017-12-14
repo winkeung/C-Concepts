@@ -382,15 +382,15 @@ A2x3x4 a3d;
 It starts from the inner most array to the outer most array, opposite to this style: **<code>int a3d[2][3][4]</code>**. And it is the later style that make it difficult for beginner (especially when mixed with pointer operators). It is because it starts from describing the final composite type(in this case the outer most array -- an 2-element array of something yet to be defined) and then successively decomposes it down to the built-in basic type(in this case **<code>int</code>** ) in a single expression. A good understanding of expression evaluation is needed.
 
 Of cause you can use this &#39;array of arrays of ...&#39; thing to represent 2-D or n-D matrix (they are truly multi-dimensional array conceptually). Just remember that for example in a 2-D matrix, extracting a row from it is very different from extracting a column from it. One is easier or harder then the other depends on whether you define a row as the top level array element or column as the top level array element. For example:
-<pre>
+<pre><code>
 int matrix_2d[2][3]; // a 2-D matrix of 2 rows(indexes: 0,1), 3 columns(indexes 0,1,2) --- row as the top level array element
 
 // to extract the whole row of index no.1
-some_variable1 = matrix_2d[1];**
+some_variable1 = matrix_2d[1];
 
 // to extract the whole column of index no.2
 some_variable2 = matrix_2d[][2]; // no such syntax in C, have to extract element by element with a for loop or something similar.
-</pre>
+</code></pre>
 That is why nested array is a better name then multi-dimensional array. Because the word mutli-dimensional usually implies that all dimensions have the same status, meaning if an operation can be applied on one dimension then it can also be applied on any of the other dimensions.
 
 The initialization for nested array is like this:
