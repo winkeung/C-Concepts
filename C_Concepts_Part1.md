@@ -346,69 +346,69 @@ some_variable2 = a[0][1];
 By substituting no.4 into no.3, we get:
 1. ...
 2. ...
-3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4**  ~~object~~ integers.
+3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4** ~~object~~integers.
 
 By substituting no.3 into no.2, we get:
 1...
-2.**(a[2])[****3****]**: object **(a[2])** is an array of **3** objectarrays of 4 integers_._
+2.**<code>(a[2])[3]</code>**: object **<code>(a[2])</code>** is an array of **3** ~~object~~arrays of 4 integers.
 
 And finally we reduce it into:
-1. **a[****2****]**: object **a** is an array of **2** object arrays of 3 arrays of 4 integers_._
-** **
+1. **<code>a[2]</code>**: object **<code>a</code>** is an array of **2** ~~object~~arrays of 3 arrays of 4 integers.
+
 Which explains why the no. in the square bracket nearest to the variable identifier is the top level array&#39;s length.
 
 It may seem that it is not necessary to apply this kind of lengthy analysis to understand nested array declaration but when it mixed with pointer operators, then it is very useful.
 
 The declaration statement is like a demo showing you how a known type of object is extracted out from a variable of unknown type in order to let you know what type the variable is (how that type is constructed from the known type). This is commonly called &#39;declaration reflects use&#39;. For example: ** **
-
-**int a[2][3][4]**;
-
+<pre>
+int a[2][3][4];
+</pre>
 Which is like saying that:
 
-If the &#39;get element operator -- **[]**&#39; is applied 3 times successively (**a[][][]**) on &#39; **a**&#39;, then we will get a **int** object.
+If the &#39;get element operator -- **<code>[]</code>**&#39; is applied 3 times successively (**<code>a[][][]</code>**) on &#39; **<code>a</code>**&#39;, then we will get a **<code>int</code>** object.
 
-In this example the variable of unknown type is **a** and the know type of object is **int**.
+In this example the variable of unknown type is **<code>a</code>** and the know type of object is **<code>int</code>**.
 
 It let you know how something is constructed by showing you the procedure of disassembling it.
 
 a3d can also be declared like this:
+<pre>
+typedef int       A4[4];
+typedef A4      A3x4[3];
+typedef A3x4  A2x3x4[2];
 
-**typedef int       A4[4];**
-**typedef A4      A3x4[3];**
-**typedef A3x4  A2x3x4[2];**
-
-**A2x3x4 a3d;**
-
-It starts from the inner most array to the outer most array, opposite to this style**: int a3d[2][3][4]**. And it is the later style that make it difficult for beginner (especially when mixed with pointer operators). It is because it starts from describing the final composite type(in this case the outer most array -- an 2-element array of something yet to be defined) and then successively decomposes it down to the built-in basic type(in this case **int** ) in a single expression. A good understanding of expression evaluation is needed.
+A2x3x4 a3d;
+</pre>
+It starts from the inner most array to the outer most array, opposite to this style: **<code>int a3d[2][3][4]</code>**. And it is the later style that make it difficult for beginner (especially when mixed with pointer operators). It is because it starts from describing the final composite type(in this case the outer most array -- an 2-element array of something yet to be defined) and then successively decomposes it down to the built-in basic type(in this case **<code>int</code>** ) in a single expression. A good understanding of expression evaluation is needed.
 
 Of cause you can use this &#39;array of arrays of ...&#39; thing to represent 2-D or n-D matrix (they are truly multi-dimensional array conceptually). Just remember that for example in a 2-D matrix, extracting a row from it is very different from extracting a column from it. One is easier or harder then the other depends on whether you define a row as the top level array element or column as the top level array element. For example:
-
-**int matrix\_2d[2][3];** //a 2-D matrix of 2 rows(indexes: 0,1), 3 columns(indexes 0,1,2) --- row as the top level array element
+<pre>
+int matrix_2d[2][3]; // a 2-D matrix of 2 rows(indexes: 0,1), 3 columns(indexes 0,1,2) --- row as the top level array element
 
 // to extract the whole row of index no.1
-**some\_variable1 = matrix\_2d[1];**
+some_variable1 = matrix_2d[1];**
 
 // to extract the whole column of index no.2
-**some\_variable2 = matrix\_2d[][2]; //** no such syntax in C, have to extract element by element with a for loop or something similar.
-
+some_variable2 = matrix_2d[][2]; // no such syntax in C, have to extract element by element with a for loop or something similar.
+</pre>
 That is why nested array is a better name then multi-dimensional array. Because the word mutli-dimensional usually implies that all dimensions have the same status, meaning if an operation can be applied on one dimension then it can also be applied on any of the other dimensions.
 
 The initialization for nested array is like this:
-
+<pre>
 int a3d[2][3][4]=
 {
   {
-      {1,2,3,4},         //a3d[0][0]
-      {5,6,7,8},         //a3d[0][1]
+      {1,2,3,4},      //a3d[0][0]
+      {5,6,7,8},      //a3d[0][1]
       {9,10,11,12}    //a3d[0][2]
-   },  //a3d[0]
+   }, //a3d[0]
    {
-     {13,14,15,16},  //a3d[1][0]
-     {17,18,19,20},  //a3d[1][1]
-     {21,22,23,24}   //a3d[1][2]
-   } //a3d[1]
+     {13,14,15,16},   //a3d[1][0]
+     {17,18,19,20},   //a3d[1][1]
+     {21,22,23,24}    //a3d[1][2]
+   }  //a3d[1]
 }; //a3d
-
+</pre>
 which reflects the nested nature of it.
 
 
