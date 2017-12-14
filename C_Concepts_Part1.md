@@ -82,39 +82,242 @@ or
 (This web site can convert your C declaration into English [http://www.lemoda.net/c/cdecl/index.cgi?text=explain+int+a[3]%3B](http://www.lemoda.net/c/cdecl/index.cgi?text=explain+int+a%5b3%5d%3B))
 
 Visualizing **<code>a3d[2][3][4]</code>**:
+
 ![Alt text](array_2x3x4.jpg)
 
  or
 
- ![](data:image/*;base64,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)
+![Alt text](array_2x3x4_1.jpg)
 
 The memory layout for the 3-D array **a3d** will look like this, the integer on the top will be located at low memory address:
 
-| _a3d_ | _a3d[0]_ | _a3d[0][0]_ | _a3d[0][0][0]_ | **int** |
-| --- | --- | --- | --- | --- |
-| _a3d[0][0][1]_ | **int** |
-| _a3d[0][0][2]_ | **int** |
-| _a3d[0][0][3]_ | **int** |
-| _a3d[0][1]_ | _a3d[0][1][0]_ | **int** |
-| _a3d[0][1][1]_ | **int** |
-| _a3d[0][1][2]_ | **int** |
-| _a3d[0][1][3]_ | **int** |
-| _a3d[0][2]_ | _a3d[0][2][0]_ | **int** |
-| _a3d[0][2][1]_ | **int** |
-| _a3d[0][2][2]_ | **int** |
-| _a3d[0][2][3]_ | **int** |
-| _a3d[1]_ | _a3d[1][0]_ | _a3d[1][0][0]_ | **int** |
-| _a3d[1][0][1]_ | **int** |
-| _a3d[1][0][2]_ | **int** |
-| _a3d[1][0][3]_ | **int** |
-| _a3d[1][1]_ | _a3d[1][1][0]_ | **int** |
-| _a3d[1][1][1]_ | **int** |
-| _a3d[1][1][2]_ | **int** |
-| _a3d[1][1][3]_ | **int** |
-| _a3d[1][2]_ | _a3d[1][2][0]_ | **int** |
-| _a3d[1][2][1]_ | **int** |
-| _a3d[1][2][2]_ | **int** |
-| _a3d[1][2][3]_ | **int** |
+<table style="width: 100%px;" cellspacing="0" cellpadding="4" border="1">
+ <colgroup><col width="32*">
+ <col width="36*">
+ <col width="52*">
+ <col width="65*">
+ <col width="72*">
+ </colgroup><tbody>
+<tr>
+  <td rowspan="24" width="12%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d</i></div>
+</td>
+  <td rowspan="12" width="14%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0]</i></div>
+</td>
+  <td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][0]</i></div>
+</td>
+  <td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][0][0]</i></div>
+</td>
+  <td width="28%" valign="TOP"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][0][1]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][0][2]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][0][3]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr>
+  <td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][1]</i></div>
+</td>
+  <td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][1][0]</i></div>
+</td>
+  <td width="28%" valign="TOP"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][1][1]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][1][2]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][1][3]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr>
+  <td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][2]</i></div>
+</td>
+  <td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][2][0]</i></div>
+</td>
+  <td width="28%" valign="TOP"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][2][1]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][2][2]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[0][2][3]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr>
+  <td rowspan="12" width="14%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1]</i></div>
+</td>
+  <td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][0]</i></div>
+</td>
+  <td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][0][0]</i></div>
+</td>
+  <td width="28%" valign="TOP"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][0][1]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][0][2]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][0][3]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr>
+  <td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][1]</i></div>
+</td>
+  <td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][1][0]</i></div>
+</td>
+  <td width="28%" valign="TOP"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][1][1]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][1][2]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][1][3]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr>
+  <td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][2]</i></div>
+</td>
+  <td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][2][0]</i></div>
+</td>
+  <td width="28%" valign="TOP"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][2][1]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][2][2]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+<tr valign="TOP">
+  <td width="25%"><div style="text-decoration: none;" align="CENTER">
+<i>a3d[1][2][3]</i></div>
+</td>
+  <td width="28%"><div align="CENTER">
+<b>int</b></div>
+</td>
+ </tr>
+</tbody></table>
 
 Total 2x3x4 = 24 integers.
 
