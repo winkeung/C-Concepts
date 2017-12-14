@@ -17,10 +17,10 @@ If you think that both **pi** and **var** are of the same type -- pointer to **i
 
 The answer is, this is equivalent to:
 <pre>
-int\* pi;
+int* pi;
 int var;
 </pre>
-Like array declaration, the pointer dereference operator &#39; **<code>\*<code>**&#39; in a declaration statement is used like when it is used in normal C statement (&quot;declaration reflects use&quot;). Therefore the first declaration on this post can be re-written as:
+Like array declaration, the pointer dereference operator &#39; **<code>\*</code>**&#39; in a declaration statement is used like when it is used in normal C statement (&quot;declaration reflects use&quot;). Therefore the first declaration on this post can be re-written as:
 
 **<code>int (\*pi);</code>**
 
