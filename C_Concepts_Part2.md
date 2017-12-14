@@ -93,35 +93,35 @@ program output:
 </pre>
 The pointer to pointer to pointer to integer declaration:
 <pre>
-int \*\*\*pppi;
+int ***pppi;
 </pre>
 can be re-written as:
 <pre>
-int (\*(\*(\*pppi)));
+int (*(*(*pppi)));
 </pre>
 to emphasize the order of evaluation of the expression. You can construct and analyze this kind of pointer to pointer (to...) thing by the rules just mentioned for analyzing <code>int (\*pi)</code> above.
 
 You can also do the same thing with typedef:
 <pre>
-typedef int      \*PI;
-typedef PI      \*PPI;
-typedef PPI    \*PPPI;
+typedef int      *PI;
+typedef PI      *PPI;
+typedef PPI    *PPPI;
 
-**PPPI pppi; **
+PPPI pppi;
 </pre>
-Visualizing **<code>pppi</code>**:
+Visualizing <code>pppi</code>:
 
 ![Alt text](pppi.jpg)
 
 The 3 arrows in the picture correspond to the 3 &#39;<code>\*</code>&#39; operators. These 2 styles of declaration: the &#39; **<code>int \*\*\*pppi</code>**&#39; one and the **<code>typedef</code>**  one are that the former one is describing this picture from right to left (from pointer to pointee) and the later one is from left to right (from pointee to pointer).
 
-## **Variable Declaration Involving Both Pointer Dereference Operators &#39;<code>\*</code>&#39; and Array Index Operator &#39;<code>[]&</code>#39;**
+## **Variable Declaration Involving Both Pointer Dereference Operators &#39;<code>\*</code>&#39; and Array Index Operator &#39;<code>[]</code>&#39;**
 
 The question mentioned in part 1 :
 
 Do you know what this means?
 <pre>
-char \*\*var[12][3];
+char **var[12][3];
 </pre>
 will discussed here.
 
