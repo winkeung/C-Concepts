@@ -324,30 +324,29 @@ Total 2x3x4 = 24 integers.
 In the declaration of a nested array,  the no. in the square bracket nearest to the variable identifier is the top level array&#39;s length.
 
 An nested array&#39;s element is accessed like this in a C statement:
-
-**i = a[0][1][3]; **
-
+<pre>
+i = a[0][1][3];
+</pre>
 But actually **a** is an array of arrays of arrays, the expression can be equivalently re-written as:
+<pre>
+i = ((a[0])[1])[3];
+</pre>
+This emphasizes how the expression is evaluated form top level array downwards to the bottom level array. This reveals the fact that **a** is actually an array of arrays of arrays behind the scene. In this expression the sub expression **<code>a[0]</code>** and **<code>a[0][1]</code>** can also appear by themselves alone in C statement, like:
+<pre>
+some_variable1 = a[0];
+some_variable2 = a[0][1];
+</pre>
+**In C, the syntax for (nested) array declaration make use of the syntax for accessing (nested) array element  in normal C statement**. For example, to analyze **<code>int a[2][3][4]</code>**, first re-write it as **<code>int ((a[2])[3])[4]</code>** to emphasize the order of evaluation. And then, the expression **<code>int ((a[2])[3])[4]</code>** can be analyzed starting from the inner most bracket like this:
 
-**i = ((a[0])[1])[3];**
-
-This emphasizes how the expression is evaluated form top level array downwards to the bottom level array. This reveals the fact that **a** is actually an array of arrays of arrays behind the scene. In this expression the sub expression **a[0]** and **a[0][1]** can also appear by themselves alone in C statement **,** like:
-
-
-**some\_variable1 = a[0];**
-**some\_variable2 = a[0][1];**
-
-**In C, the syntax for (nested) array declaration make use of the syntax for accessing (nested) array element  in normal C statement**.For example, to analyze **int a[2][3][4]**, first re-write it as **int ((a[2])[3])[4]** to emphasize the order of evaluation.  And then, the expression **int ((a[2])[3])[4] **can be analyzed starting from the inner most bracket like this:
-
-1. **a[****2****]**: the **&#39;[2]&#39;** array index operator operating on **a** means object **a** is an array of **2** objects, the expression  **(a[2])** is evaluated as one such object.
-2. **(a[2])[****3****]**: object **(a[2])** is an array of **3** objects **,** the expression  **((a[2])[3])** is evaluated as one such object.
-3. **((a[2])[3])[****4****]:** object **((a[2])[3])** is an array of **4** objects, the expression **((a[2])[3])[4]** is evaluated as one such object.
-4. **int ((a[2])[3])[4]:** object **((a[2])[3])[4]** is an integer.
+1. **<code>a[2]</code>**: the **&#39;</code>[2]</code>&#39;** array index operator operating on **<code>a</code>** means object **<code>a</code>** is an array of **<code>2</code>** objects, the expression  **<code>(a[2])</code>** is evaluated as one such object.
+2. **<code>(a[2])[3]</code>**: object **<code>(a[2])</code>** is an array of **3** objects, the expression **<code>((a[2])[3])</code>** is evaluated as one such object.
+3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4** objects, the expression **<code>((a[2])[3])[4]</code>** is evaluated as one such object.
+4. **<code>int ((a[2])[3])[4]</code>**: object **<code>((a[2])[3])[4]</code>** is an integer.
 
 By substituting no.4 into no.3, we get:
-1....
-2...
-3. **((a[2])[3])[****4****]:** object **((a[2])[3])** is an array of **4** object integers **.**
+1. ...
+2. ...
+3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4** **`object`** integers.
 
 By substituting no.3 into no.2, we get:
 1...
