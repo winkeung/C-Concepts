@@ -90,8 +90,8 @@ Visualizing **<code>a3d[2][3][4]</code>**:
 ![Alt text](array_2x3x4_1.jpg)
 
 The memory layout for the 3-D array **a3d** will look like this, the integer on the top will be located at low memory address:
-<br>
-<table style="width: 100%px;" cellspacing="0" cellpadding="4" border="1">
+
+<table cellspacing="0" cellpadding="4" border="1">
  <colgroup><col width="32*">
  <col width="36*">
  <col width="52*">
@@ -318,7 +318,7 @@ The memory layout for the 3-D array **a3d** will look like this, the integer on 
 </td>
  </tr>
 </tbody></table>
-<br>
+
 Total 2x3x4 = 24 integers.
 
 In the declaration of a nested array,  the no. in the square bracket nearest to the variable identifier is the top level array&#39;s length.
