@@ -26,10 +26,10 @@ Like array declaration, the pointer dereference operator &#39; **<code>\*</code>
 
 to emphasize the order of evaluation. This declaration statement can be analyzed like this:
 
-Everything to the right of &#39; **<code>int</code>**&#39; until the semi-colon is one complete C expression which the resulting object of the evaluation will be assigned &#39; **<code>int</code>**&#39; as its type. Now this expression is &#39;**<code>(\*pi)</code>**&#39;.
+Everything to the right of &#39;**<code>int</code>**&#39; until the semi-colon is one complete C expression which the resulting object of the evaluation will be assigned &#39;**<code>int</code>**&#39; as its type. Now this expression is &#39;**<code>(\*pi)</code>**&#39;.
 1. In this expression **<code>pi</code>** is acted upon by a dereference operator which means **<code>pi</code>** is a pointer to some object.
-2. And then nothing more to evaluate so we finished evaluating the entire expression which  is evaluated to be that &#39;some object&#39; in step 1.. And then this &#39;some object&#39; is assigned &#39; **int**&#39; as its type.
-3. Substitute the result form step 2 to step 1, we get: **<code>pi</code>** is a pointer to some ~~object~~ **<code>int</cdoe>**.
+2. And then nothing more to evaluate so we finished evaluating the entire expression which  is evaluated to be that &#39;some object&#39; in step 1. And then this &#39;some object&#39; is assigned &#39;**int**&#39; as its type.
+3. Substitute the result form step 2 to step 1, we get: **<code>pi</code>** is a pointer to some ~~object~~ **<code>int</code>**.
 
 Although simple declaration like this don&#39;t need this kind of lengthy analysis in order to understand. However when the expression is mixed with several array index operators and dereference operators then it will be very useful.
 
@@ -41,12 +41,12 @@ Because this statement actually means &#39;Dereferencing **<code>pi</code>** wil
 
 And if you want to declare 2 variables both as &#39;pointer to integer&#39; in one statement:
 <pre>
-int \*pi, \*var; // Not &#39; int\* pi, var; &#39;
+int *pi, *var; // Not &#39; int* pi, var; &#39;
 </pre>
 which is equivalent to:
 <pre>
-int \*pi;
-int \*var;
+int *pi;
+int *var;
 </pre>
 The confusion is caused by people wrongly thinking about the declaration syntax as :
 <pre>
@@ -54,9 +54,9 @@ The confusion is caused by people wrongly thinking about the declaration syntax 
 </pre>
 and also because of how the type cast operators look like:
 <pre>
-void \*v;
-int \*pi;
-pi = (int\*)v;// type cast v to (int \*)
+void *v;
+int *pi;
+pi = (int\*)v;// type cast v to (int *)
 </pre>
 and that&#39;s why they wrongly think that the &#39;\*&#39; belongs to the &lt;Type&gt; part. The correct syntax is:
 <pre>
