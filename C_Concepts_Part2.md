@@ -33,7 +33,7 @@ Everything to the right of &#39;<code>**int**</code>&#39; until the semi-colon i
 
 Although simple declaration like this don&#39;t need this kind of lengthy analysis in order to understand. However when the expression is mixed with several array index operators and dereference operators then it will be very useful.
 
-And therefore the &#39;<code>\*&</code>#39; sign is better put next to the variable identifier &#39; **<code>pi</code>**&#39;  rather then to &#39; **<code>int</code>**&#39; which I do it in purpose to confuse readers who don&#39;t know about this.
+And therefore the &#39;<code>\*</code>&#39; sign is better put next to the variable identifier &#39; **<code>pi</code>**&#39;  rather then to &#39; **<code>int</code>**&#39; which I do it in purpose to confuse readers who don&#39;t know about this.
 <pre>
 int *pi; // better then &#39;int*  pi;&#39;
 </pre>
@@ -132,8 +132,10 @@ The general form of variable declaration is:
 **<code>&lt;Type&gt;</code>** : It can be any C built-in type like **<code>int</code>** , **<code>char</code>** , ... or **<code>struct</code>** or **<code>union</code>** or **<code>typedef</code>** type.
 
 **<code>&lt;Expression&gt;</code>** : An expression that a variable identifier is acted upon by any number of &#39;**<code>[]</code>**&#39; and/or &#39;**<code>\*</code>**&#39; successively on it. &#39;<code>[]</code>&#39; and &#39;<code>\*</code>&quot; are both unary operators(i.e. it takes one operand(input)--takes one input, produces one output). The situation is similar to something like this in mathematics:  <code>g(g(f(g(f(f(x))))))</code>. Where <code>x</code> is a variable, <code>g()</code> and <code>f()</code> is functions. The general pattern will look like:
-
-<code>\*\*\*...var[][][]....</code> (&#39;<code>[]</code>&#39; has higher precedence then &#39;<code>\*</code>&#39;,  brackets can be inserted to change the precedence of operator)
+<pre>
+***...var[][][]...
+</pre>
+(&#39;<code>[]</code>&#39; has higher precedence then &#39;<code>\*</code>&#39;,  brackets can be inserted to change the precedence of operator)
 
 The resulting object evaluated from the expression will get assigned the type of &lt;**<code>Type</code>**&gt;. The declaration statement is like a demo showing you the procedure of extracting a known type of object from a variable of unknown type.  By showing you the steps to decompose something, you know how something is composed.
 
@@ -148,31 +150,34 @@ For example:
 
 Analysis of the above examples:
 
-1.  **char \*\*var[12][3];**
+1.  <code>char \*\*var[12][3];</code>
 
 Rewrite it to:
-**char (\*(\*((var[12])[3])));**
+<pre>
+char (*(*((var[12])[3])));
+</pre>
 to emphasize the order of evaluation. Then evaluate it starting from the inner most bracket:
-
-
-char (\*(\*(**(var[12])**[3]))); //var is an 12-element array (of what?)
-char (\*(\***((var[12])[3])**)); //var is an 12-element array (of 3-element arrays (of what?))
-char (\***(\*((var[12])[3]))**); //var is an 12-element array (of 3-element arrays (of pointers (to what?)))
-char **(\*(\*((var[12])[3])))**; //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to what?))))
-**char (\*(\*((var[12])[3])))**; //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to char))))
+<pre>
+char (*(*((var[12])[3]))); //var is an 12-element array (of what?)
+char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of what?))
+char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to what?)))
+char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to what?))))
+char (*(*((var[12])[3]))); //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to char))))
+</pre>
 Done.
 
 
-2. **struct my\_struct \*var[2][3][4];**
+2. <code>struct my\_struct \*var[2][3][4];</code>
 
 Rewrite it to:
-**struct my\_struct (\*(((var[2])[3])[4]));**
+<pre>
+struct my_struct (*(((var[2])[3])[4]));
+</pre>
+Evaluation starts from the variable identifier <code>var</code>&#39;s first operation which is caused by the array index operator&#39;<code>[2]</code>&#39; right next to it.
 
-Evaluation starts from the variable identifier **var**&#39;s first operation which is caused by the array index operator&#39;**[2]**&#39; right next to it.
+ ![Alt text](declaration.jpg)
 
- ![](data:image/*;base64,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)
-
-1. **var** is acted upon by an array index operator &#39;**[2]**&#39;. That means **var** is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39; **obj1**&#39;. So expression **(var[2])** is evaluated to an **obj1**.
+1. <code>var</code> is acted upon by an array index operator &#39;**[2]**&#39;. That means **var** is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39; **obj1**&#39;. So expression **(var[2])** is evaluated to an **obj1**.
 2. Rewrite **(var[2])[3]** to **obj1[3]**. It tells us **obj1** is an 3-element array of something. Let&#39;s call this &#39;something&#39; **obj2**. So expression **(obj1[3])** is evaluated to an **obj2**.
 3. Rewrite **(obj1[3])[4]** to **obj2[4]**. It tells us obj2 is an 4-element array of something. Let&#39;s call it this &#39;something&#39; &#39; **obj3**&#39;. So expression **(obj2[4])** is evaluated to an **obj3**.
 4. Rewrite **\*(obj2[4])** to **\*obj3**. A dereference operator is acted on it which suggests that **obj3** is a pointer to something. Let&#39;s call this &#39;something&#39; &#39; **obj4**&#39;.  So expression **(\*obj3)** is evaluated to an **obj4**.
