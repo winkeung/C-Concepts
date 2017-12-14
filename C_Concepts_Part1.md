@@ -33,28 +33,28 @@ In C, there are only 2 main categories of numbers (whole number and floating poi
 **e.g. <code>float,double...</code>**
 
   **Warning: Numeric** literal constants **appeared in C statements also get data types mentioned above associated with them too. The rules that apply to variables of a certain type also apply to constants of the same type.** For example:
+<pre>
+long long v;
+long long v1;
 
-**<code>long long v;</code>**
-**<code>long long v1;</code>**
-
-**<code>v = 0xfffffffe + 2ll; // the constant 2 is of &#39;long long&#39; type</code>**
-**<code>v1= 0xfffffffe + 2;</code>**
-**<code>printf(&quot;%lld %lld\n&quot;, v, v1);</code>**
-
+v = 0xfffffffe + 2ll; // the constant 2 is of &#39;long long&#39; type
+v1= 0xfffffffe + 2;</code>**
+printf(&quot;%lld %lld\n&quot;, v, v1);
+</pre>
 program output:
 
 <code>4294967296 0</code>
-
-**<code>if (1/2&gt;0) 
+<pre>
+if (1/2&gt;0) 
   printf(&quot;yes\n&quot;);
-else</code>**
-**  printf(&quot;no\n&quot;);**
+else
+  printf(&quot;no\n&quot;);
 
-**if (1.0/2&gt;0)**
-**  printf(&quot;yes&quot;\n);**
-**else**
-**  printf(&quot;no\n&quot;);**
-
+if (1.0/2&gt;0)
+  printf(&quot;yes&quot;\n);
+else
+  printf(&quot;no\n&quot;);
+</pre>
 program output:
 no
 yes
