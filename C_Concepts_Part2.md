@@ -1,32 +1,32 @@
 
 # **C Concepts: Part 2**
 
-## **Variable Declaration Involving Pointer Dereference Operators &#39;\*&#39;**
+## **Variable Declaration Involving Pointer Dereference Operators &#39;<code>\*</code>&#39;**
 
 The simplest C pointer variable declaration:
-
-**<code>int\* pi;</code>**
-
-which means pi is a pointer to **int**.
+<pre>
+int* pi;
+</pre>
+which means pi is a pointer to **<code>int</code>**.
 
 Then do you know what does the following means?
-
-**<code>int\* pi, var;</code>**
-
-If you think that both **pi** and **var** are of the same type -- pointer to **int** , then your are **WRONG**!
+<pre>
+int* pi, var;
+</pre>
+If you think that both **<code>pi</code>** and **<code>var</code>** are of the same type -- pointer to **<code>int</code>** , then your are **WRONG**!
 
 The answer is, this is equivalent to:
 <pre>
 int* pi;
 int var;
 </pre>
-Like array declaration, the pointer dereference operator &#39; **<code>\*</code>**&#39; in a declaration statement is used like when it is used in normal C statement (&quot;declaration reflects use&quot;). Therefore the first declaration on this post can be re-written as:
-
-**<code>int (\*pi);</code>**
-
+Like array declaration, the pointer dereference operator &#39;**<code>\*</code>**&#39; in a declaration statement is used like when it is used in normal C statement (&quot;declaration reflects use&quot;). Therefore the first declaration on this post can be re-written as:
+<pre>
+int (*pi);
+</pre>
 to emphasize the order of evaluation. This declaration statement can be analyzed like this:
 
-Everything to the right of &#39;**<code>int</code>**&#39; until the semi-colon is one complete C expression which the resulting object of the evaluation will be assigned &#39;**<code>int</code>**&#39; as its type. Now this expression is &#39;**<code>(\*pi)</code>**&#39;.
+Everything to the right of &#39;<code>**int**</code>&#39; until the semi-colon is one complete C expression which the resulting object of the evaluation will be assigned &#39;**<code>int</code>**&#39; as its type. Now this expression is &#39;**<code>(\*pi)</code>**&#39;.
 1. In this expression **<code>pi</code>** is acted upon by a dereference operator which means **<code>pi</code>** is a pointer to some object.
 2. And then nothing more to evaluate so we finished evaluating the entire expression which  is evaluated to be that &#39;some object&#39; in step 1. And then this &#39;some object&#39; is assigned &#39;**<code>int</code>**&#39; as its type.
 3. Substitute the result form step 2 to step 1, we get: **<code>pi</code>** is a pointer to some ~~object~~ **<code>int</code>**.
@@ -62,7 +62,7 @@ and that&#39;s why they wrongly think that the &#39;<code>\*</code>&#39; belongs
 <pre>
 &lt;Type&gt; &lt;variable expression&gt;, &lt;variable expression&gt;;
 </pre>
-The <code>&lt;variable expression&gt;</code> is an expression showing how the variable can be evaluated to a object of <code>&lt;Type&gt;</code>. And <code>&lt;Type&gt;</code> can be any built-in type keywords (<code>int</code>, <code>unsigned char</code>, <code>long</code>...), <code>**typedef** name</code>, <code>struct name</code> or <code>union name</code>.
+The <code>&lt;variable expression&gt;</code> is an expression showing how the variable can be evaluated to a object of <code>&lt;Type&gt;</code>. And <code>&lt;Type&gt;</code> can be any built-in type keywords (<code>**int**</code>, <code>**unsigned char**</code>, <code>**long**</code>...), <code>**typedef** name</code>, <code>**struct** name</code> or <code>**union** name</code>.
 e.g.
 <pre>
 unsigned char **ppc, c;
@@ -77,15 +77,15 @@ struct s *ps, as[10];
 </pre>
 Of course it is quit counter intuitive, but that is the way C variable declaration is designed. Reason may be when writing the compiler, the code used to parse normal C statement can also be re-used to parse declaration statement.
 
-Similar to nested array, pointer itself can also be pointed to by an other pointer, and this other pointer can also be pointed to by some other pointer, and so on...., for example:
+Similar to nested array, pointer itself can also be pointed to by an other pointer, and this other pointer can also be pointed to by some other pointer, and so on..., for example:
 <pre>
 int i = 0;
-int \*pi = &amp;i;
-int \*\*ppi = &amp;pi;
-int \*\*\*pppi = &amp;ppi;
+int *pi = &amp;i;
+int **ppi = &amp;pi;
+int ***pppi = &amp;ppi;
 
-\*\*\*pppi = 88;**
-printf(&quot;%d %d %d\n&quot;, i, \*pi, \*\*ppi);
+***pppi = 88;
+printf(&quot;%d %d %d\n&quot;, i, *pi, **ppi);
 </pre>
 program output:
 <pre>
