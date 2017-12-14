@@ -1,7 +1,7 @@
 
-### [**C Concepts: Part 2**](https://ctatsujin.blogspot.hk/2013/01/c-concepts-part-2_28.html)
+# **C Concepts: Part 2**
 
-### **Variable Declaration Involving Pointer Dereference Operators &#39;\*&#39;**
+## **Variable Declaration Involving Pointer Dereference Operators &#39;\*&#39;**
 
 The simplest C pointer variable declaration:
 
@@ -16,132 +16,135 @@ Then do you know what does the following means?
 If you think that both **pi** and **var** are of the same type -- pointer to **int** , then your are **WRONG**!
 
 The answer is, this is equivalent to:
+<pre>
+int\* pi;
+int var;
+</pre>
+Like array declaration, the pointer dereference operator &#39; **<code>\*<code>**&#39; in a declaration statement is used like when it is used in normal C statement (&quot;declaration reflects use&quot;). Therefore the first declaration on this post can be re-written as:
 
-**int\* pi;**
-**int var;**
+**<code>int (\*pi);</code>**
 
-Like array declaration, the pointer dereference operator &#39; **\***&#39; in a declaration statement is used like when it is used in normal C statement (&quot;declaration reflects use&quot;). Therefore the first declaration on this post can be re-written as:
+to emphasize the order of evaluation. This declaration statement can be analyzed like this:
 
-**int (\*pi);**
-
-to emphasize the order of evaluation **.** This declaration statement can be analyzed like this:
-
-Everything to the right of &#39; **int**&#39; until the semi-colon is one complete C expression which the resulting object of the evaluation will be assigned &#39; **int**&#39; as its type. Now this expression is &#39;**(\*pi)**&#39;.
-1. In this expression **pi** is acted upon by a dereference operator which means **pi** is a pointer to some object.
+Everything to the right of &#39; **<code>int</code>**&#39; until the semi-colon is one complete C expression which the resulting object of the evaluation will be assigned &#39; **<code>int</code>**&#39; as its type. Now this expression is &#39;**<code>(\*pi)</code>**&#39;.
+1. In this expression **<code>pi</code>** is acted upon by a dereference operator which means **<code>pi</code>** is a pointer to some object.
 2. And then nothing more to evaluate so we finished evaluating the entire expression which  is evaluated to be that &#39;some object&#39; in step 1.. And then this &#39;some object&#39; is assigned &#39; **int**&#39; as its type.
-3. Substitute the result form step 2 to step 1, we get: **pi** is a pointer to some object **int**.
+3. Substitute the result form step 2 to step 1, we get: **<code>pi</code>** is a pointer to some ~~object~~ **<code>int</cdoe>**.
 
 Although simple declaration like this don&#39;t need this kind of lengthy analysis in order to understand. However when the expression is mixed with several array index operators and dereference operators then it will be very useful.
 
-And therefore the &#39;\*&#39; sign is better put next to the variable identifier &#39; **pi**&#39;  rather then to &#39; **int**&#39; which I do it in purpose to confuse readers who don&#39;t know about this.
-
-**int  \*pi; // better then &#39;int\*  pi;&#39;**
-
-Because this statement actually means &#39;Dereferencing **pi** will get a **int** , so you know what type **pi** is.&#39;.
+And therefore the &#39;<code>\*&</code>#39; sign is better put next to the variable identifier &#39; **<code>pi</code>**&#39;  rather then to &#39; **<code>int</code>**&#39; which I do it in purpose to confuse readers who don&#39;t know about this.
+<pre>
+int  \*pi; // better then &#39;int\*  pi;&#39;
+</pre>
+Because this statement actually means &#39;Dereferencing **<code>pi</code>** will get a **<code>int</code>** , so you know what type **<code>pi*</code>* is.&#39;.
 
 And if you want to declare 2 variables both as &#39;pointer to integer&#39; in one statement:
-
-**int \*pi, \*var; // Not &#39; int\* pi, var; &#39;**
-
+<pre>
+int \*pi, \*var; // Not &#39; int\* pi, var; &#39;
+</pre>
 which is equivalent to:
-**int \*pi;**
-**int \*var;  **
-
+<pre>
+int \*pi;
+int \*var;
+</pre>
 The confusion is caused by people wrongly thinking about the declaration syntax as :
-
-**&lt;Type&gt; &lt;variable name&gt;, &lt;variable name&gt;; // wrong**
-
+<pre>
+&lt;Type&gt; &lt;variable name&gt;, &lt;variable name&gt;; // wrong
+</pre>
 and also because of how the type cast operators look like:
-
-
-**void \*v;**
-**int \*pi;**
-**pi = (int\*)v;**// type cast v to (int \*)
-
+<pre>
+void \*v;
+int \*pi;
+pi = (int\*)v;// type cast v to (int \*)
+</pre>
 and that&#39;s why they wrongly think that the &#39;\*&#39; belongs to the &lt;Type&gt; part. The correct syntax is:
-
-**&lt;Type&gt; &lt;variable expression&gt;, &lt;variable expression&gt;;**
-
-The **&lt;** variable expression&gt; is an expression showing how the variable can be evaluated to a object of &lt;Type&gt;. And &lt;Type&gt; can be any built-in type keyword( **int** , **unsigned char** , **long**...), **typedef** name, **struct** name or **union** name.
+<pre>
+&lt;Type&gt; &lt;variable expression&gt;, &lt;variable expression&gt;;
+</pre>
+The <code>&lt;variable expression&gt;</code> is an expression showing how the variable can be evaluated to a object of <code>&lt;Type&gt;</code>. And <code>&lt;Type&gt;</code> can be any built-in type keyword( <code>int</code> , <code>unsigned char</code> , <code>long</code>...), <code>typedef name</code>, <code>struct name</code> or <code>union name</code>.
 e.g.
+<pre>
+unsigned char \*\*ppc, c;
 
-**unsigned char \*\*ppc, c;**
+typedef int \*\*PntPntI;
+PntPntI ppi, appi[10];
 
-**typedef int \*\*PntPntI;**
-**PntPntI ppi, appi[10];**
-
-**struct s{**
-**  int v;**
-**};**
-**struct s \*ps, as[10];**
-
+struct s{
+  int v;
+};
+struct s \*ps, as[10];
+</pre>
 Of course it is quit counter intuitive, but that is the way C variable declaration is designed. Reason may be when writing the compiler, the code used to parse normal C statement can also be re-used to parse declaration statement.
-** **
+
 Similar to nested array, pointer itself can also be pointed to by an other pointer, and this other pointer can also be pointed to by some other pointer, and so on...., for example:
+<pre>
+int i = 0;
+int \*pi = &amp;i;
+int \*\*ppi = &amp;pi;
+int \*\*\*pppi = &amp;ppi;
 
-**int i = 0;**
-**int \*pi = &amp;i;**
-**int \*\*ppi = &amp;pi;**
-**int \*\*\*pppi = &amp;ppi;**
-
-**\*\*\*pppi = 88;**
-**printf(&quot;%d %d %d\n&quot;, i, \*pi, \*\*ppi);**
-
+\*\*\*pppi = 88;**
+printf(&quot;%d %d %d\n&quot;, i, \*pi, \*\*ppi);
+</pre>
 program output:
+<pre>
 88 88 88
-
+</pre>
 The pointer to pointer to pointer to integer declaration:
-**int \*\*\*pppi; **
-
+<pre>
+int \*\*\*pppi;
+</pre>
 can be re-written as:
-
-**int (\*(\*(\*pppi))); **
-
-to emphasize the order of evaluation of the expression. You can construct and analyze this kind of pointer to pointer (to...) thing by the rules just mentioned for analyzing **int (\*pi)** above.
+<pre>
+int (\*(\*(\*pppi)));
+</pre>
+to emphasize the order of evaluation of the expression. You can construct and analyze this kind of pointer to pointer (to...) thing by the rules just mentioned for analyzing <code>int (\*pi)</code> above.
 
 You can also do the same thing with typedef:
-
-**typedef int      \*PI;**
-**typedef PI      \*PPI;**
-**typedef PPI    \*PPPI;**
+<pre>
+typedef int      \*PI;
+typedef PI      \*PPI;
+typedef PPI    \*PPPI;
 
 **PPPI pppi; **
+</pre>
+Visualizing **<code>pppi</code>**:
 
-Visualizing **pppi** :
+![Alt text](pppi.jpg)
 
- ![](data:image/*;base64,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)
+The 3 arrows in the picture correspond to the 3 &#39;<code>\*</code>&#39; operators. These 2 styles of declaration: the &#39; **<code>int \*\*\*pppi</code>**&#39; one and the **<code>typedef</code>**  one are that the former one is describing this picture from right to left (from pointer to pointee) and the later one is from left to right (from pointee to pointer).
 
- The 3 arrows in the picture correspond to the 3 &#39;\*&#39; operators. These 2 styles of declaration: the &#39; **int \*\*\*pppi**&#39; one and the **typedef**   one are that the former one is describing this picture from right to left (from pointer to pointee) and the later one is from left to right (from pointee to pointer).
-
-### **Variable Declaration Involving Both Pointer Dereference Operators &#39;\*&#39; and Array Index Operator &#39;[]&#39;**
+## **Variable Declaration Involving Both Pointer Dereference Operators &#39;<code>\*</code>&#39; and Array Index Operator &#39;<code>[]&</code>#39;**
 
 The question mentioned in part 1 :
 
 Do you know what this means?
-**char \*\*var[12][3];**
-
+<pre>
+char \*\*var[12][3];
+</pre>
 will discussed here.
 
 The general form of variable declaration is:
+<pre>
+&lt;Type&gt;  &lt;Expression&gt;;
+</pre>
+**<code>&lt;Type&gt;</code>** : It can be any C built-in type like **<code>int</code>** , **<code>char</code>** , ... or **<code>struct</code>** or **<code>union</code>** or **<code>typedef</code>** type.
 
-**&lt;Type&gt;  &lt;Expression&gt;;**
+**<code>&lt;Expression&gt;</code>** : An expression that a variable identifier is acted upon by any number of &#39;**<code>[]</code>**&#39; and/or &#39;**<code>\*</code>**&#39; successively on it. &#39;<code>[]</code>&#39; and &#39;<code>\*</code>&quot; are both unary operators(i.e. it takes one operand(input)--takes one input, produces one output). The situation is similar to something like this in mathematics:  <code>g(g(f(g(f(f(x))))))</code>. Where <code>x</code> is a variable, <code>g()</code> and <code>f()</code> is functions. The general pattern will look like:
 
-**&lt;Type&gt;** : It can be any C built-in type like **int** , **char** , ... or **struct** or **union** or **typedef** type.
+<code>\*\*\*...var[][][]....</code> (&#39;<code>[]</code>&#39; has higher precedence then &#39;<code>\*</code>&#39;,  brackets can be inserted to change the precedence of operator)
 
-**&lt;Expression&gt;** : An expression that a variable identifier is acted upon by any number of &#39;**[]**&#39; and/or &#39; **\***&#39; successively on it. &#39;[]&#39; and &#39;\*&quot; are both unary operators(i.e. it takes one operand(input)--takes one input, produces one output). The situation is similar to something like this in mathematics:  g(g(f(g(f(f(x)))))). Where x is a variable, g() and f() is functions. The general pattern will look like:
-
-\*\*\*...var[][][].... (&#39;[]&#39; has higher precedence then &#39;\*&#39;,  brackets can be inserted to change the precedence of operator)
-
-The resulting object evaluated from the expression will get assigned the type of &lt; **Type** &gt;. The declaration statement is like a demo showing you the procedure of extracting a known type of object from a variable of unknown type.  By showing you the steps to decompose something, you know how something is composed.
+The resulting object evaluated from the expression will get assigned the type of &lt;**<code>Type</code>**&gt;. The declaration statement is like a demo showing you the procedure of extracting a known type of object from a variable of unknown type.  By showing you the steps to decompose something, you know how something is composed.
 
 For example:
 
-1. **char \*\*var[12][3];**
+1. **<code>char \*\*var[12][3];</code>**
 
-2. **struct my\_struct \*var[2][3][4];**
+2. **<code>struct my\_struct \*var[2][3][4];</code>**
 
-3. **typedef int int32;**
-**int32 \*(\*var)[4];**
+3. <pre>typedef int int32;
+**int32 \*(\*var)[4];</pre>
 
 Analysis of the above examples:
 
