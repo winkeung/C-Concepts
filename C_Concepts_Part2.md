@@ -172,7 +172,7 @@ Evaluation starts from the variable identifier <code>var</code>&#39;s first oper
 
  ![Alt text](declaration.jpg)
 
-1. <code>var</code> is acted upon by an array index operator &#39;<code>[2]</code>&#39;. That means <code>var</code> is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39;<code>obj1**&#39;. So expression <code>(var[2])</code> is evaluated to an<code>obj1</code>.
+1. <code>var</code> is acted upon by an array index operator &#39;<code>[2]</code>&#39;. That means <code>var</code> is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39;<code>obj1</code>&#39;. So expression <code>(var[2])</code> is evaluated to an <code>obj1</code>.
 2. Rewrite <code>(var[2])[3]</code> to <code>obj1[3]</code>. It tells us <code>obj1</code> is an 3-element array of something. Let&#39;s call this &#39;something&#39; <code>obj</code>. So expression <code>(obj1[3])</code> is evaluated to an <code>obj2</code>.
 3. Rewrite <code>(obj1[3])[4]</code> to <code>obj2[4]</code>. It tells us obj2 is an 4-element array of something. Let&#39;s call it this &#39;something&#39; &#39;<code>obj3</code>&#39;. So expression <code>(obj2[4])</code> is evaluated to an <code>obj3</code>.
 4. Rewrite <code>\*(obj2[4])</code> to <code>\*obj3</code>. A dereference operator is acted on it which suggests that <code>obj3</code> is a pointer to something. Let&#39;s call this &#39;something&#39; &#39;<code>obj4</code>&#39;.  So expression <code>(\*obj3)</code> is evaluated to an <code>obj4</code>.
