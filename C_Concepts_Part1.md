@@ -1,16 +1,16 @@
-# **C Concepts**
+# **Introduction**
 
 I found that most of the books or web sites teaching C to beginners doesn&#39;t explain the subtle part of  the concepts in C clear enough or put enough emphasis/warning on them. Those concepts will usually trap beginners. Once you mastered all these subtle concepts then you will suddenly realize that actually C is a language with just a small number of  keywords and concepts to remember. And then you will also start to appreciate the minimalist design of C. This series of posts is not intended to be a complete tutorial of the C language but it can be used as supplementary materials to those tutorials.  Lets&#39; talk about data type first...
 
-## **C Data Types:**
+# **C Only Has One Data Type: Number**
 
 Do you know what this means?
 <pre>
 char **var[12][3];
 </pre>
-If you know the answer, then skip this section, if not, after finish reading this section, you will find it very easy to decode it.
+If you know the answer, then skip this part and first half of part 2, if not, after finish reading, you will find it very easy to decode it.
 
-It can be said that C only have one kind of built-indata types which are NUMBERs. User can define new data types using number types as basic building blocks according to some rules which I summarize them into three rules:
+It can be said that C only have one kind of built-in data types which are NUMBERs. User can define new data types using number types as basic building blocks according to some rules which I summarize them into three rules:
 
 1. Grouping data together in some ways (array, structure and union).
 2. Treating the memory location(the address) of data as a kind of data (pointer).
@@ -24,13 +24,13 @@ some basic built-in type(s) (+ rule(s))
 
 In C, there are only 2 main categories of numbers (whole number and floating point number) and under these 2 categories they are sub-divided by their sizes and whether they support sign(positive/negative) or not:
 
-### **C Basic Data Type -- Number:**
-
 1. Whole Number
 - e.g. <code>long long, signed int, unsigned int, short...</code>
 
 2. Floating Point Number
 - e.g. <code>float, double...</code>
+
+# **Even Numeric Literals (Constants) Have Sizes**
 
 **Warning: Numeric literal constants appeared in C statements also get data types mentioned above associated with them too. The rules that apply to variables of a certain type also apply to constants of the same type.** For example:
 <pre>
@@ -61,7 +61,8 @@ program output:
 no
 yes
 </pre>
-### **There is ONLY 1-D Array in C. That is no Multi-Dimensional Array in C but Nested 1-D Array:**
+
+# **There is ONLY 1-D Array in C. That is no Multi-Dimensional Array in C but Nested 1-D Array:**
 
 If you know how to analyze the syntax of a what people usually call "multi-dimensional" array&#39;s declaration,  you will agree that it is more appropriate to call it an &#39;nested array&#39; rather then &#39;multi-dimensional array&#39;. An &#39;nested array&#39; is an array whose elements are also arrays. An array of arrays (of arrays...) of something. The word &#39;something&#39; here can be basic data type, structure, union or pointer. **In C, there is only 1-D array.** If you have a array of struct, you can add for example &#39; **<code>.field</code>**&#39; after the array index operator like: &#39;**<code>as[1].field</code>**&#39; to access the field. Similarly, if you have an array of arrays, you access the inner array&#39;s element by attaching one more &#39;**<code>[]</code>**&#39; to access it: e.g. **<code>aa[1][2]</code>**, just like you add a &#39; **<code>.field</code>**&#39; in the case of struct. &#39;**<code>as[1]&#39;</code>** returns you the struct at index 1, **&#39;<code>aa[1]</code>**&#39; returns you the array at index 1. You add **<code>&#39;.field</code>&#39;** or &#39;**<code>[]</code>**&#39; to further access its internal objects.
 
