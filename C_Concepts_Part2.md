@@ -188,22 +188,20 @@ Then we can resolve <code>obj3</code> , <code>obj2</code>, <code>obj1</code> and
 
 The methods above demonstrate algorithms (some mechanical ways) of how to convert a declaration in C language into a natural language &#39;English&#39;. It is just merely a translation of some abstract concepts described in an unfamiliar language to a familiar language. All languages are 1-D array of symbols. Understanding means you are able to extract the meanings of these 1-D array of symbols and then build a mental picture of the things it describes in your brain. Let&#39;s use pictures to analyze example 3.
 
-3.
-<pre>
-typedef int int32;
-int32 *(*var)[4];
-</pre>
+3. <code>typedef int int32;</code><br>
+<code>int32 \*(\*var)[4];</code>
+
 Rewrite it to:
-<pre>
-int32 (*((*var)[4]));
-</pre>
+
+<code>int32 (*((*var)[4]));</code>
+
 Evaluation starts from the variable identifier <code>var</code>&#39;s first operation caused by the dereference operator which is the operator closest to it.
 
 <code>int32 (\*(**(\*var)**[4])); // I know var is a pointer, but pointer to what?</code>
 
 ![Alt text](deref_var.jpg)
 
-<code>int32 (\*(**(\*var)[4]**)); // I know var is a pointer to an 4-element array, but array of what?</code>
+<code>int32 (\***((\*var)[4])**); // I know var is a pointer to an 4-element array, but array of what?</code>
 
 ![Alt text](idx_deref_var.jpg)
 
