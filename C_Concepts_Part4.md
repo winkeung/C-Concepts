@@ -124,6 +124,3 @@ This is because people usually start learning mathematics more earlier then star
 
 Code that simply convert multi-byte integers or structs between byte stream by using type casting will make it not portable.
 
-Posted by [C Tatsujin](https://www.blogger.com/profile/11422253818297753379)at [09:53](https://ctatsujin.blogspot.hk/2013/01/c-concepts-part-4.html) [No comments:](https://ctatsujin.blogspot.hk/2013/01/c-concepts-part-4.html#comment-form) ![](data:image/*;base64,R0lGODlhEgASAOMAANDHu6pqNFRTUOWjJQAAABYWFhAJA9CPKUk1ErmIF+KjUygVBjMmBv/BMfy2I9DHuyH5BAEAAA8ALAAAAAASABIAAARP8MlJq72TYLyM3hQRBB4oFcoxlhujAMAKIk6jKMKHIY0zqLoLz3dIFEAMBzGBABkGy+aGkCAGpBjRcmEKAFKB4KUAg4kvhPJ5TCBgTfBKBAA7)
-
-[Email This](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=333655540947437815&amp;target=email) [BlogThis!](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=333655540947437815&amp;target=blog) [Share to Twitter](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=333655540947437815&amp;target=twitter) [Share to Facebook](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=333655540947437815&amp;target=facebook) [Share to Pinterest](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=333655540947437815&amp;target=pinterest)

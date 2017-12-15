@@ -103,6 +103,3 @@ String is not a built-in data type of C although C supports string literal. e.g.
 WARNING:
 **PLEASE DON&#39;T FORGET THE NULL CHARACTER AT THE END OF A C STRING.**
 
-Posted by [C Tatsujin](https://www.blogger.com/profile/11422253818297753379)at [07:49](https://ctatsujin.blogspot.hk/2013/01/c-concepts-part-3.html) [No comments:](https://ctatsujin.blogspot.hk/2013/01/c-concepts-part-3.html#comment-form) ![](data:image/*;base64,R0lGODlhEgASAOMAANDHu6pqNFRTUOWjJQAAABYWFhAJA9CPKUk1ErmIF+KjUygVBjMmBv/BMfy2I9DHuyH5BAEAAA8ALAAAAAASABIAAARP8MlJq72TYLyM3hQRBB4oFcoxlhujAMAKIk6jKMKHIY0zqLoLz3dIFEAMBzGBABkGy+aGkCAGpBjRcmEKAFKB4KUAg4kvhPJ5TCBgTfBKBAA7)
-
-[Email This](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=6664296616972723941&amp;target=email) [BlogThis!](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=6664296616972723941&amp;target=blog) [Share to Twitter](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=6664296616972723941&amp;target=twitter) [Share to Facebook](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=6664296616972723941&amp;target=facebook) [Share to Pinterest](https://www.blogger.com/share-post.g?blogID=5054678106580248638&amp;postID=6664296616972723941&amp;target=pinterest)
