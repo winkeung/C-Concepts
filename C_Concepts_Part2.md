@@ -336,10 +336,10 @@ and statement calling the function pointed to by <code>pf</code> will be like th
 
 The general idea is, replace the function name with &#39;<code>(\*&lt;pointer name&gt;)</code>&#39;. This also fit the principle used for variable deceleration: &quot;declaration reflects use&#39;. The declaration is actually a demo showing how an identifier (variable identifier or function identifier) of unknown type is used. When you know how it is being used, you should know what type it is. Why function declaration fit this principle is also because function in C always return a single value (even void function return a single void). They can appear in expression that is interchangeable with variables. e.g
 
-
-<code>i = a + b \* f(2,v) - 3;    // a , b, f(2,v) and constant 3 represent same kind of </code><br>
-<code>                            // things in an expression -- numerical values.</code>
-
+<pre>
+i = a + b * f(2,v) - 3;    // a , b, f(2,v) and constant 3 represent same kind of
+                           // things in an expression -- numerical values.
+</pre>
 Therefore function or function pointer can be declared the same way as for variable declaration.
 
 Function pointer is same as other pointer type, there can be array of function pointers, or pointer to function pointer. Function can return function pointer or take function pointer as argument. When used as argument, inside the function prototype the name can be omitted.
@@ -374,7 +374,7 @@ int arg_f(int i)
     return 0;
 }
 
-void (*pointed_to\_by_array_f(int argi, int (*argf)(int)))(int)
+void (*pointed_to_by_array_f(int argi, int (*argf)(int)))(int)
 {
     printf(&quot;this is pointed_to_by_array_f\n&quot;);
     (*argf)(3);
@@ -383,18 +383,18 @@ void (*pointed_to\_by_array_f(int argi, int (*argf)(int)))(int)
 
 int main()
 {
-    apf[0]=&amp;pointed_to_by_array_f;
+    apf[0] = &amp;pointed_to_by_array_f;
     (*(*apf[0])(1, &amp;arg_f))(2); // in this line there are 2 function calls invoked.
     return 0;
 }
 </pre>
 
 Program output:
-<pre>
-this is pointed_to_by_array_f ** &lt;--- called from main: (*(*apf[0])(1, &amp;arg_f))(2);
-this is arg_f   ** &lt;--------------------- called from this is pointed_to_by_array_f
-this is return_f** &lt;-------------------- called from main: (*(*apf[0])(1, &amp;arg_f))(2);
-</pre>
+
+<code>this is pointed_to_by_array_f  &lt;------ called from main: (\***(\*apf[0])(1, &amp;arg_f)**)(2);</code><br>
+<code>this is arg_f    &lt;-------------------- called from pointed_to_by_array_f</code><br>
+<code>this is return_f &lt;-------------------- called from main: **(\*(\*apf[0])(1, &amp;arg_f))(2)**;</code>
+
 Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;</code>:
 
 <code>void (\*(\***apf[4]**)(int, int (\*)(int)))(int);</code>
@@ -405,7 +405,7 @@ Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quo
 
 - <code>apf</code> is a 4-element array of pointers to ....
 
-<code>void (\***(\*apf[4])(int,**int **(\*)**(int)**)**)(int);<code>
+<code>void (\***(\*apf[4])(int,**int **(\*)**(int)**)**)(int);</code>
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to ....) returning...
 
@@ -421,7 +421,7 @@ Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quo
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to ...
 
-<code>void **(\*(\*apf[4])(int, int (\*)(int)))(int)**;<code>
+<code>void **(\*(\*apf[4])(int, int (\*)(int)))(int)**;</code>
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to function taking 1 argument(1 integer) returning...
 
