@@ -276,14 +276,14 @@ type cast operator to cast something to the same type as var:
 
 It can be also used in function prototype&#39;s argument list:
 <pre>
-void fun(int\*(\*)[2][3], int);
+void fun(int*(*)[2][3], int);
 
-void fun(int\*(\*arg1)[2][3], int arg2)
+void fun(int*(*arg1)[2][3], int arg2)
 {
-....
+...
 }
 </pre>
-As the operand for <code>\*</code> at the right hand side, operand for <code>[]</code> is at the left hand side, it will be always in this form <code>...\*\*\*\*var[][][][]...</code> (brackets can be used to change the order of precedence -- e.g. &#39;<code>\*\*(\*\*var[])[][]</code>&#39;). When var is taken out, there is no other location to insert it back which still make the whole expression syntactically correct. var will be always
+As the operand for <code>\*</code> at the right hand side, operand for <code>[]</code> is at the left hand side, it will be always in this form <code>...\*\*\*\*var[][][][]...</code> (brackets can be used to change the order of precedence -- e.g. &#39;<code>\*\*(\*\*var[])[][]</code>&#39;). When var is taken out, there is no other location to insert it back which still make the whole expression syntactically correct. var will be always:
 
 1. at the right of all &#39;<code>\*</code>&#39;(s) if any and
 2. at the left of all &#39;<code>[]</code>&#39;(s) if any and
@@ -330,14 +330,15 @@ It can be declared like this:
 
 <code>int (\*pf)(void); // just replace &#39;fun&#39; with &#39;(\*pf)&#39;</code>
 
-and statement calling the function pointed to by **pf** will be like this:
+and statement calling the function pointed to by <code>pf</code> will be like this:
+
 <code>i = (\*pf)();</code>
 
 The general idea is, replace the function name with &#39;<code>(\*&lt;pointer name&gt;)</code>&#39;. This also fit the principle used for variable deceleration: &quot;declaration reflects use&#39;. The declaration is actually a demo showing how an identifier (variable identifier or function identifier) of unknown type is used. When you know how it is being used, you should know what type it is. Why function declaration fit this principle is also because function in C always return a single value (even void function return a single void). They can appear in expression that is interchangeable with variables. e.g
 
 
 <code>i = a + b \* f(2,v) - 3;    // a , b, f(2,v) and constant 3 represent same kind of </code><br>
-<code>                            // things in an expression -- numerical values.<code>
+<code>                            // things in an expression -- numerical values.</code>
 
 Therefore function or function pointer can be declared the same way as for variable declaration.
 
