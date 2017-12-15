@@ -207,18 +207,17 @@ Evaluation starts from the variable identifier <code>var</code>&#39;s first oper
 
 - Noted that the thick line border question mark box in the previous picture is now enlarged (because now it is known that it is an array, and it needs more space to draw box inside to represent elements) and border changed to thin line in this picture(thick border is used to indicate the focus of the current discussion).
 
-<code>int32 (**\*((\*var)[4])**); // I know var is a pointer to an 4-element array of pointers, but pointer to what?</code>
+<code>int32 **(\*((\*var)[4]))**; // I know var is a pointer to an 4-element array of pointers, but pointer to what?</code>
 
 ![Alt text](deref_idx_deref_var.jpg)
 
-**int32 (\*((\*var)[4]))**; // I know var is a pointer to an 4-element array of pointers to int32, yeah!
+<code>**int32 (\*((\*var)[4]))**; // I know var is a pointer to an 4-element array of pointers to int32, yeah!</code>
 
- ![]()
+![Alt text](int32_deref_idx_deref_var.jpg)
 
 Visualizing the number of array element:
 
- ![]()
-
+![Alt text](int32_deref_idx_deref_var_1.jpg)
 
 **Warning:**
 
