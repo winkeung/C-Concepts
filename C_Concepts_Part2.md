@@ -435,7 +435,7 @@ A function taking 2 arguments: 1 integer 1 character returning pointer to intege
 
  ![Alt text](ret_int_arg_int_char.jpg)
 
-The thick border box is the function. The 2 argument are represented by the 2 boxes above with think arrows pointing to it and return value is represented inside the thick border box in this case a pointer. It points to a integer. A function is always pointed to by a no. of box(es) with thick arrow(s) even when it takes no argument in this case a void box will point to it. (this corresponds to the syntax of a empty bracket&#39;<code>()</code>&#39; or &#39;<code>(void)</code>&#39;) Therefor you can always tell from this that it is a function.
+The thick border box is the function. The 2 argument are represented by the 2 boxes above with thick arrows pointing to it and return value is represented inside the thick border box in this case a pointer. It points to a integer. A function is always pointed to by a no. of box(es) with thick arrow(s) even when it takes no argument in this case a void box will point to it. (this corresponds to the syntax of a empty bracket&#39;<code>()</code>&#39; or &#39;<code>(void)</code>&#39;) Therefor you can always tell from this that it is a function.
 
 The visualization of &quot;<code>void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>&quot;:
 
@@ -443,7 +443,7 @@ The visualization of &quot;<code>void (\*(\*apf[4])(int, int (\*)(int)))(int);</
 
   <code>typedef</code> alteratives for &quot;<code>void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>&quot;:
 
-&#39;typedef&#39; style describes things starting from left to right, top to bottom and inside to outside in the picture.
+&#39;<code>typedef</code>&#39; style describes things starting from left to right, top to bottom and inside to outside in the picture.
 <pre>
 typedef void (*RET_VOID_ARG_INT)(int);
 typedef int (*RET_INT_ARG_INT)(int);
