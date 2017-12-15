@@ -30,7 +30,7 @@ In C, there are only 2 main categories of numbers (whole number and floating poi
 - e.g. <code>long long, signed int, unsigned int, short...</code>
 
 2. Floating Point Number
-- e.g. <code>float,double...</code>
+- e.g. <code>float, double...</code>
 
 **Warning: Numeric literal constants appeared in C statements also get data types mentioned above associated with them too. The rules that apply to variables of a certain type also apply to constants of the same type.** For example:
 <pre>
@@ -89,7 +89,7 @@ Visualizing **<code>a3d[2][3][4]</code>**:
 
 ![Alt text](array_2x3x4_1.jpg)
 
-The memory layout for the 3-D array **a3d** will look like this, the integer on the top will be located at low memory address:
+The memory layout for the 3-D array <code>a3d</code> will look like this, the integer on the top will be located at low memory address:
 
 <table cellspacing="0" cellpadding="4">
  <colgroup><col width="32*">
