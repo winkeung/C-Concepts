@@ -39,8 +39,8 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
 <b>Situations</b></div>
 </td>
   <td colspan="2" width="359"><div style="margin-bottom: 0.2in;">
-<b>T a[n];</b></div>
-<b>T *p = &amp;a[0];  </b>
+<code>T a[n];</code></div>
+<code>T *p = &amp;a[0];</code>
    </td>
   <td rowspan="2" width="137"><div align="CENTER">
 <b>Comment</b></div>
