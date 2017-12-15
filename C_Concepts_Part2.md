@@ -181,7 +181,7 @@ Evaluation starts from the variable identifier <code>var</code>&#39;s first oper
 Then we can resolve <code>obj3</code> , <code>obj2</code>, <code>obj1</code> and <code>var</code> by a sequence of substitutions:
 
 1. Substitute no.5 (&#39; <code>obj4</code> is <code>struct my\_struct</code>&#39;) to no.4 ('<code>obj3</code> is a pointer to <code>obj4</code>'). We get &#39;<code>obj3</code> is a pointer to ~~<code>obj4</code>~~<code>struct my\_struct</code>&#39;.
-2. Substitute &#39;<code>obj3</code> is a pointer to <code>struct my\_struct</code>&#39; to no.3 ('<code>obj2</code> is an 4-element array of  <code>obj3</code>s'). We get &#39;<code>obj2</code> is an 4-element array of <code>~~obj3~~</code> pointers to <code>struct my\_struct</code>&#39;.
+2. Substitute &#39;<code>obj3</code> is a pointer to <code>struct my\_struct</code>&#39; to no.3 ('<code>obj2</code> is an 4-element array of  <code>obj3</code>s'). We get &#39;<code>obj2</code> is an 4-element array of <code>~~obj3~~</code>pointers to <code>struct my\_struct</code>&#39;.
 3. Substitute &#39;<code>obj2</code> is an 4-element array of pointers to <code>struct my\_struct</code>&#39; to no. 2 ('<code>obj1</code> is an 3-element array of <code>obj2</code>s'). We get &#39;<code>obj1</code> is an 3-element array of <code>~~obj2~~</code>4-element arrays of pointers to <code>struct my\_struct</code>&#39;.
 4. Substitute  &#39;<code>obj1</code> is an 3-element array of 4-element arrays of pointers to pointer to <code>struct my\_struct</code>&#39; to no. 1 ('<code>var</code> is an 2-element array of <code>obj1</code>s'). We get &#39;<code>var</code> is an 2-element array of <code>~~obj1~~</code>3-element arrays of 4-element arrays of pointers to <code>struct my\_struct</code>&#39;
 5. <code>var</code> is an 2-element array of 3-element arrays of 4-element arrays of pointers to <code>struct my\_struct</code>.
@@ -223,37 +223,33 @@ Visualizing the number of array element:
 
 The picture above doesn&#39;t means all the things at the left hand side of the &#39; **var**&#39; box will be created not to say **var** will pointing to them as a effect of the declaration statement. The effect of the declaration statement is just reserving a small piece of memory space (usually 4 bytes in 32bit machine) for the pointer variable &#39; **var**&#39; only. It has to be initialized before it can be used.
 
-**&#39;int32 \*(\*var)[4];&#39;** can also be declared with typedef statements:
+<code>&#39;int32 \*(\*var)[4];&#39;</code> can also be declared with typedef statements:
+<pre>
+typedef int             int32;
+typedef int32         *PINT32;
+typedef PINT32    A4PINT32[4];
+typedef A4PINT32   *PA4PINT32;
 
-**typedef int                int32;**
-
-**typedef int32            \*PINT32;**
-
-**typedef PINT32       A4PINT32[4];**
-
-**typedef A4PINT32  \*PA4PINT32;**
-
-**PA4PINT32              var;**
-
+PA4PINT32                 var;
+</pre>
 Visualizing this:
-
-**typedef int                int32;**
-
-**typedef int32            \*PINT32;**
-
- ![]()
-
- **typedef PINT32       A4PINT32[4];**
-
- ![]()
-
-**typedef A4PINT32  \*PA4PINT32;**
-
- ![]()
-
-** PA4PINT32              var;**
-
- ![]()
+<pre>
+typedef int             int32;
+typedef int32         *PINT32;
+</pre>
+![Alt text](pint32.jpg)
+<pre>
+typedef PINT32       A4PINT32[4];
+</pre>
+ ![Alt text](a4pint32.jpg)
+<pre>
+typedef A4PINT32  *PA4PINT32;
+</pre>
+ ![Alt text](pa4pint32.jpg)
+<pre>
+PA4PINT32              var;
+</pre>
+ ![Alt text](pa4pint32_var.jpg)
 
 This 2 approaches arrive at the same final picture. The former one go from the direction of pointer/array to pointee/element. The later go from pointee/element to pointer/array. But there is no way to declare variable from pointee/element to pointer/array in one single statement in C. Here I propose such a syntax that can do that, the general form is:
 
