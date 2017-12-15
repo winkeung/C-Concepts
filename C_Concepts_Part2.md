@@ -395,53 +395,53 @@ Program output:
 <code>this is arg_f    &lt;-------------------- called from pointed_to_by_array_f</code><br>
 <code>this is return_f &lt;-------------------- called from main: **(\*(\*apf[0])(1, &amp;arg_f))(2)**;</code>
 
-__Steps__ of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>&quot;:
+Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>&quot;:
 
 <code>void (\*(\*__apf[4]__)(int, int (\*)(int)))(int);</code>
 
 - <code>apf</code> is a 4-element array of ...
 
-<code>void (\*(**\*apf[4]**)(int, int (\*)(int)))(int);</code>
+<code>void (\*(__\*apf[4]__)(int, int (\*)(int)))(int);</code>
 
 - <code>apf</code> is a 4-element array of pointers to ....
 
-<code>void (\***(\*apf[4])(int,** int (**\***)(int)**)**)(int);</code>
+<code>void (\*__(\*apf[4])(int,__ int (__\*__)(int)__)__)(int);</code>
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments (1 integer, 1 pointer to ....) returning...
 
-<code>void (\***(\*apf[4])(int, int (\*)(int))**)(int);</code>
+<code>void (\*__(\*apf[4])(int,__ int __(\*)(int))__)(int);</code>
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments (1 integer, 1 pointer to function taking 1 argument (1 integer) returning ... ) returning...
 
-<code>void (\***(\*apf[4])(int, int (\*)(int))**)(int);</code>
+<code>void (\*__(\*apf[4])(int, int (\*)(int))__)(int);</code>
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning...
 
-<code>void **(\*(\*apf[4])(int, int (\*)(int)))**(int);</code>
+<code>void __(\*(\*apf[4])(int, int (\*)(int))__(int);</code>
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to ...
 
-<code>void **(\*(\*apf[4])(int, int (\*)(int)))(int)**;</code>
+<code>void __(\*(\*apf[4])(int, int (\*)(int)))(int)__;</code>
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to function taking 1 argument(1 integer) returning...
 
-<code>void (\*(\*apf[4])(int, int (\*)(int)))(int)**;</code>
+<code>__void (\*(\*apf[4])(int, int (\*)(int)))(int)__;</code>
 
 - <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to function taking 1 argument(1 integer) returning void.
 
 Visualization:
 
-A function taking 2 arguments: 1 integer 1 character returning pointer to integer (<code>**int \*func(int, char);**</code>) will be represented like this:
+A function taking 2 arguments: 1 integer 1 character returning pointer to integer (<code>int \*func(int, char);</code>) will be represented like this:
 
  ![Alt text](ret_int_arg_int_char.jpg)
 
-The thick border box is the function. The 2 argument are represented by the 2 boxes above with think arrows pointing to it and return value is represented inside the thick border box in this case a pointer. It points to a integer. A function is always pointed to by a no. of box(es) with thick arrow(s) even when it takes no argument in this case a void box will point to it. (this corresponds to the syntax of a empty bracket&#39;()&#39; or &#39;(void)&#39;) Therefor you can always tell from this that it is a function.
+The thick border box is the function. The 2 argument are represented by the 2 boxes above with think arrows pointing to it and return value is represented inside the thick border box in this case a pointer. It points to a integer. A function is always pointed to by a no. of box(es) with thick arrow(s) even when it takes no argument in this case a void box will point to it. (this corresponds to the syntax of a empty bracket&#39;<code>()</code>&#39; or &#39;<code>(void)</code>&#39;) Therefor you can always tell from this that it is a function.
 
-The visualization of <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;</code>:
+The visualization of <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>&quot;:
 
  ![Alt text](complex_decl.jpg)
 
-  **typedef** alteratives for **&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;**:
+  <code>typedef</code> alteratives for &quot;<code>void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>&quot;:
 
 &#39;typedef&#39; style describes things starting from left to right, top to bottom and inside to outside in the picture.
 <pre>
