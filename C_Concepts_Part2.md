@@ -157,7 +157,7 @@ Rewrite it to:
 <code>char (\*(\*((var[12])[3])));</code>
 
 to emphasize the order of evaluation. Then evaluate it starting from the inner most bracket:<br>
-<code>char (\*(\*(**<span style="color:blue">(var[12])</span>**[3]))); //var is an 12-element array (of what?)</code><br>
+<code>char (\*(\*(**(var[12])**[3]))); //var is an 12-element array (of what?)</code><br>
 <code>char (\*(\***((var[12])[3])**)); //var is an 12-element array (of 3-element arrays (of what?))</code><br>
 <code>char (\***(\*((var[12])[3]))**); //var is an 12-element array (of 3-element arrays (of pointers (to what?)))</code><br>
 <code>char **(\*(\*((var[12])[3])))**; //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to what?))))</code><br>
@@ -180,11 +180,11 @@ Evaluation starts from the variable identifier <code>var</code>&#39;s first oper
 
 Then we can resolve <code>obj3</code> , <code>obj2</code>, <code>obj1</code> and <code>var</code> by a sequence of substitutions:
 
-1. Substitute no.5 (&#39; **obj4** is **struct my\_struct**&#39;) to no.4( **obj3** is a pointer to **obj4** ). We get &#39; **obj3** is a pointer to **obj4**** struct my\_struct**&#39;.
-2. Substitute &#39; **obj3** is a pointer to **struct my\_struct**&#39; to no.3( **obj2** is an 4-element array of **obj3** s). We get &#39; **obj2** is an 4-element array of **obj3** pointers to **struct my\_struct**&#39;.
-3. Substitute &#39; **obj2** is an 4-element array of pointers to **struct my\_struct**.&#39; to no. 2( **obj1** is an 3-element array of **obj2** s). We get &#39; **obj1** is an 3-element array of **obj2** 4-element arrays of pointers to **struct my\_struct**&#39;.
-4. Substitute  &#39; **obj1** is an 3-element array of 4-element arrays of pointers to pointer to **struct my\_struct**&#39; to no. 1( **var** is an 2-element array of **obj1** s). We get &#39; **var** is an 2-element array of **obj1** 3-element arrays of 4-element arrays of pointers to **struct my\_struct**&#39;
-5. **var** is an 2-element array of 3-element arrays of 4-element arrays of pointers to **struct my\_struct**.
+1. Substitute no.5 (&#39; <code>obj4</code> is <code>struct my\_struct</code>&#39;) to no.4(<code>obj3</code> is a pointer to <code>obj4</code>). We get &#39;<code>obj3</code> is a pointer to ~~<code>obj4</code>~~<code>struct my\_struct</code>&#39;.
+2. Substitute &#39;<code>obj3</code> is a pointer to <code>struct my\_struct</code>&#39; to no.3(<code>obj2</code> is an 4-element array of  <code>obj3</code>s). We get &#39;<code>obj2</code> is an 4-element array of <code>obj3</code> pointers to <code>struct my\_struct</code>&#39;.
+3. Substitute &#39;<code>obj2</code> is an 4-element array of pointers to <code>struct my\_struct</code>&#39; to no. 2(<code>obj1</code> is an 3-element array of <code>obj2</code>s). We get &#39;<code>obj1</code> is an 3-element array of ~~<code>obj2</code>~~ 4-element arrays of pointers to <code>struct my\_struct</code>&#39;.
+4. Substitute  &#39; <code>obj1</code> is an 3-element array of 4-element arrays of pointers to pointer to <code>struct my\_struct**&#39; to no. 1( <code>var</code> is an 2-element array of <code>obj1</code> s). We get &#39; <code>var</code> is an 2-element array of <code>obj1</code> 3-element arrays of 4-element arrays of pointers to <code>struct my\_struct**&#39;
+5. <code>var</code> is an 2-element array of 3-element arrays of 4-element arrays of pointers to <code>struct my\_struct**.
 
 The methods above demonstrate algorithms (some mechanical ways) of how to convert a declaration in C language into a natural language &#39;English&#39;. It is just merely a translation of some abstract concepts described in an unfamiliar language to a familiar language. All languages are 1-D array of symbols. Understanding means you are able to extract the meanings of these 1-D array of symbols and then build a mental picture of the things it describes in your brain. Let&#39;s use pictures to analyze example 3.
 
