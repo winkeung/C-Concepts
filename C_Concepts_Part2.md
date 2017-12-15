@@ -131,7 +131,7 @@ The general form of variable declaration is:
 </pre>
 **<code>&lt;Type&gt;</code>** : It can be any C built-in type like **<code>int</code>** , **<code>char</code>** , ... or **<code>struct</code>** or **<code>union</code>** or **<code>typedef</code>** type.
 
-**<code>&lt;Expression&gt;</code>** : An expression that a variable identifier is acted upon by any number of &#39;**<code>[]</code>**&#39; and/or &#39;**<code>\*</code>**&#39; successively on it. &#39;<code>[]</code>&#39; and &#39;<code>\*</code>&quot; are both unary operators(i.e. it takes one operand(input)--takes one input, produces one output). The situation is similar to something like this in mathematics:  <code>g(g(f(g(f(f(x))))))</code>. Where <code>x</code> is a variable, <code>g()</code> and <code>f()</code> is functions. The general pattern will look like:
+**<code>&lt;Expression&gt;</code>** : An expression that a variable identifier is acted upon by any number of &#39;**<code>[]</code>**&#39; and/or &#39;**<code>\*</code>**&#39; successively on it. &#39;<code>[]</code>&#39; and &#39;<code>\*</code>&quot; are both unary operators (i.e. it takes one operand(input)--takes one input, produces one output). The situation is similar to something like this in mathematics:  <code>g(g(f(g(f(f(x))))))</code>. Where <code>x</code> is a variable, <code>g()</code> and <code>f()</code> is functions. The general pattern will look like:
 <pre>
 ***...var[][][]...
 </pre>
@@ -415,19 +415,19 @@ Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);</co
 
 <code>void (\*__(\*apf[4])(int, int (\*)(int))__)(int);</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning...
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments (1 integer, 1 pointer to function taking 1 argument (1 integer) returning integer) returning...
 
 <code>void __(\*(\*apf[4])(int, int (\*)(int))__(int);</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to ...
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments (1 integer, 1 pointer to function taking 1 argument (1 integer) returning integer) returning a pointer to ...
 
 <code>void __(\*(\*apf[4])(int, int (\*)(int)))(int)__;</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to function taking 1 argument(1 integer) returning...
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments (1 integer, 1 pointer to function taking 1 argument (1 integer) returning integer) returning a pointer to function taking 1 argument (1 integer) returning...
 
 <code>__void (\*(\*apf[4])(int, int (\*)(int)))(int)__;</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to function taking 1 argument(1 integer) returning void.
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments (1 integer, 1 pointer to function taking 1 argument (1 integer) returning integer) returning a pointer to function taking 1 argument (1 integer) returning void.
 
 Visualization:
 
