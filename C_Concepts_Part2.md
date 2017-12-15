@@ -395,9 +395,9 @@ Program output:
 <code>this is arg_f    &lt;-------------------- called from pointed_to_by_array_f</code><br>
 <code>this is return_f &lt;-------------------- called from main: **(\*(\*apf[0])(1, &amp;arg_f))(2)**;</code>
 
-Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;</code>:
+Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int)</code>;&quot;:
 
-<code>void (\*(\***apf[4]**)(int, int (\*)(int)))(int);</code>
+<code>void (\*(\*__apf[4]__)(int, int (\*)(int)))(int);</code>
 
 - <code>apf</code> is a 4-element array of ...
 
