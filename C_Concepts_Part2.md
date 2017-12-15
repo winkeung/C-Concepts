@@ -205,7 +205,7 @@ Evaluation starts from the variable identifier <code>var</code>&#39;s first oper
 
 ![Alt text](idx_deref_var.jpg)
 
-- Noted that the thick line border question mark box in the previous picture is now enlarged (because now it is known that it is an array, and it needs more space to draw box inside to represent elements) and border changed to thin line in this picture(thick border is used to indicate the focus of the current discussion).
+- Noted that the thick line border question mark box in the previous picture is now enlarged (because now it is known that it is an array, and it needs more space to draw box inside to represent elements) and border changed to thin line in this picture (thick border is used to indicate the focus of the current discussion).
 
 <code>int32 **(\*((\*var)[4]))**; // I know var is a pointer to an 4-element array of pointers, but pointer to what?</code>
 
@@ -253,13 +253,13 @@ PA4PINT32              var;
 
 This 2 approaches arrive at the same final picture. The former one go from the direction of pointer/array to pointee/element. The later go from pointee/element to pointer/array. But there is no way to declare variable from pointee/element to pointer/array in one single statement in C. Here I propose such a syntax that can do that, the general form is:
 
-&lt;Type&gt;(any no. of []or\*)  &lt;variable name&gt;
+<code>&lt;Type&gt;(any no. of []or\*)  &lt;variable name&gt;</code>
 
 Example:
 
 | **Pointer/Array → Pointee/Element** | **Pointee/Element → Pointer/Array** |
 | --- | --- |
-| int a[2][3][4]; | int[4][3][2] a; |
+| <code>int a[2][3][4];</code> | int[4][3][2] a; |
 | int \*\*\*pppi; | int\*\*\* pppi; |
 | int \*\*\*var[2][3][4]; | int\*\*\*[4][3][2] var; |
 | int \*\*(\*var[2][3])[4]; | int\*\*[4]\*[3][2] var; |
