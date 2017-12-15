@@ -29,10 +29,10 @@ pi[1] = 1;  //same effect as above
 A guess may be this is to make pointer and array inter-changeable for easy refactoring. Following is a table showing when array and pointer behave the same and when not the same in different situations:
 
 <table cellspacing="0" cellpadding="4" border="1">
- <colgroup><col width="143">
- <col width="175">
- <col width="175">
- <col width="137">
+ <colgroup><col width="25%">
+ <col width="25%">
+ <col width="25%">
+ <col width="25%">
  </colgroup><tbody>
 <tr valign="TOP">
   <td rowspan="2" width="143"><div align="CENTER">
