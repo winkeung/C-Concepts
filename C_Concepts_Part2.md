@@ -1,7 +1,7 @@
 
-# **C Concepts: Part 2**
+Part 2
 
-## **Variable Declaration Involving Pointer Dereference Operators &#39;<code>\*</code>&#39;**
+# **Variable Declaration Involving Pointer Dereference Operators &#39;<code>\*</code>&#39;**
 
 The simplest C pointer variable declaration:
 <pre>
@@ -115,7 +115,7 @@ Visualizing <code>pppi</code>:
 
 The 3 arrows in the picture correspond to the 3 &#39;<code>\*</code>&#39; operators. These 2 styles of declaration: the &#39;**<code>int \*\*\*pppi</code>**&#39; one and the **<code>typedef</code>**  one are that the former one is describing this picture from right to left (from pointer to pointee) and the later one is from left to right (from pointee to pointer).
 
-## **Variable Declaration Involving Both Pointer Dereference Operators &#39;<code>\*</code>&#39; and Array Index Operator &#39;<code>[]</code>&#39;**
+# **Variable Declaration Involving Both Pointer Dereference Operators &#39;<code>\*</code>&#39; and Array Index Operator &#39;<code>[]</code>&#39;**
 
 The question mentioned in part 1 :
 
@@ -264,7 +264,7 @@ Example:
 | <code>int \*\*\*var[2][3][4];</code> | <code>int\*\*\*[4][3][2] var;</code> |
 | <code>int \*\*(\*var[2][3])[4];</code> | <code>int\*\*[4]\*[3][2] var;</code> |
 
-## **&#39;<code>[]</code>&#39; and &#39;<code>\*</code>&#39; When used in Type Casting**
+# **&#39;<code>[]</code>&#39; and &#39;<code>\*</code>&#39; When used in Type Casting**
 
 Type casting operator is constructed by a variable declaration statement with the variable taken out and enclosed in brackets.
 
@@ -289,7 +289,7 @@ As the operand for <code>\*</code> at the right hand side, operand for <code>[]<
 2. at the left of all &#39;<code>[]</code>&#39;(s) if any and
 3. inside of all bracket(s) if any.
 
-## **Function Return Value Type involve &#39;<code>\*</code>&#39; and &#39;<code>[]</code>&#39;**
+# **Function Return Value Type involve &#39;<code>\*</code>&#39; and &#39;<code>[]</code>&#39;**
 
 Example:
 <pre>
@@ -308,7 +308,7 @@ General form:
 
 It is an expression of &#39;<code>[]</code>&#39; and &#39;<code>\*</code>&#39; acting on the inner most expression &#39;<code>&lt;function\_name&gt;(argument list)</code>&#39; successively. The inner most expression &#39;<code>&lt;function\_name&gt;(argument list)</code>&#39; evaluated to be the object returned by the function &#39;<code>function\_name</code>&#39;.
 
-## **Function Pointers**
+# **Function Pointers**
 
 In C, there are 2 things in total you can do to a existing function, they are:
 1. Call it.
