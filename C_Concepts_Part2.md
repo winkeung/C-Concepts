@@ -259,179 +259,180 @@ Example:
 
 | **Pointer/Array → Pointee/Element** | **Pointee/Element → Pointer/Array** |
 | --- | --- |
-| <code>int a[2][3][4];</code> | int[4][3][2] a; |
-| int \*\*\*pppi; | int\*\*\* pppi; |
-| int \*\*\*var[2][3][4]; | int\*\*\*[4][3][2] var; |
-| int \*\*(\*var[2][3])[4]; | int\*\*[4]\*[3][2] var; |
+| <code>int a[2][3][4];</code> | <code>int[4][3][2] a;</code> |
+| <code>int \*\*\*pppi;</code> | <code>int\*\*\* pppi;</code> |
+| <code>int \*\*\*var[2][3][4];</code> | <code>int\*\*\*[4][3][2] var;</code> |
+| <code>int \*\*(\*var[2][3])[4];</code> | <code>int\*\*[4]\*[3][2] var;</code> |
 
-### **&#39;[]&#39;  and &#39;\*&#39; When used in Type Casting**
+## **&#39;<code>[]</code>&#39; and &#39;<code>\*</code>&#39; When used in Type Casting**
 
 Type casting operator is constructed by a variable declaration statement with the variable taken out and enclosed in brackets.
 
-**int \*(\*var)[2][3];**
+<code>int \*(\*var)[2][3];</code>
 
 type cast operator to cast something to the same type as var:
 
-**(int\*(\*)[2][3])**
+<code>(int\*(\*)[2][3])</code>
 
 It can be also used in function prototype&#39;s argument list:
+<pre>
+void fun(int\*(\*)[2][3], int);
 
-**void fun(int\*(\*)[2][3], int);**
+void fun(int\*(\*arg1)[2][3], int arg2)
+{
+....
+}
+</pre>
+As the operand for <code>\*</code> at the right hand side, operand for <code>[]</code> is at the left hand side, it will be always in this form <code>...\*\*\*\*var[][][][]...</code> (brackets can be used to change the order of precedence -- e.g. &#39;<code>\*\*(\*\*var[])[][]</code>&#39;). When var is taken out, there is no other location to insert it back which still make the whole expression syntactically correct. var will be always
 
-**void fun(int\*(\*arg1)[2][3], int arg2)**
-
-**{**
-
-**....**
-
-**}**
-
-As the operand for \* at the right hand side, operand for [] is at the left hand side, it will be always in this form ..\*\*\*\*var[][][][]... (brackets can be used to change the order of precedence -- e.g. &#39;\*\*(\*\*var[])[][]&#39;). When var is taken out, there is no other location to insert it back which still make the whole expression syntactically correct. var will be always
-
-1. at the right of all &#39;\*&#39;(s) if any and
-2. at the left of all &#39;[]&#39;(s) if any and
+1. at the right of all &#39;<code>\*</code>&#39;(s) if any and
+2. at the left of all &#39;<code>[]</code>&#39;(s) if any and
 3. inside of all bracket(s) if any.
 
-### **Function Return Value Type involve &#39;\*&#39; and &#39;[]&#39;**
+## **Function Return Value Type involve &#39;<code>\*</code>&#39; and &#39;<code>[]</code>&#39;**
 
 Example:
-**int fun(void); //return a integer**
-**int \*fun(void); // return a pointer to integer**
-**int fun(void)[2]; // illegal, array is not allowed as return value, but anyway it means return a 2-element array of integers.**
-**int (\*fun(void))[2]; // return a pointer to 2-element array of integers**
-**int (\*fun(void))[2][3][4]; //return a pointer to 2-element array of 3-element arrays of 4-element arrays of  integers**
-**int \*(\*fun(void))[2];//return a pointer to 2-element array of pointers to integer**
-
+<pre>
+int fun(void);             // return a integer
+int *fun(void);            // return a pointer to integer
+int fun(void)[2];          // illegal, array is not allowed as return value, but anyway it means return a 2-element array of integers.
+int (*fun(void))[2];       // return a pointer to 2-element array of integers
+int (*fun(void))[2][3][4]; // return a pointer to 2-element array of 3-element arrays of 4-element arrays of  integers
+int *(*fun(void))[2];      // return a pointer to 2-element array of pointers to integer
+</pre>
 They also follow the &#39;declare reflects use&#39; principle as with variable declaration.
 
 General form:
-&lt;type&gt; **...\*(\***** **&lt;function\_name&gt;(&lt;argument list&gt;)**  **** )[].... ****;**
-(symbols in underline are optional, brackets can be added to change precedence.)
+<code>&lt;type&gt; ...**\*(\*** &lt;function\_name&gt;(&lt;argument list&gt;) **)[]**...;</code>
+(symbols in bold are optional, brackets can be added to change precedence.)
 
-It is an expression of &#39;[]&#39; and &#39;\*&#39; acting on the inner most expression &#39;&lt;function\_name&gt;(argument list)&#39; successively.The inner most expression &#39;&lt;function\_name&gt;(argument list)&#39; evaluated to be the object returned by the function &#39;function\_name&#39;.
+It is an expression of &#39;<code>[]</code>&#39; and &#39;<code>\*</code>&#39; acting on the inner most expression &#39;<code>&lt;function\_name&gt;(argument list)</code>&#39; successively. The inner most expression &#39;<code>&lt;function\_name&gt;(argument list)</code>&#39; evaluated to be the object returned by the function &#39;<code>function\_name</code>&#39;.
 
-### **Function Pointers**
+## **Function Pointers**
 
 In C, there are 2 things in total you can do to a existing function, they are:
 1. Call it.
 2. Get the pointer(address) of it. (and then stored it to a variable.)
 
 For example:
-**int fun(void);**
+<pre>
+int fun(void);
 
-**i = fun();      // call the function. **
+i = fun();      // call the function.
+</pre>
+- If you just see this line of code alone, you can still tell that &#39;<code>fun</code>&#39; is a name to a function (not a variable) because there is a &#39;<code>()</code>&#39; next to it. Like <code>[]</code>, we know that the name next to it the name of an array. However, unlike &#39;<code>[]</code>&#39;,  &#39;<code>()</code>&#39; also has other use: to enforce the order evaluation. What does &#39;<code>()</code>&#39; mean depends on its surroundings.
 
-- If you just see this line of code alone, you can still tell that &#39;fun&#39; is a name to a function (not a variable) because there is a &#39;()&#39; next to it. Like [], we know that the name next to it the name of an array. However, unlike &#39;[]&#39;,  &#39;()&#39; also has other use: to enforce the order evaluation. What does &#39;()&#39; mean depends on its surroundings.
+<code>pf = &amp;fun;   //or without &#39;&amp;&#39;, get the pointer of the function</code>
 
-**pf = &amp;fun;   //or without &#39;&amp;&#39;, get the pointer of the function**
-
-The question is, how to declare the variable **pf?**
+The question is, how to declare the variable <code>pf</code>?
 
 It can be declared like this:
 
-**int (\*pf)(void); // just replace &#39;fun&#39; with &#39;(\*pf)&#39;**
+<code>int (\*pf)(void); // just replace &#39;fun&#39; with &#39;(\*pf)&#39;</code>
 
 and statement calling the function pointed to by **pf** will be like this:
-**i = (\*pf)();**
+<code>i = (\*pf)();</code>
 
-The general idea is, replace the function name with &#39;(\*&lt;pointer name&gt;)&#39;. This also fit the principle used for variable deceleration: &quot;declaration reflects use&#39;. The declaration is actually a demo showing how an identifier(variable identifier or function identifier) of unknown type is used. When you know how it is being used, you should know what type it is. Why function declaration fit this principle is also because function in C always return a single value(even void function return a single void). They can appear in expression that is interchangeable with variables. e.g
+The general idea is, replace the function name with &#39;<code>(\*&lt;pointer name&gt;)</code>&#39;. This also fit the principle used for variable deceleration: &quot;declaration reflects use&#39;. The declaration is actually a demo showing how an identifier (variable identifier or function identifier) of unknown type is used. When you know how it is being used, you should know what type it is. Why function declaration fit this principle is also because function in C always return a single value (even void function return a single void). They can appear in expression that is interchangeable with variables. e.g
 
 
-**i = a + b \* f(2,v) - 3;    // a , b, f(2,v) and constant 3 represent same kind of things in an expression -- numerical values.**
+<code>i = a + b \* f(2,v) - 3;    // a , b, f(2,v) and constant 3 represent same kind of </code><br>
+<code>                            // things in an expression -- numerical values.<code>
 
 Therefore function or function pointer can be declared the same way as for variable declaration.
 
 Function pointer is same as other pointer type, there can be array of function pointers, or pointer to function pointer. Function can return function pointer or take function pointer as argument. When used as argument, inside the function prototype the name can be omitted.
  e.g.
-**void fun((\*argf)(int i)); **
+ 
+<code>void fun((\*argf)(int i));</code>
 
 is equivalent to:
 
-**void fun((\*)(int));**
-.
+<code>void fun((\*)(int));</code>
+
 And all these ideas can be chained together in many different ways and even expressed in a single statement which make it very difficult to the beginner. For Examples:
 
+<code>void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>
 
-**void (\*(\*apf[4])(int, int (\*)(int)))(int);**
-
-**apf** is a 4-element array of pointers to function of 2 arguments(a integer and a pointer to function of 1 argument(a integer) returning integer) returning a pointer to function of 1 argument(a integer) returning void.
+<code>apf</code> is a 4-element array of pointers to function of 2 arguments(a integer and a pointer to function of 1 argument(a integer) returning integer) returning a pointer to function of 1 argument(a integer) returning void.
 
 Demo code:
+<pre>
+#include &lt;stdio.h&gt;
 
-**#include &lt;stdio.h&gt;
+void (*(*apf[4])(int, int (*)(int)))(int);
 
-void (\*(\*apf[4])(int, int (\*)(int)))(int);
-
-void return\_f(int i)
+void return_f(int i)
 {
-    printf(&quot;this is return\_f\n&quot;);
+    printf(&quot;this is return_f\n&quot;);
 }
 
-int arg\_f(int i)
+int arg_f(int i)
 {
-    printf(&quot;this is arg\_f\n&quot;);
+    printf(&quot;this is arg_f\n&quot;);
     return 0;
 }
 
-void (\*pointed\_to\_by\_array\_f(int argi, int (\*argf)(int)))(int)
+void (*pointed_to\_by_array_f(int argi, int (*argf)(int)))(int)
 {
-    printf(&quot;this is pointed\_to\_by\_array\_f\n&quot;);
-    (\*argf)(3);
-    return &amp;return\_f;
+    printf(&quot;this is pointed_to_by_array_f\n&quot;);
+    (*argf)(3);
+    return &amp;return_f;
 }
 
 int main()
 {
-    apf[0]=&amp;pointed\_to\_by\_array\_f;
-    (\*(\*apf[0])(1, &amp;arg\_f))(2); // in this line there are 2 function calls invoked.
+    apf[0]=&amp;pointed_to_by_array_f;
+    (*(*apf[0])(1, &amp;arg_f))(2); // in this line there are 2 function calls invoked.
     return 0;
-}**
-
+}
+</pre>
 
 Program output:
-**this is pointed\_to\_by\_array\_f ** &lt;--- called from main: (\***(\*apf[0])****  **** (1, &amp;arg\_f)**)(2);
-**this is arg\_f   ** &lt;--------------------- called from this is pointed\_to\_by\_array\_f
-**this is return\_f** &lt;-------------------- called from main: **(\*(\*apf[0])(1, &amp;arg\_f))**  **(2)**;
+<pre>
+this is pointed_to_by_array_f ** &lt;--- called from main: (*(*apf[0])(1, &amp;arg_f))(2);
+this is arg_f   ** &lt;--------------------- called from this is pointed_to_by_array_f
+this is return_f** &lt;-------------------- called from main: (*(*apf[0])(1, &amp;arg_f))(2);
+</pre>
+Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;</code>:
 
-Steps of Analyzing **&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;**:
+<code>void (\*(\***apf[4]**)(int, int (\*)(int)))(int);</code>
 
-void (\*(\***apf[4]**)(int, int (\*)(int)))(int); ** **
+- <code>apf</code> is a 4-element array of ...
 
-- **apf** is a 4-element array of ...
+<code>void (\*(**\*apf[4]**)(int, int (\*)(int)))(int);</code>
 
-void (\*(**\*apf[4]**)(int, int (\*)(int)))(int); ** **
+- <code>apf</code> is a 4-element array of pointers to ....
 
-- **apf** is a 4-element array of pointers to ....
+<code>void (\***(\*apf[4])(int,**int **(\*)**(int)**)**)(int);<code>
 
-void (\***(\*apf[4])(int,**int **(\*)**(int)**)**)(int);
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to ....) returning...
 
-- **apf** is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to ....) returning...
+<code>void (\***(\*apf[4])(int,**int **(\*)(int))**)(int);</code>
 
-void (\***(\*apf[4])(int,**int **(\*)(int))**)(int);
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning ... ) returning...
 
-- **apf** is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning ... ) returning...
+<code>void (\***(\*apf[4])(int, int (\*)(int))**)(int);</code>
 
-void (\***(\*apf[4])(int, int (\*)(int))**)(int);
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning...
 
-- **apf** is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning...
+<code>void **(\*(\*apf[4])(int, int (\*)(int)))**(int);</code>
 
-void **(\*(\*apf[4])(int, int (\*)(int)))**(int);
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to ...
 
-- **apf** is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to ...
+<code>void **(\*(\*apf[4])(int, int (\*)(int)))(int)**;<code>
 
-void **(\*(\*apf[4])(int, int (\*)(int)))(int)**;
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to function taking 1 argument(1 integer) returning...
 
-- **apf** is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to function taking 1 argument(1 integer) returning...
+<code>void (\*(\*apf[4])(int, int (\*)(int)))(int)**;</code>
 
-**void (\*(\*apf[4])(int, int (\*)(int)))(int)**;
-
-- **apf** is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to function taking 1 argument(1 integer) returning void.
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to function taking 1 argument(1 integer) returning void.
 
 Visualization:
 
-A function taking 2 arguments: 1 integer 1 character returning pointer to integer (**int \*func(int, char);**) will be represented like this:
+A function taking 2 arguments: 1 integer 1 character returning pointer to integer (<code>**int \*func(int, char);**</code>) will be represented like this:
 
- ![]()
+ ![Alt text](ret_int_arg_int_char.jpg)
 
 The thick border box is the function. The 2 argument are represented by the 2 boxes above with think arrows pointing to it and return value is represented inside the thick border box in this case a pointer. It points to a integer. A function is always pointed to by a no. of box(es) with thick arrow(s) even when it takes no argument in this case a void box will point to it. (this corresponds to the syntax of a empty bracket&#39;()&#39; or &#39;(void)&#39;) Therefor you can always tell from this that it is a function.
 
