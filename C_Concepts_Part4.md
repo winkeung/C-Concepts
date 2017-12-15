@@ -124,3 +124,5 @@ This is because people usually start learning mathematics more earlier then star
 
 Code that simply convert multi-byte integers or structs between byte stream by using type casting will make it not portable.
 
+[Part 1](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part1.md)
+[Top](https://github.com/winkeung/C-Concepts/blob/master/README.md)
