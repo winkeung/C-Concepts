@@ -137,7 +137,7 @@ The general form of variable declaration is:
 </pre>
 (&#39;<code>[]</code>&#39; has higher precedence then &#39;<code>\*</code>&#39;,  brackets can be inserted to change the precedence of operator)
 
-The resulting object evaluated from the expression will get assigned the type of &lt;**<code>Type</code>**&gt;. The declaration statement is like a demo showing you the procedure of extracting a known type of object from a variable of unknown type.  By showing you the steps to decompose something, you know how something is composed.
+The resulting object evaluated from the expression will get assigned the type of <code>&lt;Type&gt;</code>. The declaration statement is like a demo showing you the procedure of extracting a known type of object from a variable of unknown type.  By showing you the steps to decompose something, you know how something is composed.
 
 For example:
 
@@ -157,7 +157,7 @@ Rewrite it to:
 <code>char (\*(\*((var[12])[3])));</code>
 
 to emphasize the order of evaluation. Then evaluate it starting from the inner most bracket:<br>
-<code>char (\*(\*(**(var[12])**[3]))); //var is an 12-element array (of what?)</code><br>
+<code>char (\*(\*(**<span style="color:blue">(var[12])</span>**[3]))); //var is an 12-element array (of what?)</code><br>
 <code>char (\*(\***((var[12])[3])**)); //var is an 12-element array (of 3-element arrays (of what?))</code><br>
 <code>char (\***(\*((var[12])[3]))**); //var is an 12-element array (of 3-element arrays (of pointers (to what?)))</code><br>
 <code>char **(\*(\*((var[12])[3])))**; //var is an 12-element array (of 3-element arrays (of pointers (to pointer (to what?))))</code><br>
@@ -172,13 +172,13 @@ Evaluation starts from the variable identifier <code>var</code>&#39;s first oper
 
  ![Alt text](declaration.jpg)
 
-1. <code>var</code> is acted upon by an array index operator &#39;<code>[2]</code>&#39;. That means **var** is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39; **obj1**&#39;. So expression **(var[2])** is evaluated to an **obj1**.
-2. Rewrite **(var[2])[3]** to **obj1[3]**. It tells us **obj1** is an 3-element array of something. Let&#39;s call this &#39;something&#39; **obj2**. So expression **(obj1[3])** is evaluated to an **obj2**.
-3. Rewrite **(obj1[3])[4]** to **obj2[4]**. It tells us obj2 is an 4-element array of something. Let&#39;s call it this &#39;something&#39; &#39; **obj3**&#39;. So expression **(obj2[4])** is evaluated to an **obj3**.
-4. Rewrite **\*(obj2[4])** to **\*obj3**. A dereference operator is acted on it which suggests that **obj3** is a pointer to something. Let&#39;s call this &#39;something&#39; &#39; **obj4**&#39;.  So expression **(\*obj3)** is evaluated to an **obj4**.
-5. Rewrite **(\*obj3)** to **obj4**. No more operator acts upon **obj4**. We finish our expression evaluation and the evaluation result is **obj4**. **obj4** is then assigned to &#39; **struct my\_struct**&#39; type stated at the front of thedeclaration statement.
+1. <code>var</code> is acted upon by an array index operator &#39;<code>[2]</code>&#39;. That means <code>var</code> is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39;<code>obj1**&#39;. So expression <code>(var[2])</code> is evaluated to an<code>obj1</code>.
+2. Rewrite <code>(var[2])[3]</code> to <code>obj1[3]</code>. It tells us <code>obj1</code> is an 3-element array of something. Let&#39;s call this &#39;something&#39; <code>obj</code>. So expression <code>(obj1[3])</code> is evaluated to an <code>obj2</code>.
+3. Rewrite <code>(obj1[3])[4]</code> to <code>obj2[4]</code>. It tells us obj2 is an 4-element array of something. Let&#39;s call it this &#39;something&#39; &#39;<code>obj3</code>&#39;. So expression <code>(obj2[4])</code> is evaluated to an <code>obj3</code>.
+4. Rewrite <code>\*(obj2[4])</code> to <code>\*obj3</code>. A dereference operator is acted on it which suggests that <code>obj3</code> is a pointer to something. Let&#39;s call this &#39;something&#39; &#39;<code>obj4</code>&#39;.  So expression <code>(\*obj3)</code> is evaluated to an <code>obj4</code>.
+5. Rewrite <code>(\*obj3)</code> to <code>obj4</code>. No more operator acts upon<code>obj4</code>. We finish our expression evaluation and the evaluation result is <code>obj4</code>. <code>obj4</code> is then assigned to &#39;<code>struct my\_struct</code>&#39; type stated at the front of the declaration statement.
 
-Then we can resolve **obj3** , **obj2, obj1** and **var** by a sequence of substitutions:
+Then we can resolve <code>obj3</code> , <code>obj2</code>, <code>obj1</code> and <code>var</code> by a sequence of substitutions:
 
 1. Substitute no.5 (&#39; **obj4** is **struct my\_struct**&#39;) to no.4( **obj3** is a pointer to **obj4** ). We get &#39; **obj3** is a pointer to **obj4**** struct my\_struct**&#39;.
 2. Substitute &#39; **obj3** is a pointer to **struct my\_struct**&#39; to no.3( **obj2** is an 4-element array of **obj3** s). We get &#39; **obj2** is an 4-element array of **obj3** pointers to **struct my\_struct**&#39;.
