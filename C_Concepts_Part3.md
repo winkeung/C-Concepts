@@ -1,7 +1,7 @@
 
 Part 3
 
-# **The Confusing Duality Between Arrays and Pointer**
+# **The Confusing Duality Between Arrays and Pointers**
 
 This is the second counter-intuitive features of C that confuses a lot of beginners (The first is the &#39;declare reflect use&#39; declaration style). For integer variables in C, you can do the following:
 <pre>
@@ -20,7 +20,8 @@ b = a; // illegal
 When array variable name appear in normal C statement, it will be evaluated to a pointer to its 1st element. Another counter-intuitive thing is index operator can operate on pointer. But actually they are 2 different concepts:
 <pre>
 int a[2];
-int *pi = &amp;a[0]; //  can be re-written by replacing &#39;&amp;a[0]&#39; with just &#39;a&#39; , utilizing a just mentioned counter-intuitive feature of C
+int *pi = &amp;a[0]; 
+int *pi = a; // same as the line above, by utilizing a just mentioned counter-intuitive feature of C
 
 a[1] = 1;
 pi[1] = 1;  //same effect as above
