@@ -452,3 +452,6 @@ COMPLEX_FUNC apf[4];
 </pre>
  ![Alt text](complex_decl_typedef.jpg)
 
+
+[Part 3](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part3.md)
+[Top](https://github.com/winkeung/C-Concepts/blob/master/README.md)
