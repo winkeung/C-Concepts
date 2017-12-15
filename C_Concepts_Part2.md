@@ -283,7 +283,7 @@ void fun(int*(*arg1)[2][3], int arg2)
 ...
 }
 </pre>
-As the operand for <code>\*</code> at the right hand side, operand for <code>[]</code> is at the left hand side, it will be always in this form <code>...\*\*\*\*var[][][][]...</code> (brackets can be used to change the order of precedence -- e.g. &#39;<code>\*\*(\*\*var[])[][]</code>&#39;). When var is taken out, there is no other location to insert it back which still make the whole expression syntactically correct. var will be always:
+As the operand for <code>\*</code> at the right hand side, operand for <code>[]</code> is at the left hand side, it will be always in this form <code>...\*\*\*\*var[][][][]...</code> (brackets can be used to change the order of precedence -- e.g. &#39;<code>\*\*(\*\*var[])[][]</code>&#39;). When <code>var</code> is taken out, there is no other location to insert it back which still make the whole expression syntactically correct. <code>var</code> will be always:
 
 1. at the right of all &#39;<code>\*</code>&#39;(s) if any and
 2. at the left of all &#39;<code>[]</code>&#39;(s) if any and
@@ -320,7 +320,7 @@ int fun(void);
 
 i = fun();      // call the function.
 </pre>
-- If you just see this line of code alone, you can still tell that &#39;<code>fun</code>&#39; is a name to a function (not a variable) because there is a &#39;<code>()</code>&#39; next to it. Like <code>[]</code>, we know that the name next to it the name of an array. However, unlike &#39;<code>[]</code>&#39;,  &#39;<code>()</code>&#39; also has other use: to enforce the order evaluation. What does &#39;<code>()</code>&#39; mean depends on its surroundings.
+- If you just see the second line of code alone, you can still tell that &#39;<code>fun</code>&#39; is a name to a function (not a variable) because there is a &#39;<code>()</code>&#39; next to it. Like <code>[]</code>, we know that the name next to it the name of an array. However, unlike &#39;<code>[]</code>&#39;,  &#39;<code>()</code>&#39; also has other use: to enforce the order evaluation. What does &#39;<code>()</code>&#39; mean depends on its surroundings.
 
 <code>pf = &amp;fun;   //or without &#39;&amp;&#39;, get the pointer of the function</code>
 
@@ -355,7 +355,7 @@ And all these ideas can be chained together in many different ways and even expr
 
 <code>void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>
 
-<code>apf</code> is a 4-element array of pointers to function of 2 arguments(a integer and a pointer to function of 1 argument(a integer) returning integer) returning a pointer to function of 1 argument(a integer) returning void.
+<code>apf</code> is a 4-element array of pointers to function of 2 arguments (a integer and a pointer to function of 1 argument (a integer) returning integer) returning a pointer to function of 1 argument (a integer) returning void.
 
 Demo code:
 <pre>
@@ -384,7 +384,7 @@ void (*pointed_to_by_array_f(int argi, int (*argf)(int)))(int)
 int main()
 {
     apf[0] = &amp;pointed_to_by_array_f;
-    (*(*apf[0])(1, &amp;arg_f))(2); // in this line there are 2 function calls invoked.
+    (*(*apf[0])(1, &amp;arg_f))(2); // at this line there are 2 function calls invoked.
     return 0;
 }
 </pre>
@@ -405,29 +405,29 @@ Steps of Analyzing <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quo
 
 - <code>apf</code> is a 4-element array of pointers to ....
 
-<code>void (\***(\*apf[4])(int,**int **(\*)**(int)**)**)(int);</code>
+<code>void (\***(\*apf[4])(int,** int (**\***)(int)**)**)(int);</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to ....) returning...
-
-<code>void (\***(\*apf[4])(int,**int **(\*)(int))**)(int);</code>
-
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning ... ) returning...
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments (1 integer, 1 pointer to ....) returning...
 
 <code>void (\***(\*apf[4])(int, int (\*)(int))**)(int);</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning...
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments (1 integer, 1 pointer to function taking 1 argument (1 integer) returning ... ) returning...
+
+<code>void (\***(\*apf[4])(int, int (\*)(int))**)(int);</code>
+
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning...
 
 <code>void **(\*(\*apf[4])(int, int (\*)(int)))**(int);</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to ...
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to ...
 
 <code>void **(\*(\*apf[4])(int, int (\*)(int)))(int)**;</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to function taking 1 argument(1 integer) returning...
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to function taking 1 argument(1 integer) returning...
 
 <code>void (\*(\*apf[4])(int, int (\*)(int)))(int)**;</code>
 
-- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer ) returning a pointer to function taking 1 argument(1 integer) returning void.
+- <code>apf</code> is a 4-element array of pointers to function taking 2 arguments(1 integer, 1 pointer to function taking 1 argument(1 integer) returning integer) returning a pointer to function taking 1 argument(1 integer) returning void.
 
 Visualization:
 
@@ -437,18 +437,18 @@ A function taking 2 arguments: 1 integer 1 character returning pointer to intege
 
 The thick border box is the function. The 2 argument are represented by the 2 boxes above with think arrows pointing to it and return value is represented inside the thick border box in this case a pointer. It points to a integer. A function is always pointed to by a no. of box(es) with thick arrow(s) even when it takes no argument in this case a void box will point to it. (this corresponds to the syntax of a empty bracket&#39;()&#39; or &#39;(void)&#39;) Therefor you can always tell from this that it is a function.
 
-The visualization of **&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;**:
+The visualization of <code>&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;</code>:
 
- ![]()
+ ![Alt text](complex_decl.jpg)
 
   **typedef** alteratives for **&quot;void (\*(\*apf[4])(int, int (\*)(int)))(int);&quot;**:
 
 &#39;typedef&#39; style describes things starting from left to right, top to bottom and inside to outside in the picture.
-
-**typedef void (\*RET\_VOID\_ARG\_INT)(int);**
-**typedef int (\*RET\_INT\_ARG\_INT)(int);**
-**typedef RET\_VOID\_ARG\_INT (\*COMPLEX\_FUNC)(int, RET\_INT\_ARG\_INT);**
-**COMPLEX\_FUNC apf[4];**
-
- ![]()
+<pre>
+typedef void (*RET_VOID_ARG_INT)(int);
+typedef int (*RET_INT_ARG_INT)(int);
+typedef RET_VOID_ARG_INT (*COMPLEX_FUNC)(int, RET_INT_ARG_INT);
+COMPLEX_FUNC apf[4];
+</pre>
+ ![Alt text](complex_decl_typedef.jpg)
 
