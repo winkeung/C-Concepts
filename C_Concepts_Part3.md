@@ -33,6 +33,7 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
  <col>
  <col>
  <col>
+ <col>
  </colgroup><tbody>
 <tr valign="TOP">
   <td rowspan="2" ><div align="CENTER">
