@@ -15,5 +15,13 @@ Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts 
 - [Function Pointers](C_Concepts_Part2.md#function-pointers)
 
 [Part 3](C_Concepts_Part3.md)
+- [The Confusing Duality Between Arrays and Pointers](C_Concepts_Part3.md#the-confusing-duality-between-arrays-and-pointers)
+- [Pointer Arithmetic: 1 + 1 is not always equal to 2](C_Concepts_Part3.md#pointer-arithmetic-1--1-is-not-always-equal-to-2)
+- [Array/Nested Array on Function Argument List: You Do Not Get What You Write](C_Concepts_Part3.md#arraynested-array-on-function-argument-list-you-do-not-get-what-you-write)
+- [C String: No Such Data Type in C](C_Concepts_Part3.md#c-string-no-such-data-type-in-c)
 
 [Part 4](C_Concepts_Part4.md)
+- [Global Variable, Stack, Heap. -- Your Variables' Lifetime and Scope](C_Concepts_Part4.md#global-variable-stack-heap----your-variables-lifetime-and-scope)
+- [There Is No Call By Reference In C. It Is Always Call By Value.](C_Concepts_Part4.md#there-is-no-call-by-reference-in-c-it-is-always-call-by-value)
+- [Comparison operators following the rule of expression evaluation, different from the way it is used in mathematics.](C_Concepts_Part4.md#comparison-operators-following-the-rule-of-expression-evaluation-different-from-the-way-it-is-used-in-mathematics)
+- [Don't Make Assumption on Endianness and Struct Field Alignment](C_Concepts_Part4.md#dont-make-assumption-on-endianness-and-struct-field-alignment)

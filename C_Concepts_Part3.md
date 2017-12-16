@@ -1,4 +1,3 @@
-
 Part 3
 
 # **The Confusing Duality Between Arrays and Pointers**
@@ -237,4 +236,5 @@ WARNING:
 **PLEASE DON&#39;T FORGET THE NULL CHARACTER AT THE END OF A C STRING.**
 
 [Part 4](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part4.md)
-[Top](https://github.com/winkeung/C-Concepts/blob/master/README.md)
+
+[Up](https://github.com/winkeung/C-Concepts/blob/master/README.md)
