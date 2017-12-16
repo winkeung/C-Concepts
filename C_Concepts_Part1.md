@@ -322,7 +322,7 @@ The memory layout for the 3-D array <code>a3d</code> will look like this, the in
 
 Total 2x3x4 = 24 integers.
 
-In the declaration of a nested array,  the no. in the square bracket nearest to the variable identifier is the top level array&#39;s length.
+In the declaration of a nested array,  the no. in the square bracket nearest to the variable identifier is the top level array&#39;s element count.
 
 An nested array&#39;s element is accessed like this in a C statement:
 <pre>
@@ -360,7 +360,7 @@ Which explains why the no. in the square bracket nearest to the variable identif
 
 It may seem that it is not necessary to apply this kind of lengthy analysis to understand nested array declaration but when it mixed with pointer operators, then it is very useful.
 
-The declaration statement is like a demo showing you how a known type of object is extracted out from a variable of unknown type in order to let you know what type the variable is (how that type is constructed from the known type). This is commonly called &#39;declaration reflects use&#39;. For example:
+The declaration statement is like a demo showing you how a object of simpler known type is retrieved from a variable of complex unknown type in order to let you know what type the variable is (how that type is constructed from the known type). This is commonly called &#39;declaration reflects use&#39;. For example:
 <pre>
 int a[2][3][4];
 </pre>
