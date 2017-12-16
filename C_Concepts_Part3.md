@@ -190,18 +190,32 @@ int main()
   return 0;
 }
 </pre>
-# **Pointer Arithmetic:**
+# **Pointer Arithmetic: 1 + 1 is not always equal to 2**
 
 Integer addition and subtraction can be applied to pointer type, but the no. you add/subtract means the no. of objects the pointer have to skip forwards or backwards. For example
 <pre>
 int a[10];
 int *p=a;
 
-p = p+3; //means the address is increased by 3*4 = 12 bytes because integer is 4-byte long.
+p = p+3; // means the address is increased by 3*4 = 12 bytes because integer is 4-byte long.
 </pre>
-# **Nested Arrays on Function Argument List:**
+# **Array/Nested Array on Function Argument List: You Do Not Get Want You Want**
+
+Here nested array here is just a special case of array, it doesn't matter the element of the array is also array or other kind of object.
 
 For example:
+
+<code>void f(int a[10];</code>
+
+is equivalent to :
+
+<code>void f(int \*a);</code>
+
+is equivalent to :
+
+<code>void f(int a[]);</code>
+
+Another example:
 
 <code>void f(int a[2][3][4]);</code>
 
@@ -213,13 +227,14 @@ is equivalent to:
 
 <code>void f(int (\*a)[3][4]);</code>
 
-# **C String:**
+Therefore it is converted to the point to the type of the element of the array.
 
-String is not a built-in data type of C although C supports string literal. e.g. &quot;hello&quot;. It is a convention used by the strxxx() functions in C standard library to represent string as a char array with &#39;<code>/0</code>&#39; as the terminating character. As string is an array, it is subjected to the counter-intuitive behavior of C mentioned above. And other thing that beginners usually get trapped is that they usually forget about the null character  at the end. They forget to allocate space for it. They forget to add one at the end. They forget to count it. They forget to copy it along with other characters in the string.
+# **C String: No Such Data Type in C**
+
+String is not a built-in data type of C although C supports string literal. e.g. <code>&quot;hello&quot;</code>. It is a convention used by the <code>strxxx()</code> functions in C standard library to represent string as a char array with &#39;<code>/0</code>&#39; as the terminating character. As string is an array, it is subjected to the counter-intuitive behavior of C mentioned above. And other thing that beginners usually get trapped is that they usually forget about the null character  at the end. They forget to allocate space for it. They forget to add one at the end. They forget to count it. They forget to copy it along with other characters in the string.
 
 WARNING:
 **PLEASE DON&#39;T FORGET THE NULL CHARACTER AT THE END OF A C STRING.**
 
 [Part 4](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part4.md)
 [Top](https://github.com/winkeung/C-Concepts/blob/master/README.md)
-
