@@ -201,17 +201,17 @@ p = p+3; // means the address is increased by 3*4 = 12 bytes because integer is 
 </pre>
 # **Array/Nested Array on Function Argument List: You Do Not Get Want You Want**
 
-Here nested array is just a special case of array, it doesn't matter the element of the array is also array or other kind of object.
+Here nested array is just a special case of array, it doesn't matter the element of the array is also array or other kinds of object.
 
 For example:
 
-<code>void f(int a[10];</code>
+<code>void f(int a[10]);</code>
 
 is equivalent to :
 
 <code>void f(int \*a);</code>
 
-is equivalent to :
+is also equivalent to :
 
 <code>void f(int a[]);</code>
 
@@ -223,7 +223,7 @@ is equivalent to:
 
 <code>void f(int a[][3][4]);</code>
 
-is equivalent to:
+is also equivalent to:
 
 <code>void f(int (\*a)[3][4]);</code>
 
