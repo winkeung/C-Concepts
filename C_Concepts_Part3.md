@@ -33,7 +33,6 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
  <col>
  <col>
  <col>
- <col>
  </colgroup><tbody>
 <tr valign="TOP">
   <td rowspan="2" ><div align="CENTER">
@@ -52,7 +51,7 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
  <td ><b>Pointer '<code>p</code>'</b></td>
  </tr>
 <tr valign="TOP">
-  <td ><span style="background: #ffff00;">Assigned by (i.e.lvalue)</span></td>
+  <td ><span style="background: #ffff00;">1. Assigned by (i.e.lvalue)</span></td>
   <td ><div style="margin-bottom: 0.2in;">
 <code><span style="background: #ffff00;">a
    = &lt;expression&gt;;</span></code></div>
@@ -66,7 +65,7 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
    evaluated as '<code>&amp;a[0]</code>', a constant pointer value.</span></td>
  </tr>
 <tr valign="TOP">
-  <td >Assigned to (i.e. rvalue)</td>
+  <td >2. Assigned to (i.e. rvalue)</td>
   <td ><div style="margin-bottom: 0.2in;">
 <code>b = a;</code></div>
 OK. But counter-intuitive. '<code>a</code>' will be evaluated to '<code>&amp;a[0]</code>'.
@@ -78,7 +77,7 @@ OK.</td>
    </td>
  </tr>
 <tr valign="TOP">
-  <td >Array operator</td>
+  <td >3. Array operator</td>
   <td ><div style="margin-bottom: 0.2in;">
 <code>b = a[1];</code></div>
 <div style="margin-bottom: 0.2in;">
@@ -96,7 +95,7 @@ OK but counter-intuitive.</div>
    </td>
  </tr>
 <tr valign="TOP">
-  <td >Dereference operator</td>
+  <td >4. Dereference operator</td>
   <td ><div style="margin-bottom: 0.2in;">
 <code>*a</code></div>
 OK but counter-intuitive. Equivalent to <code>a[0]</code>.</td>
@@ -107,7 +106,7 @@ OK.</td>
    </td>
  </tr>
 <tr valign="TOP">
-  <td ><span style="background: #ffff00;">Address of operator</span></td>
+  <td ><span style="background: #ffff00;">5. Address of operator</span></td>
   <td ><div style="margin-bottom: 0.2in;">
 <code><span style="background: #ffff00;">&amp;a</span></code></div>
 <span style="background: #ffff00;">OK. Of type '<code>T (*)[n]</code>'.</span></td>
@@ -118,7 +117,7 @@ OK.</td>
    intuitive.</span></td>
  </tr>
 <tr valign="TOP">
-  <td >As Function Argument 
+  <td >6. As Function Argument 
    </td>
   <td ><div style="margin-bottom: 0.2in;">
 <code>f(T a[n]);</code></div>
@@ -135,7 +134,7 @@ OK.</td>
   <td >Array behaves like pointer.</td>
  </tr>
 <tr valign="TOP">
-  <td >Pass to Function</td>
+  <td >7. Pass to Function</td>
   <td ><div style="margin-bottom: 0.2in;">
 <code>f(a);</code></div>
 OK but counter-intuitive. 'f' will not get a local copy of '<code>a</code>'
@@ -146,7 +145,7 @@ OK</td>
   <td >Array behaves like pointer.</td>
  </tr>
 <tr valign="TOP">
-  <td ><span style="background: #ffff00;">'sizeof()' operator</span></td>
+  <td ><span style="background: #ffff00;">8. 'sizeof()' operator</span></td>
   <td ><div style="margin-bottom: 0.2in;">
 <code><span style="background: #ffff00;">sizeof(a)</span></code></div>
 <span style="background: #ffff00;">OK. Return <code>n*sizeof(T)</code></span></td>
@@ -158,7 +157,7 @@ OK</td>
  </tr>
 </tbody></table>
 
-That means, in a C program you can change array to pointer or pointer to array by just change the lines of code including the declaration and also the lines using the operators in yellow background in the table above. For example:
+That means, in a C program you can change array to pointer or pointer to array by just change the lines of code including the declaration and also the lines using the operators in 1, 5, 8 in the table above. For example:
 <pre>
 void f(int a[]);
 
