@@ -1,4 +1,3 @@
-
 Part 2
 
 # **Variable Declaration Involving Pointer Dereference Operators &#39;<code>\*</code>&#39;**
