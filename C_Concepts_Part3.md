@@ -35,7 +35,7 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
  <col width="25%">
  </colgroup><tbody>
 <tr valign="TOP">
-  <td rowspan="2" width="143"><div align="CENTER">
+  <td rowspan="2" ><div align="CENTER">
 <b>Situations</b></div>
 </td>
   <td colspan="2" width="359"><div style="margin-bottom: 0.2in;">
