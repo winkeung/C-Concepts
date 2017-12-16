@@ -22,6 +22,6 @@ Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts 
 
 [Part 4](C_Concepts_Part4.md)
 - [Global Variable, Stack, Heap. -- Your Variables' Lifetime and Scope](C_Concepts_Part4.md#global-variable-stack-heap----your-variables-lifetime-and-scope)
-- [There Is No Call By Reference In C. It Is Always Call By Value.](C_Concepts_Part4.md#there-is-no-call-by-reference-in-c-it-is-always-call-by-value)
+- [There Is No Pass By Reference In C. It Is Always Pass By Value.](C_Concepts_Part4.md#there-is-no-pass-by-reference-in-c-it-is-always-pass-by-value)
 - [Comparison operators following the rule of expression evaluation, different from the way it is used in mathematics.](C_Concepts_Part4.md#comparison-operators-following-the-rule-of-expression-evaluation-different-from-the-way-it-is-used-in-mathematics)
 - [Don't Make Assumption on Endianness and Struct Field Alignment](C_Concepts_Part4.md#dont-make-assumption-on-endianness-and-struct-field-alignment)
