@@ -368,7 +368,7 @@ Which is like saying that:
 
 If the &#39;get element operator -- **<code>[]</code>**&#39; is applied 3 times successively (**<code>a[][][]</code>**) on &#39; **<code>a</code>**&#39;, then we will get a **<code>int</code>** object.
 
-In this example the variable of unknown type is **<code>a</code>** and the know type of object is **<code>int</code>**.
+In this example the variable of unknown type is **<code>a</code>** and the known type of object is **<code>int</code>**.
 
 It let you know how something is constructed by showing you the procedure of disassembling it.
 
