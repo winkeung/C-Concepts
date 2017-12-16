@@ -68,8 +68,8 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
   <td >Assigned to (i.e. rvalue)</td>
   <td ><div style="margin-bottom: 0.2in;">
 <code>b = a;</code></div>
-OK. But counter-intuitive. 'a' will be evaluated to '&amp;a[0]'.
-   So 'b' has to be 'T*', not 'T[n]'.</td>
+OK. But counter-intuitive. '<code>a</code>' will be evaluated to '<code>&amp;a[0]</code>'.
+   So '<code>b</code>' has to be '<code>T*</code>', not '<code>T[n]</code>'.</td>
   <td ><div style="margin-bottom: 0.2in;">
 <code>q = p;</code></div>
 OK.</td>
@@ -90,7 +90,7 @@ OK.
 <code>p[1] = r;</code></div>
 <div style="margin-bottom: 0.2in;">
 OK but counter-intuitive.</div>
-q is of type 'T'.</td>
+<code>q</code> is of type '<code>T</code>'.</td>
   <td >Pointer behaves like Array. 
    </td>
  </tr>
@@ -108,11 +108,11 @@ OK.</td>
 <tr valign="TOP">
   <td ><span style="background: #ffff00;">Address of operator</span></td>
   <td ><div style="margin-bottom: 0.2in;">
-<b><span style="background: #ffff00;">&amp;a</span></b></div>
-<span style="background: #ffff00;">OK. Of type 'T (*)[n]'.</span></td>
+<code><span style="background: #ffff00;">&amp;a</span></code></div>
+<span style="background: #ffff00;">OK. Of type '<code>T (*)[n]</code>'.</span></td>
   <td ><div style="margin-bottom: 0.2in;">
-<b><span style="background: #ffff00;">&amp;p</span></b></div>
-<span style="background: #ffff00;">OK. Of type 'T **'</span></td>
+<code><span style="background: #ffff00;">&amp;p</span></code></div>
+<span style="background: #ffff00;">OK. Of type '<code>T **</code>'</span></td>
   <td ><span style="background: #ffff00;">Behave differently. It is
    intuitive.</span></td>
  </tr>
@@ -121,7 +121,7 @@ OK.</td>
    </td>
   <td ><div style="margin-bottom: 0.2in;">
 <code>f(T a[n]);</code></div>
-OK but counter-intuitive. Equivalent to T *a. This means there
+OK but counter-intuitive. Equivalent to <code>T *a</code>. This means there
    will be no space revered for a array in function's local scope but
    instead just a pointer pointing to the address the caller passed
    in. Therefore the <code>n</code> in the index operator has no effect and
@@ -147,10 +147,10 @@ OK</td>
 <tr valign="TOP">
   <td ><span style="background: #ffff00;">'sizeof()' operator</span></td>
   <td ><div style="margin-bottom: 0.2in;">
-<b><span style="background: #ffff00;">sizeof(a)</span></b></div>
-<span style="background: #ffff00;">OK. Return n*sizeof(T)</span></td>
+<code><span style="background: #ffff00;">sizeof(a)</span></code></div>
+<span style="background: #ffff00;">OK. Return <code>n*sizeof(T)</code></span></td>
   <td ><div style="margin-bottom: 0.2in;">
-<b><span style="background: #ffff00;">sizeof(p)</span></b></div>
+<code><span style="background: #ffff00;">sizeof(p)</span></code></div>
 <span style="background: #ffff00;">OK.</span></td>
   <td ><span style="background: #ffff00;">Behave differently. It is
    intuitive.</span></td>
