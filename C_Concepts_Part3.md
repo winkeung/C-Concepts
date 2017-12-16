@@ -29,10 +29,10 @@ pi[1] = 1;  //same effect as above
 A guess may be this is to make pointer and array inter-changeable for easy refactoring. Following is a table showing when array and pointer behave the same and when not the same in different situations:
 
 <table cellspacing="0" cellpadding="4" border="1">
- <colgroup><col width="25%">
- <col width="25%">
- <col width="25%">
- <col width="25%">
+ <colgroup><col>
+ <col>
+ <col>
+ <col>
  </colgroup><tbody>
 <tr valign="TOP">
   <td rowspan="2" ><div align="CENTER">
@@ -47,8 +47,8 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
 </td>
  </tr>
 <tr valign="TOP">
-  <td ><b>Array 'a'</b></td>
-  <td ><b>Pointer 'p'</b></td>
+ <td ><b>Array '<code>a</code>'</b></td>
+ <td ><b>Pointer '<code>p</code>'</b></td>
  </tr>
 <tr valign="TOP">
   <td ><span style="background: #ffff00;">Assigned by (i.e.lvalue)</span></td>
@@ -61,17 +61,17 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
 <b><span style="background: #ffff00;">p
    = &lt;expression&gt;;</span></b></div>
 <span style="background: #ffff00;">OK.</span></td>
-  <td ><span style="background: #ffff00;">Because '<b>a</b>' is
-   evaluated as '<b>&amp;a[0]</b>', a constant pointer value.</span></td>
+  <td ><span style="background: #ffff00;">Because '<code>a</code>' is
+   evaluated as '<code>&amp;a[0]</code>', a constant pointer value.</span></td>
  </tr>
 <tr valign="TOP">
   <td >Assigned to (i.e. rvalue)</td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>b = a;</b></div>
+<code>b = a;</code></div>
 OK. But counter-intuitive. 'a' will be evaluated to '&amp;a[0]'.
    So 'b' has to be 'T*', not 'T[n]'.</td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>q = p;</b></div>
+<code>q = p;</code></div>
 OK.</td>
   <td >Array behaves like Pointer. 
    </td>
