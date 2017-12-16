@@ -1,4 +1,4 @@
-- [Even Numeric Literals (Constants) Have Sizes](#Even%20Numeric%20Literals%20(Constants)%20Have%20Sizes)
+- [Even Numeric Literals (Constants) Have Sizes](#Even-Numeric-Literals-(Constants)-Have-Sizes)
 
 # **Introduction**
 
