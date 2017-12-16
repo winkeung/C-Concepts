@@ -179,14 +179,14 @@ void f(int a[]);
 
 int main()
 {
-  int *a; //&lt;--- chagne
+  int *a; //&lt;--- change
   a = (int*)malloc(2*sizeof(int)); //&lt;--- change
 
  a[0] = 1; // &lt;----no change
  a[1] = 2; // &lt;--- no change
  f(a); //&lt;-- no change
 
-  printf(&quot;The size of a:%d&quot;, 2*sizeof(int)); //&lt;--- chanage
+  printf(&quot;The size of a:%d&quot;, 2*sizeof(int)); //&lt;--- change
   return 0;
 }
 </pre>
@@ -201,7 +201,7 @@ p = p+3; // means the address is increased by 3*4 = 12 bytes because integer is 
 </pre>
 # **Array/Nested Array on Function Argument List: You Do Not Get Want You Want**
 
-Here nested array here is just a special case of array, it doesn't matter the element of the array is also array or other kind of object.
+Here nested array is just a special case of array, it doesn't matter the element of the array is also array or other kind of object.
 
 For example:
 
@@ -227,7 +227,7 @@ is equivalent to:
 
 <code>void f(int (\*a)[3][4]);</code>
 
-Therefore it is converted to the point to the type of the element of the array.
+Therefore it is get converted to pointer to the type of the array element.
 
 # **C String: No Such Data Type in C**
 
