@@ -38,88 +38,88 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
   <td rowspan="2" ><div align="CENTER">
 <b>Situations</b></div>
 </td>
-  <td colspan="2" width="359"><div style="margin-bottom: 0.2in;">
+  <td colspan="2" ><div style="margin-bottom: 0.2in;">
 <code>T a[n];</code></div>
 <code>T *p = &amp;a[0];</code>
    </td>
-  <td rowspan="2" width="137"><div align="CENTER">
+  <td rowspan="2" ><div align="CENTER">
 <b>Comment</b></div>
 </td>
  </tr>
 <tr valign="TOP">
-  <td width="175"><b>Array 'a'</b></td>
-  <td width="175"><b>Pointer 'p'</b></td>
+  <td ><b>Array 'a'</b></td>
+  <td ><b>Pointer 'p'</b></td>
  </tr>
 <tr valign="TOP">
-  <td width="143"><span style="background: #ffff00;">Assigned by (i.e.lvalue)</span></td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><span style="background: #ffff00;">Assigned by (i.e.lvalue)</span></td>
+  <td ><div style="margin-bottom: 0.2in;">
 <b><span style="background: #ffff00;">a
    = &lt;expression&gt;;</span></b></div>
 <span style="background: #ffff00;">Illegal and
    counter-intuitive.</span></td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b><span style="background: #ffff00;">p
    = &lt;expression&gt;;</span></b></div>
 <span style="background: #ffff00;">OK.</span></td>
-  <td width="137"><span style="background: #ffff00;">Because '<b>a</b>' is
+  <td ><span style="background: #ffff00;">Because '<b>a</b>' is
    evaluated as '<b>&amp;a[0]</b>', a constant pointer value.</span></td>
  </tr>
 <tr valign="TOP">
-  <td width="143">Assigned to (i.e. rvalue)</td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td >Assigned to (i.e. rvalue)</td>
+  <td ><div style="margin-bottom: 0.2in;">
 <b>b = a;</b></div>
 OK. But counter-intuitive. 'a' will be evaluated to '&amp;a[0]'.
    So 'b' has to be 'T*', not 'T[n]'.</td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b>q = p;</b></div>
 OK.</td>
-  <td width="137">Array behaves like Pointer. 
+  <td >Array behaves like Pointer. 
    </td>
  </tr>
 <tr valign="TOP">
-  <td width="143">Array operator</td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td >Array operator</td>
+  <td ><div style="margin-bottom: 0.2in;">
 <b>b = a[1];</b></div>
 <div style="margin-bottom: 0.2in;">
 <b>a[1] = c;</b></div>
 OK. 
    </td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b>q = p[1];</b></div>
 <div style="margin-bottom: 0.2in;">
 <b>p[1] = r;</b></div>
 <div style="margin-bottom: 0.2in;">
 OK but counter-intuitive.</div>
 q is of type 'T'.</td>
-  <td width="137">Pointer behaves like Array. 
+  <td >Pointer behaves like Array. 
    </td>
  </tr>
 <tr valign="TOP">
-  <td width="143">Dereference operator</td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td >Dereference operator</td>
+  <td ><div style="margin-bottom: 0.2in;">
 <b>*a</b></div>
 OK but counter-intuitive. Equivalent to <b>a[0]</b>.</td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b>*p</b></div>
 OK.</td>
-  <td width="137">Array behaves like Pointer. 
+  <td >Array behaves like Pointer. 
    </td>
  </tr>
 <tr valign="TOP">
-  <td width="143"><span style="background: #ffff00;">Address of operator</span></td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><span style="background: #ffff00;">Address of operator</span></td>
+  <td ><div style="margin-bottom: 0.2in;">
 <b><span style="background: #ffff00;">&amp;a</span></b></div>
 <span style="background: #ffff00;">OK. Of type 'T (*)[n]'.</span></td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b><span style="background: #ffff00;">&amp;p</span></b></div>
 <span style="background: #ffff00;">OK. Of type 'T **'</span></td>
-  <td width="137"><span style="background: #ffff00;">Behave differently. It is
+  <td ><span style="background: #ffff00;">Behave differently. It is
    intuitive.</span></td>
  </tr>
 <tr valign="TOP">
-  <td width="143">As Function Argument 
+  <td >As Function Argument 
    </td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b>f(T a[n]);</b></div>
 OK but counter-intuitive. Equivalent to T *a. This means there
    will be no space revered for a array in function's local scope but
@@ -128,31 +128,31 @@ OK but counter-intuitive. Equivalent to T *a. This means there
    can be omitted. One use is to&nbsp; tell programmers the array
    size expected by this function but it is not enforced by the
    language.</td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b>f(T *p);</b></div>
 OK.</td>
-  <td width="137">Array behaves like pointer.</td>
+  <td >Array behaves like pointer.</td>
  </tr>
 <tr valign="TOP">
-  <td width="143">Pass to Function</td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td >Pass to Function</td>
+  <td ><div style="margin-bottom: 0.2in;">
 <b>f(a);</b></div>
 OK but counter-intuitive. 'f' will not get a local copy of '<b>a</b>'
    but a pointer to the first element of '<b>a</b>' (<b>&amp;a[0]</b>).</td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b>f(p);</b></div>
 OK</td>
-  <td width="137">Array behaves like pointer.</td>
+  <td >Array behaves like pointer.</td>
  </tr>
 <tr valign="TOP">
-  <td width="143"><span style="background: #ffff00;">'sizeof()' operator</span></td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><span style="background: #ffff00;">'sizeof()' operator</span></td>
+  <td ><div style="margin-bottom: 0.2in;">
 <b><span style="background: #ffff00;">sizeof(a)</span></b></div>
 <span style="background: #ffff00;">OK. Return n*sizeof(T)</span></td>
-  <td width="175"><div style="margin-bottom: 0.2in;">
+  <td ><div style="margin-bottom: 0.2in;">
 <b><span style="background: #ffff00;">sizeof(p)</span></b></div>
 <span style="background: #ffff00;">OK.</span></td>
-  <td width="137"><span style="background: #ffff00;">Behave differently. It is
+  <td ><span style="background: #ffff00;">Behave differently. It is
    intuitive.</span></td>
  </tr>
 </tbody></table>
