@@ -122,6 +122,40 @@ This is because people usually start learning mathematics more earlier then star
 
 Code that simply convert multi-byte integers or structs between byte stream by using type casting will make it not portable.
 
+For example, in network programming, as fields in IP packet header is Big Endian, you should not assume the socket program you write only compiled for Big Endian machine. Therefore the following macros are defined to change/keep the endianness depend on the compiler.
+<pre>
+#include <arpa/inet.h>
+uint32_t htonl(uint32_t hostlong);
+uint16_t htons(uint16_t hostshort);
+uint32_t ntohl(uint32_t netlong);
+uint16_t ntohs(uint16_t netshort);
+</pre>
+
+The byte offset of fields (alignment) and so that size of a struct depends on compiler. gcc has compiler directive to change it.
+<pre>
+#include <stdio.h>
+void main(void)
+{
+	struct {
+		char c;
+		int i;
+	}s;
+
+	struct {
+		char c;
+		int i;
+	}__attribute__((packed)) s_pack;
+	
+	printf("sizeof(s) = %d\nsizeof(s_pack) = %d\n", sizeof(s), sizeof(s_pack));
+}
+</pre>
+output:
+<pre>
+sizeof(s) = 8
+sizeof(s_pack) = 5
+</pre>
+Some compilers have compiler switch to change it rather then explicitly specifing in .c file. This may cause error if struct content is dumped out to file and read by other program with wrong assumption on struct alignment. If size or speed or whatever reason binary format is better then plain text format like XML or JSON may be good for storing or transfering data without the need to worry about endian and struct alignment.
+
 [Part 1](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part1.md)
 
 [Up](https://github.com/winkeung/C-Concepts/blob/master/README.md)

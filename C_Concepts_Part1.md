@@ -344,7 +344,7 @@ some_variable2 = a[0][1];
 3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4** objects, the expression **<code>((a[2])[3])[4]</code>** is evaluated as one such object.
 4. **<code>int ((a[2])[3])[4]</code>**: object **<code>((a[2])[3])[4]</code>** is an integer.
 
-By substituting no.4 into no.3, the original 4 statements reduced into 3 statements, with the first two remain unchagned:
+By substituting no.4 into no.3, the original 4 statements reduced into 3 statements, with the first two remain unchanged:
 1. ...
 2. ...
 3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4** ~~object~~integers.
