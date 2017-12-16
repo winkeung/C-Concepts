@@ -12,6 +12,7 @@ Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts 
 - [Variable Declaration Involving Both Pointer Dereference Operators '*' and Array Index Operator '[]'](C_Concepts_Part2.md#variable-declaration-involving-both-pointer-dereference-operators--and-array-index-operator-)
 - ['[]' and '*' When used in Type Casting](C_Concepts_Part2.md#-and--when-used-in-type-casting)
 - [Function Return Value Type involve '*' and '[]'](C_Concepts_Part2.md#function-return-value-type-involve--and-)
+- [Function Pointers](C_Concepts_Part2.md#function-pointers)
 
 [Part 3](C_Concepts_Part3.md)
 

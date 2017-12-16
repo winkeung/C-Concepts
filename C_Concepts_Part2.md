@@ -310,7 +310,7 @@ It is an expression of &#39;<code>[]</code>&#39; and &#39;<code>\*</code>&#39; a
 
 # **Function Pointers**
 
-In C, there are 2 things in total you can do to a existing function, they are:
+In C, there are 2 things in total you can do to an existing function, they are:
 1. Call it.
 2. Get the pointer(address) of it. (and then stored it to a variable.)
 
