@@ -199,7 +199,7 @@ int *p=a;
 
 p = p+3; // means the address is increased by 3*4 = 12 bytes because integer is 4-byte long.
 </pre>
-# **Array/Nested Array on Function Argument List: You Do Not Get Want You Want**
+# **Array/Nested Array on Function Argument List: You Do Not Get What You Write**
 
 Here nested array is just a special case of array, it doesn't matter the element of the array is also array or other kinds of object.
 
