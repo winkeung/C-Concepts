@@ -53,13 +53,13 @@ A guess may be this is to make pointer and array inter-changeable for easy refac
 <tr valign="TOP">
   <td ><span style="background: #ffff00;">Assigned by (i.e.lvalue)</span></td>
   <td ><div style="margin-bottom: 0.2in;">
-<b><span style="background: #ffff00;">a
-   = &lt;expression&gt;;</span></b></div>
+<code><span style="background: #ffff00;">a
+   = &lt;expression&gt;;</span></code></div>
 <span style="background: #ffff00;">Illegal and
    counter-intuitive.</span></td>
   <td ><div style="margin-bottom: 0.2in;">
-<b><span style="background: #ffff00;">p
-   = &lt;expression&gt;;</span></b></div>
+<code><span style="background: #ffff00;">p
+   = &lt;expression&gt;;</span></code></div>
 <span style="background: #ffff00;">OK.</span></td>
   <td ><span style="background: #ffff00;">Because '<code>a</code>' is
    evaluated as '<code>&amp;a[0]</code>', a constant pointer value.</span></td>
@@ -79,15 +79,15 @@ OK.</td>
 <tr valign="TOP">
   <td >Array operator</td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>b = a[1];</b></div>
+<code>b = a[1];</code></div>
 <div style="margin-bottom: 0.2in;">
-<b>a[1] = c;</b></div>
+<code>a[1] = c;</code></div>
 OK. 
    </td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>q = p[1];</b></div>
+<code>q = p[1];</code></div>
 <div style="margin-bottom: 0.2in;">
-<b>p[1] = r;</b></div>
+<code>p[1] = r;</code></div>
 <div style="margin-bottom: 0.2in;">
 OK but counter-intuitive.</div>
 q is of type 'T'.</td>
@@ -97,10 +97,10 @@ q is of type 'T'.</td>
 <tr valign="TOP">
   <td >Dereference operator</td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>*a</b></div>
-OK but counter-intuitive. Equivalent to <b>a[0]</b>.</td>
+<code>*a</code></div>
+OK but counter-intuitive. Equivalent to <code>a[0]</code>.</td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>*p</b></div>
+<code>*p</code></div>
 OK.</td>
   <td >Array behaves like Pointer. 
    </td>
@@ -120,27 +120,27 @@ OK.</td>
   <td >As Function Argument 
    </td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>f(T a[n]);</b></div>
+<code>f(T a[n]);</code></div>
 OK but counter-intuitive. Equivalent to T *a. This means there
    will be no space revered for a array in function's local scope but
    instead just a pointer pointing to the address the caller passed
-   in. Therefore the <b>n</b> in the index operator has no effect and
+   in. Therefore the <code>n</code> in the index operator has no effect and
    can be omitted. One use is to&nbsp; tell programmers the array
    size expected by this function but it is not enforced by the
    language.</td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>f(T *p);</b></div>
+<code>f(T *p);</code></div>
 OK.</td>
   <td >Array behaves like pointer.</td>
  </tr>
 <tr valign="TOP">
   <td >Pass to Function</td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>f(a);</b></div>
-OK but counter-intuitive. 'f' will not get a local copy of '<b>a</b>'
-   but a pointer to the first element of '<b>a</b>' (<b>&amp;a[0]</b>).</td>
+<code>f(a);</code></div>
+OK but counter-intuitive. 'f' will not get a local copy of '<code>a</code>'
+   but a pointer to the first element of '<code>a</code>' (<code>&amp;a[0]</code>).</td>
   <td ><div style="margin-bottom: 0.2in;">
-<b>f(p);</b></div>
+<code>f(p);</code></div>
 OK</td>
   <td >Array behaves like pointer.</td>
  </tr>
