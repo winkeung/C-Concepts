@@ -1,4 +1,4 @@
-- [Even Numeric Literals (Constants) Have Sizes](#Even-Numeric-Literals-(Constants)-Have-Sizes)
+- [Even Numeric Literals (Constants) Have Sizes](#Even-Numeric-Literals-Constants-Have-Sizes)
 
 # **Introduction**
 
@@ -32,7 +32,7 @@ In C, there are only 2 main categories of numbers (whole number and floating poi
 2. Floating Point Number
 - e.g. <code>float, double...</code>
 
-# **Even Numeric Literals (Constants) Have Sizes**
+# **Even Numeric Literals Constants Have Sizes**
 
 **Warning: Numeric literal constants appeared in C statements also get data types mentioned above associated with them too. The rules that apply to variables of a certain type also apply to constants of the same type.** For example:
 <pre>
