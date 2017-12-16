@@ -328,11 +328,11 @@ An nested array&#39;s element is accessed like this in a C statement:
 <pre>
 i = a[0][1][3];
 </pre>
-But actually **a** is an array of arrays of arrays, the expression can be equivalently re-written as:
+But actually <code>a</code> is an array of arrays of arrays, the expression can be equivalently re-written as:
 <pre>
 i = ((a[0])[1])[3];
 </pre>
-This emphasizes how the expression is evaluated form top level array downwards to the bottom level array. This reveals the fact that **a** is actually an array of arrays of arrays behind the scene. In this expression the sub expression **<code>a[0]</code>** and **<code>a[0][1]</code>** can also appear by themselves alone in C statement, like:
+This emphasizes how the expression is evaluated form top level array downwards to the bottom level array. This reveals the fact that <code>a</code> is actually an array of arrays of arrays behind the scene. In this expression the sub expression <code>a[0]</code> and <code>a[0][1]</code> can also appear by themselves alone in C statement, like:
 <pre>
 some_variable1 = a[0];
 some_variable2 = a[0][1];
@@ -350,8 +350,8 @@ By substituting no.4 into no.3, we get:
 3. **<code>((a[2])[3])[4]</code>**: object **<code>((a[2])[3])</code>** is an array of **4** ~~object~~integers.
 
 By substituting no.3 into no.2, we get:
-1...
-2.**<code>(a[2])[3]</code>**: object **<code>(a[2])</code>** is an array of **3** ~~object~~arrays of 4 integers.
+1. ...
+2. **<code>(a[2])[3]</code>**: object **<code>(a[2])</code>** is an array of **3** ~~object~~arrays of 4 integers.
 
 And finally we reduce it into:
 1. **<code>a[2]</code>**: object **<code>a</code>** is an array of **2** ~~object~~arrays of 3 arrays of 4 integers.
@@ -360,7 +360,7 @@ Which explains why the no. in the square bracket nearest to the variable identif
 
 It may seem that it is not necessary to apply this kind of lengthy analysis to understand nested array declaration but when it mixed with pointer operators, then it is very useful.
 
-The declaration statement is like a demo showing you how a known type of object is extracted out from a variable of unknown type in order to let you know what type the variable is (how that type is constructed from the known type). This is commonly called &#39;declaration reflects use&#39;. For example: ** **
+The declaration statement is like a demo showing you how a known type of object is extracted out from a variable of unknown type in order to let you know what type the variable is (how that type is constructed from the known type). This is commonly called &#39;declaration reflects use&#39;. For example:
 <pre>
 int a[2][3][4];
 </pre>
