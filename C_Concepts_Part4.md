@@ -156,7 +156,7 @@ sizeof(s_pack) = 5
 </pre>
 Some compilers have compiler switch to change it rather then explicitly specifing in .c file. This may cause error if struct content is dumped out to file and read by other program with wrong assumption on struct alignment. If size or speed or whatever reason binary format is better then plain text format like XML or JSON may be good for storing or transfering data without the need to worry about endian and struct alignment.
 
-Also some CPU may require 4-byte integer to be stored beginning at 4-byte boundary. For example at address 0xf1348074 but not at 0xf1348071 (must be divisible by 4). So type casting a pointer to any byte in a <code>char[]</code> array to a <code>int*</code> pointer may cause error.  
+Also some CPU may require 4-byte integer to be stored beginning at 4-byte boundary. For example at address <code>0xf1348074</code> but not at <code>0xf1348071</code> (must be divisible by 4). So type casting a pointer to any byte in a <code>char[]</code> array to a <code>int*</code> pointer may cause error.  
 
 [Part 1](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part1.md)
 
