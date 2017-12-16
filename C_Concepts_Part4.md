@@ -118,7 +118,7 @@ if (2&lt;x &amp;&amp; x&lt;7)
 </pre>
 This is because people usually start learning mathematics more earlier then start learning programming. As some of the mathematics syntax is same as C syntax, therefore they think this one is also true.
 
-# **Don&#39;t Make Assumption on Endianness and Struct Field Alignment**
+# **Be Aware of Endianness and Struct Field Alignment**
 
 Code that simply convert multi-byte integers or structs between byte stream by using type casting will make it not portable.
 
