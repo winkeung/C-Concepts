@@ -8,7 +8,7 @@ If the local variable in a function is declared with the &#39;<code>static</code
 
 If you call <code>malloc(s)</code> and <code>s = 0</code>, it may return you <code>NULL</code> or non <code>NULL</code> depends on implementation, so it should be prevented because if it return <code>NULL</code>, then your logic may think that it is out of memory and do something that is not supposed to be done.
 
-# **There Is No Pass By Reference In C. It Is Always Pass By Value.**
+# **There Is No Pass By Reference In C. It Is Always Pass By Value**
 
 You can say passing array is an exception. But a better way to think of it is: Let&#39;s assume pass by value is always true (no exception), then we can view that parameter passing as a form of value assignment: The caller assign values to the local variables(the arguments) of the calling function at the monment it calls a function. When it comes to array,  it happens to follow the rvalue/lvalue counter-intuitive behaviors described in Part 3. And also function cannot return array in C. If we view it as a form of value assignment too, then it also happens to follow the rule of rvalue/lvalue rule for array. By taking this point of view, we can minimize the no. of exceptions in the grammer of the language. That is good for our brain because there are less things needed to remember. Just like if you use the Sun as the origin of corrindate system rather then the Earth, the equations to describe the movement of other solar system planets will be much simpler. 
 
@@ -100,7 +100,7 @@ int main()
    return 0;
 }
 </pre>
-# **Comparison operators following the rule of expression evaluation, different from the way it is used in mathematics.**
+# **Comparison operators following the rule of expression evaluation, different from the way it is used in mathematics**
 
 If you want to check whether x is between 2 or 7 exclusive, a beginner may write:
 <pre>
