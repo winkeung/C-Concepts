@@ -8,10 +8,10 @@ Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts 
 - [There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array](C_Concepts_Part1.md/#there-is-only-1-d-array-in-c-there-is-no-multi-dimensional-array-in-c-but-nested-1-d-array)
 
 [Part 2](C_Concepts_Part2.md)
-- [Variable Declaration Involving Pointer Dereference Operators '*'](C_Concepts_Part2.md#variable-declaration-involving-pointer-dereference-operators-)
-- [Variable Declaration Involving Both Pointer Dereference Operators '*' and Array Index Operator '[]'](C_Concepts_Part2.md#variable-declaration-involving-both-pointer-dereference-operators--and-array-index-operator-)
-- ['[]' and '*' When used in Type Casting](C_Concepts_Part2.md#-and--when-used-in-type-casting)
-- [Function Return Value Type involve '*' and '[]'](C_Concepts_Part2.md#function-return-value-type-involve--and-)
+- [Variable Declaration Involving Pointer Dereference Operators '<code>*</code>'](C_Concepts_Part2.md#variable-declaration-involving-pointer-dereference-operators-)
+- [Variable Declaration Involving Both Pointer Dereference Operators '<code>*</code>' and Array Index Operator '<code>[]</code>'](C_Concepts_Part2.md#variable-declaration-involving-both-pointer-dereference-operators--and-array-index-operator-)
+- ['<code>[]</code>' and '<code>*</code>' When used in Type Casting](C_Concepts_Part2.md#-and--when-used-in-type-casting)
+- [Function Return Value Type involve '<code>*</code>' and '<code>[]</code>'](C_Concepts_Part2.md#function-return-value-type-involve--and-)
 - [Function Pointers](C_Concepts_Part2.md#function-pointers)
 
 [Part 3](C_Concepts_Part3.md)
