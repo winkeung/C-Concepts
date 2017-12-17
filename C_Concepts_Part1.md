@@ -84,11 +84,11 @@ or
 
 Visualizing **<code>a3d[2][3][4]</code>**:
 
-![Alt text](array_2x3x4.jpg)
+![Alt text](images/images/array_2x3x4.jpg)
 
  or
 
-![Alt text](array_2x3x4_1.jpg)
+![Alt text](images/array_2x3x4_1.jpg)
 
 The memory layout for the 3-D array <code>a3d</code> will look like this, the integer on the top will be located at low memory address:
 
