@@ -84,7 +84,7 @@ or
 
 Visualizing **<code>a3d[2][3][4]</code>**:
 
-![Alt text](images/images/array_2x3x4.jpg)
+![Alt text](images/array_2x3x4.jpg)
 
  or
 

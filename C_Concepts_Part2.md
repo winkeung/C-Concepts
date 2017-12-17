@@ -110,7 +110,7 @@ PPPI pppi;
 </pre>
 Visualizing <code>pppi</code>:
 
-![Alt text](pppi.jpg)
+![Alt text](images/pppi.jpg)
 
 The 3 arrows in the picture correspond to the 3 &#39;<code>\*</code>&#39; operators. These 2 styles of declaration: the &#39;**<code>int \*\*\*pppi</code>**&#39; one and the **<code>typedef</code>**  one are that the former one is describing this picture from right to left (from pointer to pointee) and the later one is from left to right (from pointee to pointer).
 
@@ -169,7 +169,7 @@ Rewrite it to:<br>
 <code>struct my_struct (\*(((var[2])[3])[4]));</code><br>
 Evaluation starts from the variable identifier <code>var</code>&#39;s first operation which is caused by the array index operator&#39;<code>[2]</code>&#39; right next to it.
 
- ![Alt text](declaration.jpg)
+ ![Alt text](images/declaration.jpg)
 
 1. <code>var</code> is acted upon by an array index operator &#39;<code>[2]</code>&#39;. That means <code>var</code> is an array and it also tells us it has 2 elements. 2 elements of &#39;something&#39;. Lets&#39; call this &#39;something&#39; &#39;<code>obj1</code>&#39;. So expression <code>(var[2])</code> is evaluated to an <code>obj1</code>.
 2. Rewrite <code>(var[2])[3]</code> to <code>obj1[3]</code>. It tells us <code>obj1</code> is an 3-element array of something. Let&#39;s call this &#39;something&#39; <code>obj</code>. So expression <code>(obj1[3])</code> is evaluated to an <code>obj2</code>.
@@ -198,25 +198,25 @@ Evaluation starts from the variable identifier <code>var</code>&#39;s first oper
 
 <code>int32 (\*(**(\*var)**[4])); // I know var is a pointer, but pointer to what?</code>
 
-![Alt text](deref_var.jpg)
+![Alt text](images/deref_var.jpg)
 
 <code>int32 (\***((\*var)[4])**); // I know var is a pointer to an 4-element array, but array of what?</code>
 
-![Alt text](idx_deref_var.jpg)
+![Alt text](images/idx_deref_var.jpg)
 
 - Noted that the thick line border question mark box in the previous picture is now enlarged (because now it is known that it is an array, and it needs more space to draw box inside to represent elements) and border changed to thin line in this picture (thick border is used to indicate the focus of the current discussion).
 
 <code>int32 **(\*((\*var)[4]))**; // I know var is a pointer to an 4-element array of pointers, but pointer to what?</code>
 
-![Alt text](deref_idx_deref_var.jpg)
+![Alt text](images/deref_idx_deref_var.jpg)
 
 <code>**int32 (\*((\*var)[4]))**; // I know var is a pointer to an 4-element array of pointers to int32, yeah!</code>
 
-![Alt text](int32_deref_idx_deref_var.jpg)
+![Alt text](images/int32_deref_idx_deref_var.jpg)
 
 Visualizing the number of array element:
 
-![Alt text](int32_deref_idx_deref_var_1.jpg)
+![Alt text](images/int32_deref_idx_deref_var_1.jpg)
 
 **Warning:**
 
@@ -236,19 +236,19 @@ Visualizing this:
 typedef int             int32;
 typedef int32         *PINT32;
 </pre>
-![Alt text](pint32.jpg)
+![Alt text](images/pint32.jpg)
 <pre>
 typedef PINT32       A4PINT32[4];
 </pre>
- ![Alt text](a4pint32.jpg)
+ ![Alt text](images/a4pint32.jpg)
 <pre>
 typedef A4PINT32  *PA4PINT32;
 </pre>
- ![Alt text](pa4pint32.jpg)
+ ![Alt text](images/pa4pint32.jpg)
 <pre>
 PA4PINT32              var;
 </pre>
- ![Alt text](pa4pint32_var.jpg)
+ ![Alt text](images/pa4pint32_var.jpg)
 
 This 2 approaches arrive at the same final picture. The former one go from the direction of pointer/array to pointee/element. The later go from pointee/element to pointer/array. But there is no way to declare variable from pointee/element to pointer/array in one single statement in C. Here I propose such a syntax that can do that, the general form is:
 
@@ -432,13 +432,13 @@ Visualization:
 
 A function taking 2 arguments: 1 integer 1 character returning pointer to integer (<code>int \*func(int, char);</code>) will be represented like this:
 
- ![Alt text](ret_int_arg_int_char.jpg)
+ ![Alt text](images/ret_int_arg_int_char.jpg)
 
 The thick border box is the function. The 2 argument are represented by the 2 boxes above with thick arrows pointing to it and return value is represented inside the thick border box in this case a pointer. It points to a integer. A function is always pointed to by a no. of box(es) with thick arrow(s) even when it takes no argument in this case a void box will point to it. (this corresponds to the syntax of a empty bracket&#39;<code>()</code>&#39; or &#39;<code>(void)</code>&#39;) Therefor you can always tell from this that it is a function.
 
 The visualization of &quot;<code>void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>&quot;:
 
- ![Alt text](complex_decl.jpg)
+ ![Alt text](images/complex_decl.jpg)
 
   <code>typedef</code> alteratives for &quot;<code>void (\*(\*apf[4])(int, int (\*)(int)))(int);</code>&quot;:
 
@@ -449,7 +449,7 @@ typedef int (*RET_INT_ARG_INT)(int);
 typedef RET_VOID_ARG_INT (*COMPLEX_FUNC)(int, RET_INT_ARG_INT);
 COMPLEX_FUNC apf[4];
 </pre>
- ![Alt text](complex_decl_typedef.jpg)
+ ![Alt text](images/complex_decl_typedef.jpg)
 
 
 [Part 3](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part3.md)
