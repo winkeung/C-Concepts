@@ -34,7 +34,8 @@ int main()
    *pi = 2;
    f(&amp;pi);
    //.. read *pi and do something according to the value
-   free(pi); // this is not freeing the memory from the malloc() call few lines above. The pointer value is over written!! Memory leak. 
+   free(pi); // this is not freeing the memory from the malloc() call few lines above. 
+             // The pointer value is over written!! Memory leak. 
 
    return 0;
 }
@@ -78,7 +79,8 @@ int main()
    s.pi = 2;
    f(&amp;s);
    //.. read *(s.pi) and do something according to the value
-   free(s.pi); // this is not freeing the memory from the malloc() call few lines above. The pointer value is over written!! Memory leak.
+   free(s.pi); // this is not freeing the memory from the malloc() call few lines above. 
+               // The pointer value is over written!! Memory leak.
 
    return 0;
 }
