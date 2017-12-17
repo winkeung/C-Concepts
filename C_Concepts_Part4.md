@@ -124,7 +124,6 @@ Code that simply convert multi-byte integers or structs between byte stream by u
 
 For example, in network programming, as fields in IP packet header is Big Endian, you should not assume the socket program you write only compiled for Big Endian machine. Therefore the following macros are defined to change/keep the endianness depend on the compiler.
 <pre>
-#include <arpa/inet.h>
 uint32_t htonl(uint32_t hostlong);
 uint16_t htons(uint16_t hostshort);
 uint32_t ntohl(uint32_t netlong);
