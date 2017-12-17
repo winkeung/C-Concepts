@@ -288,7 +288,7 @@ As the operand for <code>\*</code> at the right hand side, operand for <code>[]<
 2. at the left of all &#39;<code>[]</code>&#39;(s) if any and
 3. inside of all bracket(s) if any.
 
-# **Function Return Value Type involve &#39;<code>\*</code>&#39; and &#39;<code>[]</code>&#39;**
+# **Function Return Value Type involving &#39;<code>\*</code>&#39; and &#39;<code>[]</code>&#39;**
 
 Example:
 <pre>

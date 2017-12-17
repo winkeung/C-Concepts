@@ -11,7 +11,7 @@ Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts 
 - [Variable Declaration Involving Pointer Dereference Operators '<code>*</code>'](C_Concepts_Part2.md#variable-declaration-involving-pointer-dereference-operators-)
 - [Variable Declaration Involving Both Pointer Dereference Operators '<code>*</code>' and Array Index Operator '<code>[]</code>'](C_Concepts_Part2.md#variable-declaration-involving-both-pointer-dereference-operators--and-array-index-operator-)
 - ['<code>[]</code>' and '<code>*</code>' When used in Type Casting](C_Concepts_Part2.md#-and--when-used-in-type-casting)
-- [Function Return Value Type involve '<code>*</code>' and '<code>[]</code>'](C_Concepts_Part2.md#function-return-value-type-involve--and-)
+- [Function Return Value Type involving '<code>*</code>' and '<code>[]</code>'](C_Concepts_Part2.md#function-return-value-type-involving--and-)
 - [Function Pointers](C_Concepts_Part2.md#function-pointers)
 
 [Part 3](C_Concepts_Part3.md)
