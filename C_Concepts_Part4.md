@@ -157,6 +157,6 @@ Some compilers have compiler switch to change it rather then explicitly specifin
 
 Also some CPU may require 4-byte integer to be stored beginning at 4-byte boundary. For example at address <code>0xf1348074</code> but not at <code>0xf1348071</code> (must be divisible by 4). So type casting a pointer to any byte in a <code>char[]</code> array to a <code>int*</code> pointer may cause error.  
 
-[Part 1](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part1.md)
+[Part 1](C_Concepts_Part1.md)
 
-[Up](https://github.com/winkeung/C-Concepts/blob/master/README.md)
+[Up](README.md)

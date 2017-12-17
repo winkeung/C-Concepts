@@ -414,6 +414,6 @@ int a3d[2][3][4]=
 </pre>
 which reflects the nested nature of it.
 
-[Part 2](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part2.md)
+[Part 2](C_Concepts_Part2.md)
 
-[Up](https://github.com/winkeung/C-Concepts/blob/master/README.md)
+[Up](README.md)

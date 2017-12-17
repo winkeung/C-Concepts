@@ -245,6 +245,6 @@ String is not a built-in data type of C although C supports string literal. e.g.
 WARNING:
 **PLEASE DON&#39;T FORGET THE NULL CHARACTER AT THE END OF A C STRING.**
 
-[Part 4](https://github.com/winkeung/C-Concepts/blob/master/C_Concepts_Part4.md)
+[Part 4](C_Concepts_Part4.md)
 
-[Up](https://github.com/winkeung/C-Concepts/blob/master/README.md)
+[Up](README.md)
