@@ -120,7 +120,7 @@ This is because people usually start learning mathematics more earlier then star
 
 # **Be Aware of Endianness and Struct Field Alignment**
 
-Code that simply convert multi-byte integers or structs between byte stream by using type casting will make it not portable.
+If you know what Endianness and Struct Field Alignament are, then you probabily will be aware of them. If you don't know such things exist, then of cause you won't. Code that simply convert multi-byte integers or structs between byte stream by using type casting will make it not portable.
 
 For example, in network programming, as fields in IP packet header is Big Endian, you should not assume the socket program you write only compiled for Big Endian machine. Therefore the following macros are defined to change/keep the endianness depend on the compiler.
 <pre>
