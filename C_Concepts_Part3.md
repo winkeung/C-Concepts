@@ -18,13 +18,13 @@ b = a; // illegal
 </pre>
 However, this is legal:
 <pre>
-	struct s{
-		int i[2];
-	};
-	struct s a = {{1,2}};
-	struct s b;
+struct s{
+	int i[2];
+};
+struct s a = {{1,2}};
+struct s b;
 
-	b = a; // legal
+b = a; // legal
 </pre>
 When array variable name appear in normal C statement, it will be evaluated to a pointer to its 1st element. Another counter-intuitive thing is index operator can operate on pointer. But actually they are 2 different concepts:
 <pre>
