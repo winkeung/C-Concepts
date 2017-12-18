@@ -31,5 +31,5 @@ Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts 
 - C Traps and Pitfalls by Andrew Koenig 
 - C Programming Language by Brian W. Kernighan 
 - Structure and Interpretation of Computer Programs By Harold Abelson and Gerald Jay Sussman With Julie Sussman
-  (not related to C but teach you how to think about a program, highly recommanded)
+  (not related to C but the authors teach you how to think about a program, highly recommanded)
 
