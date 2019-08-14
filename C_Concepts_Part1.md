@@ -83,7 +83,7 @@ if (f==d)
    printf("equal\n");
 else
    printf("not equal\n"); // 0.7(decimal) = 0.10110011001100....(1100 repeat) 
-                          // flaot and double can only approximate this no. but in different precision
+                          // float and double can only approximate this no. but in different precision
 </pre>
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
