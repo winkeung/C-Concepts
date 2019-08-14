@@ -5,7 +5,7 @@ Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts 
 - [Introduction](C_Concepts_Part1.md/#introduction)
 - [C Only Has One Data Type: Number](C_Concepts_Part1.md/#c-only-has-one-data-type-number)
 - [Even Numeric Literals (Constants) Have Sizes](C_Concepts_Part1.md/#even-numeric-literals-constants-have-sizes)
-- [Decminal Floating Point Number to Binary Floating Point Number Rounding](C_Concepts_Part1.md/#float)
+- [Decminal Floating Point Number to Binary Floating Point Number Rounding](C_Concepts_Part1.md/#Decminal-Floating-Point-Number- to-Binary-Floating-Point-Number-Rounding)
 - [There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array](C_Concepts_Part1.md/#there-is-only-1-d-array-in-c-there-is-no-multi-dimensional-array-in-c-but-nested-1-d-array)
 
 [Part 2](C_Concepts_Part2.md)
