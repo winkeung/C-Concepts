@@ -203,10 +203,8 @@ int main()
 
 Integer addition and subtraction can be applied to pointer type, but the no. you add/subtract means the no. of objects the pointer have to skip forwards or backwards. For example
 <pre>
-int a[10];
-int *p=a;
-
-p = p+3; // means the address is increased by 3*4 = 12 bytes because integer is 4-byte long.
+int *p=(int*)1;
+printf("%p %p\n", p, p+1); // 0x1, 0x5 because int is 4 byte long
 </pre>
 # **Array/Nested Array on Function Argument List: You Do Not Get What You Write**
 
