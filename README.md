@@ -28,9 +28,9 @@ Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts 
 - [Be Aware of Endianness and Struct Field Alignment](C_Concepts_Part4.md#be-aware-of-endianness-and-struct-field-alignment)
 
 ## Further Reading
+- The C Programming Language by Brian W. Kernighan and Dennis M. Ritchie
 - Expert C Programming: Deep C Secrets by Peter van der Linden 
 - C Traps and Pitfalls by Andrew Koenig 
-- C Programming Language by Brian W. Kernighan 
-- Structure and Interpretation of Computer Programs By Harold Abelson and Gerald Jay Sussman With Julie Sussman
+- Structure and Interpretation of Computer Programs by Harold Abelson and Gerald Jay Sussman With Julie Sussman
   (not related to C but the authors teach you how to think about a program, highly recommanded)
 
