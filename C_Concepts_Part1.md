@@ -86,7 +86,7 @@ else
                           // float and double can only approximate this no. but in different precision
 </pre>
 
-This program shows the internals of double and float:
+This program shows the internals of double and float after decimal number 0.7 is assigned to them:
 <pre>
 #include \<stdio.h\>
 
