@@ -120,7 +120,7 @@ void main()
 	float_ *pf_ = (float_*)&f;
 	double_ *pd_ = (double_*)&d;
 
-  printf("-1^");
+ 	printf("-1^");
 	printBinary(pf_->sign, 1);
 	printf(" * 2^%d * 1.", pf_->exp-127);
 	printBinary(pf_->fraction, 23); printf("\n");
