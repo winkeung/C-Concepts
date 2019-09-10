@@ -88,7 +88,7 @@ else
 
 This program shows the internals of double and float after decimal number 0.7 is assigned to them:
 <pre>
-#include \<stdio.h\>
+#include &lt;stdio.h&gt;
 
 typedef struct {
 	unsigned int fraction : 23; // represent the digits(the Xs) in this binary no. 1.XXXXXXX... 
