@@ -122,12 +122,12 @@ void main()
 
  	printf("-1^");
 	printBinary(pf_->sign, 1);
-	printf(" * 2^%d * 1.", pf_->exp-127);
+	printf(" * 2^%d * b1.", pf_->exp-127);
 	printBinary(pf_->fraction, 23); printf("\n");
 
 	printf("-1^");
 	printBinary(pd_->sign, 1);
-	printf(" * 2^%d * 1.", pd_->exp-1023);
+	printf(" * 2^%d * b1.", pd_->exp-1023);
 	printBinary(pd_->fraction, 52); printf("\n");
 
 }
