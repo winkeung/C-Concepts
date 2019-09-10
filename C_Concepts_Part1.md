@@ -85,8 +85,10 @@ else
    printf("not equal\n"); // 0.7(decimal) = 0.1011001100110....(binary, 0110 repeat) 
                           // float and double can only approximate this no. but in different precision
 </pre>
+
+This program shows the internals of double and float:
 <pre>
-#include <stdio.h>
+#include \<stdio.h\>
 
 typedef struct {
 	unsigned int fraction : 23; // represent the digits(the Xs) in this binary no. 1.XXXXXXX... 
@@ -129,6 +131,12 @@ void main()
 	printBinary(pd_->fraction, 52); printf("\n");
 
 }
+</pre>
+
+Output:
+<pre>
+-1^0 * 2^-1 * 1.01100110011001100110011
+-1^0 * 2^-1 * 1.0110011001100110011001100110011001100110011001100110
 </pre>
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
