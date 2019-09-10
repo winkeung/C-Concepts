@@ -85,6 +85,51 @@ else
    printf("not equal\n"); // 0.7(decimal) = 0.1011001100110....(binary, 0110 repeat) 
                           // float and double can only approximate this no. but in different precision
 </pre>
+<pre>
+#include <stdio.h>
+
+typedef struct {
+	unsigned int fraction : 23; // represent the digits(the Xs) in this binary no. 1.XXXXXXX... 
+	unsigned int exp : 8; // minus this no. by 127 to get real exp no.
+	unsigned int sign : 1; 
+}float_; // value = -1^sign * 2^(exp-127) * 1.XXXXXXX....
+
+typedef struct {
+	unsigned long fraction : 52; 
+	unsigned long exp : 11; // minus this no. by 1023 to get real exp no.
+	unsigned long sign : 1;
+}double_;
+
+float f = 0.7;
+double d = 0.7;
+
+void printBinary(unsigned long l, int len)
+{
+	int i;
+	char bits[]={'0','1'};
+	for (i=len-1; i>=0; i--)
+	{
+		printf("%c", bits[(l>>i) & 1l]);
+	}
+}
+
+void main()
+{
+	float_ *pf_ = (float_*)&f;
+	double_ *pd_ = (double_*)&d;
+
+  printf("-1^");
+	printBinary(pf_->sign, 1);
+	printf(" * 2^%d * 1.", pf_->exp-127);
+	printBinary(pf_->fraction, 23); printf("\n");
+
+	printf("-1^");
+	printBinary(pd_->sign, 1);
+	printf(" * 2^%d * 1.", pd_->exp-1023);
+	printBinary(pd_->fraction, 52); printf("\n");
+
+}
+</pre>
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
 
