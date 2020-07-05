@@ -1,7 +1,7 @@
 Part 3
 
 # **The Confusing Duality Between Arrays and Pointers**
-# **(Array is second class citizen in C. Pointer steal its operator []. It has to disguise as Pointer in order to use this operator)**
+# **(Array is second class citizen in C. It cannot do value assignment with the same kind as other data types can do. Pointer steal its operator []. It has to disguise as Pointer in order to use its own operator)**
 
 This is the second counter-intuitive features of C that confuses a lot of beginners (The first is the &#39;declare reflect use&#39; declaration style). For integer variables in C, you can do the following:
 <pre>
