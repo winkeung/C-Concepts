@@ -90,15 +90,16 @@ This program shows the internals of double and float after decimal number 0.7 is
 <pre>
 #include &lt;stdio.h&gt;
 
+// value = -1^sign * 2^(exp-127) * 1.bbbbbb.... (binary decimal no., total 23 bs)
 typedef struct {
-	unsigned int fraction : 23; // represent the digits(the Xs) in this binary no. 1.XXXXXXX... 
-	unsigned int exp : 8; // minus this no. by 127 to get real exp no.
-	unsigned int sign : 1; 
-}float_; // value = -1^sign * 2^(exp-127) * 1.XXXXXXX....
+	unsigned int fraction : 23; // represent the binary digits(the bs) in this binary decimal no. 1.bbbbbbbb...
+	unsigned int exp : 8;       // minus this no. by 127 to get real exponent no.
+	unsigned int sign : 1;      // sign bit : 0=positive 1=negative
+}float_; 
 
 typedef struct {
 	unsigned long fraction : 52; 
-	unsigned long exp : 11; // minus this no. by 1023 to get real exp no.
+	unsigned long exp : 11;     // minus this no. by 1023 to get real exponent no.
 	unsigned long sign : 1;
 }double_;
 
