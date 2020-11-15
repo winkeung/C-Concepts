@@ -140,15 +140,8 @@ Output:
 -1^0 * 2^-1 * b1.0110011001100110011001100110011001100110011001100110
 </pre>
 
-<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
- <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
- <g class="layer">
-  <title>Layer 1</title>
-  <line fill="none" id="svg_1" stroke="#000000" x1="71.00001" x2="407.33335" y1="203" y2="203"/>
-  <line fill="none" id="svg_2" stroke="#000000" x1="72.66668" x2="72.66668" y1="174.00001" y2="232.7613"/>
-  <line fill="none" id="svg_4" stroke="#000000" x1="408.00001" x2="408.00001" y1="173.95268" y2="232.71397"/>
- </g>
-</svg>
+![Alt text](./float_real_no_line.svg)
+<img src="./float_real_no_line.svg">
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
 
