@@ -141,7 +141,6 @@ Output:
 </pre>
 
 ![Alt text](./float_real_no_line.svg)
-<img src="./float_real_no_line.svg">
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
 
