@@ -190,8 +190,8 @@ void printdouble_(double_ *pd_)
 void main()
 {
 	float_ f_sub_;
-	f_sub_.exp_biased = -127+127; // exponent = -127 = sub normal
-	f_sub_.fraction = 1;
+	f_sub_.exp_biased = -127+127; // exp_biased = 0 = sub normal, exponent = -126
+	f_sub_.fraction = 1; // significant digit = 0 when sub normal 
 	f_sub_.sign = 0;
 	
 	float_ f_nor_;
@@ -231,9 +231,9 @@ void main()
 Output:
 <pre>
 sign fraction                exp
-0    00000000000000000000001 00000000 <-- sub normal number(exp all '0's), fraction field means 0.00000000000000000000001
+0    00000000000000000000001 00000000 <-- sub normal number(exp all '0's), 0.00000000000000000000001 * 2^126
 sign fraction                exp
-0    00000000000000000000001 00000001 <-- normal number, fraction field means 1.00000000000000000000001
+0    00000000000000000000001 00000001 <-- normal number, fraction field means 1.00000000000000000000001 * 2^126
 (both numbers multiplied by 2)
 sign fraction                exp
 0    00000000000000000000010 00000000 <-- notice that fraction is multipled by 2
@@ -244,6 +244,18 @@ nan  <-- exp field all '1's, fraction field =1
 </pre>
 
 Use a lesser bit floating point number to show how the number of bits in exp and fraction field affect its distribution on real number line:
+1 sign bit, 3 exp bits, 4 fraction bits
+| exp bits | value |
+| -----    | ----- |
+| 000      | 2^-2 (sub normal) |
+| 001      | 2^-2  |
+| 010      | 2^-1  |
+| 011      | 2^0  |
+| 100      | 2^1  |
+| 101      | 2^2  |
+| 110      | 2^3  |
+| 111      | inf/nan  |
+
 ![Alt text](./float_real_no_line.svg)
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
