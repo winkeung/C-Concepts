@@ -244,17 +244,18 @@ nan  <-- exp field all '1's, fraction field =1
 </pre>
 
 Use a lesser bit floating point number to show how the number of bits in exp and fraction field affect its distribution on real number line:
+
 1 sign bit, 3 exp bits, 4 fraction bits
 | exp bits | value |
 | -----    | ----- |
-| 000      | 2^-2 (sub normal) |
+| 000      | 2^-2 (sub normal, most significant bit = 0) |
 | 001      | 2^-2  |
 | 010      | 2^-1  |
 | 011      | 2^0  |
 | 100      | 2^1  |
 | 101      | 2^2  |
 | 110      | 2^3  |
-| 111      | inf/nan  |
+| 111      | (inf/nan)  |
 
 ![Alt text](./float_real_no_line.svg)
 
