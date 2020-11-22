@@ -228,6 +228,22 @@ void main()
 }
 </pre>
 
+Output:
+<pre>
+sign fraction                exp
+0    00000000000000000000001 00000000 <-- sub normal number(exp all '0's), fraction field means 0.00000000000000000000001
+sign fraction                exp
+0    00000000000000000000001 00000001 <-- normal number, fraction field means 1.00000000000000000000001
+(both numbers multiplied by 2)
+sign fraction                exp
+0    00000000000000000000010 00000000 <-- notice that fraction is multipled by 2
+sign fraction                exp
+0    00000000000000000000001 00000010 <-- notice that faction doesn't change but exp is added by 1
+inf  <-- exp field all '1's, fraction field =0
+nan  <-- exp field all '1's, fraction field =1
+</pre>
+
+Used a lesser bit (8-bit) floating point number to show how the number of bits in exp field and fraction field affect the its distribution on real number line:
 ![Alt text](./float_real_no_line.svg)
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
