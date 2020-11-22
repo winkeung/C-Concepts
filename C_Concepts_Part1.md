@@ -140,6 +140,8 @@ Output:
 -1^0 * 2^-1 * b1.0110011001100110011001100110011001100110011001100110
 </pre>
 
+# Sub Normal And Inf/Nan Number
+
 This program shows the [sub normal](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Subnormal_numbers) and the [inf/nan](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Infinities) floating point numbers:
 <pre>
 #include &lt;stdio.h&gt;
