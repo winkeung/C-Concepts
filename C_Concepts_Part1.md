@@ -243,7 +243,7 @@ inf  <-- exp field all '1's, fraction field =0
 nan  <-- exp field all '1's, fraction field =1
 </pre>
 
-Used a lesser bit (8-bit) floating point number to show how the number of bits in exp field and fraction field affect the its distribution on real number line:
+Use a lesser bit floating point number to show how the number of bits in exp and fraction field affect its distribution on real number line:
 ![Alt text](./float_real_no_line.svg)
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
