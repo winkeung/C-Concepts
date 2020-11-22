@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="2200" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<svg width="2200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
 
  <g class="layer">
   <title>Layer 1</title>
 <line fill="none" id="line" stroke="#000000" x1="10" x2="2010" y1="50" y2="50"/>
 <line fill="none" id="mark_exp" stroke="#000000" x1="2010.0" x2="2010.0" y1="25.0" y2="75.0"/>
-<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="2010.0" xml:space="preserve" y="19.21666">2^4</text>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="2010.0" xml:space="preserve" y="19.21666">2^4 Inf(this pt)/Nan(to the right)</text>
 <line fill="none" id="mark_exp" stroke="#000000" x1="1010.0" x2="1010.0" y1="25.0" y2="75.0"/>
 <text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="1010.0" xml:space="preserve" y="19.21666">2^3</text>
 <line fill="none" id="mark_fract" stroke="#0000FF" x1="1010.0" x2="1010.0" y1="40.0" y2="60.0"/>
@@ -133,5 +133,6 @@
 <line fill="none" id="mark_fract" stroke="#0000FF" x1="35.390625" x2="35.390625" y1="40.0" y2="60.0"/>
 <line fill="none" id="mark_fract" stroke="#0000FF" x1="37.34375" x2="37.34375" y1="40.0" y2="60.0"/>
 <line fill="none" id="mark_fract" stroke="#0000FF" x1="39.296875" x2="39.296875" y1="40.0" y2="60.0"/>
+<text fill="#000000" font-family="serif" font-size="16" id="svg_2" stroke="#0000ff" stroke-width="0" text-anchor="middle" transform="rotate(-89.3489, 25, 112.5)" x="25" xml:space="preserve" y="118">Sub Normal</text>
  </g>
 </svg>
