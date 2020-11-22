@@ -72,7 +72,7 @@ f = 0.5;
 d = 0.5;
 
 if (f==d)
-   printf("equal\n"); // 0.5(decimal) = 0.1(binary) 
+   printf("equal\n"); // This path is taken:  0.5(decimal) = 0.1(binary) 
 else
    printf("not equal\n");
 
@@ -82,7 +82,7 @@ d = 0.7;
 if (f==d)
    printf("equal\n");
 else
-   printf("not equal\n"); // 0.7(decimal) = 0.1011001100110....(binary, 0110 repeat) 
+   printf("not equal\n"); // This path is taken: 0.7(decimal) = 0.1011001100110....(binary, 0110 repeat) 
                           // float and double can only approximate this no. but in different precision
 </pre>
 
@@ -140,15 +140,124 @@ Output:
 -1^0 * 2^-1 * b1.0110011001100110011001100110011001100110011001100110
 </pre>
 
-<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
- <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
- <g class="layer">
-  <title>Layer 1</title>
-  <line fill="none" id="svg_1" stroke="#000000" x1="71.00001" x2="407.33335" y1="203" y2="203"/>
-  <line fill="none" id="svg_2" stroke="#000000" x1="72.66668" x2="72.66668" y1="174.00001" y2="232.7613"/>
-  <line fill="none" id="svg_4" stroke="#000000" x1="408.00001" x2="408.00001" y1="173.95268" y2="232.71397"/>
- </g>
-</svg>
+This program shows the [sub normal](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Subnormal_numbers) and the [inf/nan](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Infinities) floating point numbers:
+<pre>
+#include &lt;stdio.h&gt;
+
+// value = -1^sign * 2^(exp_biased-127) * 1.bbbbbb.... (binary decimal no., total 23 bs)
+typedef struct {
+	unsigned int fraction : 23; // represent the binary digits(the bs) in this binary decimal no. 1.bbbbbbbb...
+	unsigned int exp_biased : 8;  // minus this no. by 127 to get real exponent no.
+	unsigned int sign : 1;      // sign bit : 0=positive 1=negative
+}float_; 
+
+typedef struct {
+	unsigned long fraction : 52; 
+	unsigned long exp_biased : 11;     // minus this no. by 1023 to get real exponent no.
+	unsigned long sign : 1;
+}double_;
+
+void printBinary(unsigned long l, int len)
+{
+	int i;
+	char bits[]={'0','1'};
+	for (i=len-1; i>=0; i--)
+	{
+		printf("%c", bits[(l>>i) & 1l]);
+	}
+}
+
+void printfloat_(float_ *pf_)
+{			
+	printf("sign fraction                exp\n");
+	
+	// Print out raw bit
+	printBinary(pf_->sign, 1);	        printf("    ");
+	printBinary(pf_->fraction, 23); 	printf(" ");
+	printBinary(pf_->exp_biased, 8);	printf(" ");
+	printf("\n");
+}
+
+void printdouble_(double_ *pd_)
+{
+	printf("sign fraction                                             exp\n");
+	
+	printBinary(pd_->sign, 1);        printf("    ");
+	printBinary(pd_->fraction, 52);   printf(" ");
+	printBinary(pd_->exp_biased, 52); printf("\n");
+}
+
+void main()
+{
+	float_ f_sub_;
+	f_sub_.exp_biased = -127+127; // exp_biased = 0 = sub normal, exponent = -126
+	f_sub_.fraction = 1; // significant digit = 0 when sub normal 
+	f_sub_.sign = 0;
+	
+	float_ f_nor_;
+	f_nor_.exp_biased = -126+127; // exponent = -126
+	f_nor_.fraction = 1;
+	f_nor_.sign = 0;
+	
+	printfloat_(&f_sub_);
+	printfloat_(&f_nor_);
+	
+	float *pf_sub = (float*)&f_sub_;
+	float *pf_nor = (float*)&f_nor_;	
+	*pf_sub *= 2; // multiple both by 2 and see what happen to the raw bits
+	*pf_nor *= 2;
+	
+	printfloat_(&f_sub_);
+	printfloat_(&f_nor_);
+	
+	float_ f_inf_;
+	f_inf_.exp_biased = 128+127; // exponent = 128 = inf/nan
+	f_inf_.fraction = 0;
+	f_inf_.sign = 0;
+	
+	float_ f_nan_;
+	f_nan_.exp_biased = 128+127; // exponent = 128 = inf/nan
+	f_nan_.fraction = 1;
+	f_nan_.sign = 0;
+	
+	float *pf_inf = (float*)&f_inf_;
+	float *pf_nan = (float*)&f_nan_;
+	
+	printf("%e\n", *pf_inf); // see how printf handle these numbers.
+	printf("%e\n", *pf_nan);
+}
+</pre>
+
+Output:
+<pre>
+sign fraction                exp
+0    00000000000000000000001 00000000 <-- sub normal number(exp all '0's), 0.00000000000000000000001 * 2^126
+sign fraction                exp
+0    00000000000000000000001 00000001 <-- normal number, fraction field means 1.00000000000000000000001 * 2^126
+(both numbers multiplied by 2)
+sign fraction                exp
+0    00000000000000000000010 00000000 <-- notice that fraction is multipled by 2
+sign fraction                exp
+0    00000000000000000000001 00000010 <-- notice that faction doesn't change but exp is added by 1
+inf  <-- exp field all '1's, fraction field =0
+nan  <-- exp field all '1's, fraction field =1
+</pre>
+
+Use a lesser bit floating point number to show how the number of bits in exp and fraction field affect its distribution on real number line:
+
+1 sign bit, 3 exp bits, 4 fraction bits
+| exp bits | value |
+| -----    | ----- |
+| 000      | 2^-2 (sub normal, most significant bit = 0) |
+| 001      | 2^-2  |
+| 010      | 2^-1  |
+| 011      | 2^0  |
+| 100      | 2^1  |
+| 101      | 2^2  |
+| 110      | 2^3  |
+| 111      | (inf/nan)  |
+
+![Alt text](./float_real_no_line.svg)
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
 
