@@ -72,7 +72,7 @@ f = 0.5;
 d = 0.5;
 
 if (f==d)
-   printf("equal\n"); // 0.5(decimal) = 0.1(binary) 
+   printf("equal\n"); // This path is taken:  0.5(decimal) = 0.1(binary) 
 else
    printf("not equal\n");
 
@@ -82,7 +82,7 @@ d = 0.7;
 if (f==d)
    printf("equal\n");
 else
-   printf("not equal\n"); // 0.7(decimal) = 0.1011001100110....(binary, 0110 repeat) 
+   printf("not equal\n"); // This path is taken: 0.7(decimal) = 0.1011001100110....(binary, 0110 repeat) 
                           // float and double can only approximate this no. but in different precision
 </pre>
 
