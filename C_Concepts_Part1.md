@@ -231,7 +231,7 @@ void main()
 Output:
 <pre>
 sign fraction                exp
-0    00000000000000000000001 00000000 <-- sub normal number(exp all '0's), = 0.00000000000000000000001 * 2^126
+0    00000000000000000000001 00000000 <-- sub normal number(exp field all '0's), = 0.00000000000000000000001 * 2^126
 sign fraction                exp
 0    00000000000000000000001 00000001 <-- normal number, = 1.00000000000000000000001 * 2^126
 (both numbers are multiplied by 2)
@@ -257,11 +257,11 @@ Use a lesser bit floating point number to show how the number of bits in exp and
 | 110      | 2^3  |
 | 111      | (inf/nan)  |
 
-Click on the image and click "RAW" to view the picture in seperate browser window:
+Click on the image and click "Raw" button to view the picture in seperate browser window:
 
 ![Alt text](./float_real_no_line.svg)
 
-Noted that the black marks (taller one) are affected by the how big and how small exp field can represent, the number of blue marks between black marks is affected by number of bits in fraction field.
+Noted that the black marks (taller one) are affected by the how big and small the number exp field can represent, the number of blue marks between black marks is affected by number of bits in fraction field.
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
 
