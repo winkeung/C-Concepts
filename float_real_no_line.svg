@@ -1,11 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<svg width="2200" height="768" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
 
  <g class="layer">
   <title>Layer 1</title>
-  <line fill="none" id="svg_1" stroke="#000000" x1="71.00001" x2="407.33335" y1="203" y2="203"/>
-  <line fill="none" id="svg_2" stroke="#000000" x1="72.66668" x2="72.66668" y1="174.00001" y2="232.7613"/>
-  <line fill="none" id="svg_4" stroke="#000000" x1="408.00001" x2="408.00001" y1="173.95268" y2="232.71397"/>
+<line fill="none" id="line" stroke="#000000" x1="10" x2="2010" y1="50" y2="50"/>
+<line fill="none" id="mark_exp" stroke="#000000" x1="2010.0" x2="2010.0" y1="25.0" y2="75.0"/>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="2010.0" xml:space="preserve" y="19.21666">2^4</text>
+<line fill="none" id="mark_exp" stroke="#000000" x1="1010.0" x2="1010.0" y1="25.0" y2="75.0"/>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="1010.0" xml:space="preserve" y="19.21666">2^3</text>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1010.0" x2="1010.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1072.5" x2="1072.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1135.0" x2="1135.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1197.5" x2="1197.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1260.0" x2="1260.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1322.5" x2="1322.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1385.0" x2="1385.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1447.5" x2="1447.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1510.0" x2="1510.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1572.5" x2="1572.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1635.0" x2="1635.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1697.5" x2="1697.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1760.0" x2="1760.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1822.5" x2="1822.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1885.0" x2="1885.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="1947.5" x2="1947.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_exp" stroke="#000000" x1="510.0" x2="510.0" y1="25.0" y2="75.0"/>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="510.0" xml:space="preserve" y="19.21666">2^2</text>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="510.0" x2="510.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="541.25" x2="541.25" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="572.5" x2="572.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="603.75" x2="603.75" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="635.0" x2="635.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="666.25" x2="666.25" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="697.5" x2="697.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="728.75" x2="728.75" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="760.0" x2="760.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="791.25" x2="791.25" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="822.5" x2="822.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="853.75" x2="853.75" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="885.0" x2="885.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="916.25" x2="916.25" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="947.5" x2="947.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="978.75" x2="978.75" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_exp" stroke="#000000" x1="260.0" x2="260.0" y1="25.0" y2="75.0"/>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="260.0" xml:space="preserve" y="19.21666">2^1</text>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="260.0" x2="260.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="275.625" x2="275.625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="291.25" x2="291.25" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="306.875" x2="306.875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="322.5" x2="322.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="338.125" x2="338.125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="353.75" x2="353.75" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="369.375" x2="369.375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="385.0" x2="385.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="400.625" x2="400.625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="416.25" x2="416.25" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="431.875" x2="431.875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="447.5" x2="447.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="463.125" x2="463.125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="478.75" x2="478.75" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="494.375" x2="494.375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_exp" stroke="#000000" x1="135.0" x2="135.0" y1="25.0" y2="75.0"/>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="135.0" xml:space="preserve" y="19.21666">2^0</text>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="135.0" x2="135.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="142.8125" x2="142.8125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="150.625" x2="150.625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="158.4375" x2="158.4375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="166.25" x2="166.25" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="174.0625" x2="174.0625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="181.875" x2="181.875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="189.6875" x2="189.6875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="197.5" x2="197.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="205.3125" x2="205.3125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="213.125" x2="213.125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="220.9375" x2="220.9375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="228.75" x2="228.75" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="236.5625" x2="236.5625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="244.375" x2="244.375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="252.1875" x2="252.1875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_exp" stroke="#000000" x1="72.5" x2="72.5" y1="25.0" y2="75.0"/>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="72.5" xml:space="preserve" y="19.21666">2^-1</text>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="72.5" x2="72.5" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="76.40625" x2="76.40625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="80.3125" x2="80.3125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="84.21875" x2="84.21875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="88.125" x2="88.125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="92.03125" x2="92.03125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="95.9375" x2="95.9375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="99.84375" x2="99.84375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="103.75" x2="103.75" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="107.65625" x2="107.65625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="111.5625" x2="111.5625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="115.46875" x2="115.46875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="119.375" x2="119.375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="123.28125" x2="123.28125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="127.1875" x2="127.1875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="131.09375" x2="131.09375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_exp" stroke="#000000" x1="41.25" x2="41.25" y1="25.0" y2="75.0"/>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="41.25" xml:space="preserve" y="19.21666">2^-2</text>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="41.25" x2="41.25" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="43.203125" x2="43.203125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="45.15625" x2="45.15625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="47.109375" x2="47.109375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="49.0625" x2="49.0625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="51.015625" x2="51.015625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="52.96875" x2="52.96875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="54.921875" x2="54.921875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="56.875" x2="56.875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="58.828125" x2="58.828125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="60.78125" x2="60.78125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="62.734375" x2="62.734375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="64.6875" x2="64.6875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="66.640625" x2="66.640625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="68.59375" x2="68.59375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="70.546875" x2="70.546875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_exp" stroke="#000000" x1="10" x2="10" y1="25.0" y2="75.0"/>
+<text fill="#000000" font-family="serif" font-size="13" id="svg_1" stroke="#0000ff" stroke-width="0" text-anchor="middle" x="10" xml:space="preserve" y="19.21666">0</text>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="10.0" x2="10.0" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="11.953125" x2="11.953125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="13.90625" x2="13.90625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="15.859375" x2="15.859375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="17.8125" x2="17.8125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="19.765625" x2="19.765625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="21.71875" x2="21.71875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="23.671875" x2="23.671875" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="25.625" x2="25.625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="27.578125" x2="27.578125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="29.53125" x2="29.53125" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="31.484375" x2="31.484375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="33.4375" x2="33.4375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="35.390625" x2="35.390625" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="37.34375" x2="37.34375" y1="40.0" y2="60.0"/>
+<line fill="none" id="mark_fract" stroke="#0000FF" x1="39.296875" x2="39.296875" y1="40.0" y2="60.0"/>
  </g>
 </svg>
