@@ -140,6 +140,94 @@ Output:
 -1^0 * 2^-1 * b1.0110011001100110011001100110011001100110011001100110
 </pre>
 
+This program shows the [sub normal](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Subnormal_numbers) and the [inf/nan](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Infinities) floating point numbers:
+<pre>
+#include &lt;stdio.h&gt;
+
+// value = -1^sign * 2^(exp_biased-127) * 1.bbbbbb.... (binary decimal no., total 23 bs)
+typedef struct {
+	unsigned int fraction : 23; // represent the binary digits(the bs) in this binary decimal no. 1.bbbbbbbb...
+	unsigned int exp_biased : 8;  // minus this no. by 127 to get real exponent no.
+	unsigned int sign : 1;      // sign bit : 0=positive 1=negative
+}float_; 
+
+typedef struct {
+	unsigned long fraction : 52; 
+	unsigned long exp_biased : 11;     // minus this no. by 1023 to get real exponent no.
+	unsigned long sign : 1;
+}double_;
+
+void printBinary(unsigned long l, int len)
+{
+	int i;
+	char bits[]={'0','1'};
+	for (i=len-1; i>=0; i--)
+	{
+		printf("%c", bits[(l>>i) & 1l]);
+	}
+}
+
+void printfloat_(float_ *pf_)
+{			
+	printf("sign fraction                exp\n");
+	
+	// Print out raw bit
+	printBinary(pf_->sign, 1);	        printf("    ");
+	printBinary(pf_->fraction, 23); 	printf(" ");
+	printBinary(pf_->exp_biased, 8);	printf(" ");
+	printf("\n");
+}
+
+void printdouble_(double_ *pd_)
+{
+	printf("sign fraction                                             exp\n");
+	
+	printBinary(pd_->sign, 1);        printf("    ");
+	printBinary(pd_->fraction, 52);   printf(" ");
+	printBinary(pd_->exp_biased, 52); printf("\n");
+}
+
+void main()
+{
+	float_ f_sub_;
+	f_sub_.exp_biased = -127+127; // exponent = -127 = sub normal
+	f_sub_.fraction = 1;
+	f_sub_.sign = 0;
+	
+	float_ f_nor_;
+	f_nor_.exp_biased = -126+127; // exponent = -126
+	f_nor_.fraction = 1;
+	f_nor_.sign = 0;
+	
+	printfloat_(&f_sub_);
+	printfloat_(&f_nor_);
+	
+	float *pf_sub = (float*)&f_sub_;
+	float *pf_nor = (float*)&f_nor_;	
+	*pf_sub *= 2; // multiple both by 2 and see what happen to the raw bits
+	*pf_nor *= 2;
+	
+	printfloat_(&f_sub_);
+	printfloat_(&f_nor_);
+	
+	float_ f_inf_;
+	f_inf_.exp_biased = 128+127; // exponent = 128 = inf/nan
+	f_inf_.fraction = 0;
+	f_inf_.sign = 0;
+	
+	float_ f_nan_;
+	f_nan_.exp_biased = 128+127; // exponent = 128 = inf/nan
+	f_nan_.fraction = 1;
+	f_nan_.sign = 0;
+	
+	float *pf_inf = (float*)&f_inf_;
+	float *pf_nan = (float*)&f_nan_;
+	
+	printf("%e\n", *pf_inf); // see how printf handle these numbers.
+	printf("%e\n", *pf_nan);
+}
+</pre>
+
 ![Alt text](./float_real_no_line.svg)
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
