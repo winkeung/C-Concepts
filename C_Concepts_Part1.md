@@ -263,6 +263,8 @@ Click on the image and click "Raw" button to view the picture in seperate browse
 
 ![Alt text](./float_real_no_line.svg)
 
+![Alt text](./digits.svg)
+
 Noted that the black marks (taller one) are affected by the how big and small the number exp field can represent, the number of blue marks between black marks is affected by the number of bits in fraction field.
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
