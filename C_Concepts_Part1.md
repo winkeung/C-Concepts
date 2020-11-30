@@ -245,7 +245,7 @@ inf  <-- exp field all '1's, fraction field =0
 nan  <-- exp field all '1's, fraction field =1
 </pre>
 
-Use a lesser bit floating point number to show how the number of bits in exp and fraction field affect its distribution on real number line:
+Using a lesser bit floating point number(this format is not standard but its rule follows those used by float and double) to show how the number of bits in exp and fraction field affect its distribution on real number line:
 
 1 sign bit, 3 exp bits, 4 fraction bits
 | exp bits | value |
