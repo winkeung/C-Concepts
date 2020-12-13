@@ -245,7 +245,7 @@ inf  <-- exp field all '1's, fraction field =0
 nan  <-- exp field all '1's, fraction field =1
 </pre>
 
-Using a lesser bit floating point number(this format is not standard but its rule follows those used by float and double) to show how the number of bits in exp and fraction field affect its distribution on real number line:
+Using a lesser bit floating point number (this format is not standard but its rules follow those used by float and double) to show how the number of bits in exp and fraction field affect its distribution on real number line:
 
 1 sign bit, 3 exp bits, 4 fraction bits
 | exp bits | value |
@@ -259,11 +259,13 @@ Using a lesser bit floating point number(this format is not standard but its rul
 | 110      | 2^3  |
 | 111      | (inf/nan)  |
 
-Click on the image and click "Raw" button to view the picture in seperate browser window:
+Click on the image and click "Raw" button to view the picture in seperate browser window so that you can zoom in/out:
 
 ![Alt text](./float_real_no_line.svg)
 
-Noted that the black marks (taller one) are affected by the how big and small the number exp field can represent, the number of blue marks between black marks is affected by the number of bits in fraction field.
+Noted how the no. of bits in exp and fraction fields affect the distribution of marks(the numbers it can represent) in the number line.
+The no. of the black marks (taller one) (and how far they can extend to the right and how many they can be inerted before the zero point) are affected by the range the number exp field can represent.
+The number of blue marks between black marks is affected by the number of bits in fraction field. The no. of blue marks between any neighbouring black marks are the same.
 
 The largest and smallest number and its significant digits when written without the exponent.
 
