@@ -269,7 +269,7 @@ The no. of the black marks (taller one) (and how far they can extend to the righ
 
 The number of blue marks between black marks is affected by the number of bits in fraction field. The no. of blue marks between any neighbouring black marks are the same.
 
-The largest and smallest number and its significant digits when written without the exponent.
+The largest and smallest(above zero) number and its significant digits when written without the exponent.
 
 ![Alt text](./digits.svg)
 
