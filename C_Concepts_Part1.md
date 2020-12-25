@@ -63,7 +63,7 @@ yes
 </pre>
 
 # **Floating Point Number**
-
+# Decimal point number to binary point number (floating point number) rounding
 <pre>
 float f;
 double d;
