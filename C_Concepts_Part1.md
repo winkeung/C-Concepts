@@ -236,11 +236,14 @@ sign fraction                exp
 0    00000000000000000000001 00000000 <-- sub normal number(exp field all '0's), = 0.00000000000000000000001 * 2^126
 sign fraction                exp
 0    00000000000000000000001 00000001 <-- normal number, = 1.00000000000000000000001 * 2^126
-(both numbers are multiplied by 2)
+
+(both numbers are multiplied by 4)
+
 sign fraction                exp
-0    00000000000000000000010 00000000 <-- notice that fraction is multipled by 2
+0    00000000000000000000100 00000000 <-- notice that fraction is multipled by 4 but exp doesn't change
 sign fraction                exp
-0    00000000000000000000001 00000010 <-- notice that faction doesn't change but exp is added by 1
+0    00000000000000000000001 00000011 <-- notice that faction doesn't change but exp is added by 2
+
 inf  <-- exp field all '1's, fraction field =0
 nan  <-- exp field all '1's, fraction field =1
 </pre>
