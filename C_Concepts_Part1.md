@@ -62,7 +62,7 @@ no
 yes
 </pre>
 
-# **Decimal Floating Point Number to Binary Floating Point Number Rounding**
+# **Floating Point Number**
 
 <pre>
 float f;
