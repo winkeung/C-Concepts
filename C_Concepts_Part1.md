@@ -146,9 +146,9 @@ This program shows the [sub normal](https://en.wikipedia.org/wiki/Floating-point
 <pre>
 #include &lt;stdio.h&gt;
 
-// value = -1^sign * 2^(exp_biased-127) * 1.bbbbbb.... (binary decimal no., total 23 bs)
+// value = -1^sign * 2^(exp_biased-127) * 1.bbbbbb.... (binary point no., total 23 bs)
 typedef struct {
-	unsigned int fraction : 23; // represent the binary digits(the bs) in this binary decimal no. 1.bbbbbbbb...
+	unsigned int fraction : 23; // represent the binary digits(the bs) in this binary point no. 1.bbbbbbbb...
 	unsigned int exp_biased : 8;  // minus this no. by 127 to get real exponent no.
 	unsigned int sign : 1;      // sign bit : 0=positive 1=negative
 }float_; 
@@ -232,10 +232,11 @@ void main()
 
 Output:
 <pre>
+(a 'b' indicate a binary point number, e.g. "b1.01" means (1 * 2^0) + (0 * 2^-1) + (1 * 2^-2))
 sign fraction                exp
-0    00000000000000000000001 00000000 <-- sub normal number(exp field all '0's), = 0.00000000000000000000001 * 2^126
+0    00000000000000000000001 00000000 <-- sub normal number(exp field all '0's), = b0.00000000000000000000001 * 2^126
 sign fraction                exp
-0    00000000000000000000001 00000001 <-- normal number, = 1.00000000000000000000001 * 2^126
+0    00000000000000000000001 00000001 <-- normal number, = b1.00000000000000000000001 * 2^126
 
 (both numbers are multiplied by 4)
 
