@@ -18,15 +18,17 @@ It can be said that C only have one kind of built-in data types which are NUMBER
 
 Because of rule no.3 (which can be applied repeatedly on new data type just created), things can be made really complicated. And the counter-intuitive way C declare this things make it confusing for beginners (e.g. <code>char **var[12][3]</code> -- it will be shown how to decode things like this later)
 
-In other words, all data types in C are made up of:
+## In other words, all data types in C are made up of:
 
 some basic built-in type(s) (+ rule(s))
 
-The general form for variable decleration is:
-<code>DataType_KeyWord Expression_to_access_the_variable_to_get_the_aata_of_type_DataType;</code>
+## The general form for variable decleration is:
+<pre>
+DataType_KeyWord Expression_to_access_the_variable_to_get_the_aata_of_type_DataType;
+</pre>
 
-Example:
-<code>
+## Example:
+<pre>
 char **var[12][3];
 
 Explanation:
@@ -34,7 +36,7 @@ Explanation:
 "**var[12][3]"	it the expression to access "var" to get the data of type "char".
 "**var[12][3]" is converted to "*(*((var[12])[3]))" to emphasis the order of operator evaluation.
 In English, var is an array of 12 elements of array of 3 elements of pointer to pointer to "char".
-</code>
+</pre>
 
 In C, there are only 2 main categories of numbers (whole number and floating point number) and under these 2 categories they are sub-divided by their sizes and whether they support sign(positive/negative) or not:
 
