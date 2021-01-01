@@ -4,12 +4,13 @@
  <g class="layer">
   <title>Layer 1</title>
   <text fill="#000000" font-family="serif" font-size="0.016" id="svg_1" stroke="#000000" stroke-width="0" text-anchor="middle" x="102" xml:space="preserve" y="78.39999">0.000</text>
-  <text fill="#000000" font-family="serif" font-size="24" id="svg_2" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0)" x="386" xml:space="preserve" y="79.99999">0000.000000</text>
-  <text fill="#000000" font-family="serif" font-size="24" id="svg_3" stroke="#000000" stroke-width="0" text-anchor="middle" x="357.4" xml:space="preserve" y="56">1111.1</text>
-  <text fill="#000000" font-family="serif" font-size="24" id="svg_4" stroke="#000000" stroke-width="0" text-anchor="middle" x="404" xml:space="preserve" y="104.8">0.000001</text>
-  <rect fill="#000000" fill-opacity="0" height="24.4" id="svg_7" stroke="#ff0000" width="52.4" x="337.60001" y="35.2"/>
-  <rect fill="#000000" fill-opacity="0" height="24.4" id="svg_8" stroke="#ff0000" width="47.2" x="401" y="83.8"/>
-  <rect fill="#000000" fill-opacity="0" height="24.4" id="svg_9" stroke="#0000ff" width="10.00001" x="390.4" y="83.8"/>
-  <rect fill="#000000" fill-opacity="0" height="24.4" id="svg_10" stroke="#0000ff" width="10.00001" x="327" y="35.4"/>
+  <text fill="#000000" font-family="Monospace" font-size="22" font-weight="bold" id="svg_2" stroke="#000000" stroke-width="0" style="cursor: move;" text-anchor="middle" x="382.57143" xml:space="preserve" y="78.45713">0000.000000</text>
+  <text fill="#000000" font-family="Monospace" font-size="22" font-weight="bold" id="svg_3" stroke="#000000" stroke-width="0" text-anchor="middle" x="350.25714" xml:space="preserve" y="58.85714">1111.1</text>
+  <text fill="#000000" font-family="Monospace" font-size="22" font-weight="bold" id="svg_4" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0)" x="402.28571" xml:space="preserve" y="98.22857">0.000001</text>
+  <rect fill="#000000" fill-opacity="0" height="17.82857" id="svg_7" stroke="#ff0000" width="66.68572" x="322.74287" y="43.2"/>
+  <rect fill="#000000" fill-opacity="0" height="17.54286" id="svg_8" stroke="#ff0000" width="55.48571" x="401.28571" y="82.94285"/>
+  <rect fill="#000000" fill-opacity="0" height="17.54286" id="svg_9" stroke="#0000ff" width="10.00001" x="390.68572" y="83.22857"/>
+  <rect fill="#000000" fill-opacity="0" height="18.11429" id="svg_10" stroke="#0000ff" transform="matrix(1, 0, 0, 1, 0, 0)" width="10.00001" x="311.85714" y="43.11429"/>
+  <rect fill="#000000" fill-opacity="0" height="17.54286" id="svg_5" stroke="#0000ff" width="10.00001" x="351.2857" y="63.51429"/>
  </g>
 </svg>
