@@ -333,7 +333,7 @@ The memory layout for the 3-D array <code>a3d</code> will look like this, the in
 	 <col width="32*">
 	 <col width="36*">
 	 <col width="52*">
-	 <col width="100*">
+	 <col width="100">
 	 <col width="72*">
  </colgroup>
 <tbody>
