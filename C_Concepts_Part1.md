@@ -38,7 +38,7 @@ Explanation:
 This expression show how the "var" variable is accessed to get the data of type "char". It is first 
 indexed to get an element that means it is an array of something. And then this "something" is indexed again to get 
 another element so that this "something" is an array also. The element of this "something" is then dereferenced twice
-to get a "char" type data. Somebody call this way of declaring a variable type as "Declaration by use", tell the compiler
+to get a "char" type data. Somebody call this way of declaring a variable type as "Declaration by use", telling the compiler
 what data type a variable is by showing how to access (use) it.
 To state it in English, var is an array of 12 elements of array of 3 elements of pointer to pointer to "char".
 </pre>
@@ -332,7 +332,7 @@ The memory layout for the 3-D array <code>a3d</code> will look like this, the in
  <colgroup><col width="32*">
  <col width="36*">
  <col width="52*">
- <col width="65*">
+ <col width="100*">
  <col width="72*">
  </colgroup><tbody>
 <tr>
