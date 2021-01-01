@@ -1,6 +1,6 @@
 # **Introduction**
 
-I found that most of the books or web sites teaching C to beginners doesn&#39;t explain the subtle part of  the concepts in C clear enough or put enough emphasis/warning on them. Those concepts will usually trap beginners. Once you mastered all these subtle concepts then you will suddenly realize that actually C is a language with just a small number of  keywords and concepts to memorize. And then you will also start to appreciate the minimalist design of C. This series of posts is not intended to be a complete tutorial of the C language but it can be used as supplementary materials to those tutorials.  Lets&#39; talk about data type first...
+I found that most of the books or web sites teaching C to beginners doesn&#39;t explain the subtle part of  the concepts in C clear enough or put enough emphasis/warning on them. Those concepts will usually confuse beginners. Once you mastered all these subtle concepts then you will suddenly realize that actually C is a language with just a small number of  keywords and concepts to memorize. And then you will also start to appreciate the minimalist design of C. This series of posts is not intended to be a complete tutorial of the C language but it can be used as supplementary materials to those tutorials.  Lets&#39; talk about data type first...
 
 # **C Only Has One Data Type: Number**
 
@@ -18,9 +18,23 @@ It can be said that C only have one kind of built-in data types which are NUMBER
 
 Because of rule no.3 (which can be applied repeatedly on new data type just created), things can be made really complicated. And the counter-intuitive way C declare this things make it confusing for beginners (e.g. <code>char **var[12][3]</code> -- it will be shown how to decode things like this later)
 
-In other words, all data type in C is of the form:
+In other words, all data types in C are made up of:
 
 some basic built-in type(s) (+ rule(s))
+
+The general form for variable decleration is:
+<code>DataType_KeyWord Expression_to_access_the_variable_to_get_the_aata_of_type_DataType;</code>
+
+Example:
+<code>
+char **var[12][3];
+
+Explanation:
+"char" is the DataType_KeyWord.
+"**var[12][3]"	it the expression to access "var" to get the data of type "char".
+"**var[12][3]" is converted to "*(*((var[12])[3]))" to emphasis the order of operator evaluation.
+In English, var is an array of 12 elements of array of 3 elements of pointer to pointer to "char".
+</code>
 
 In C, there are only 2 main categories of numbers (whole number and floating point number) and under these 2 categories they are sub-divided by their sizes and whether they support sign(positive/negative) or not:
 
