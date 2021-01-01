@@ -329,12 +329,14 @@ Visualizing **<code>a3d[2][3][4]</code>**:
 The memory layout for the 3-D array <code>a3d</code> will look like this, the integer on the top will be located at low memory address:
 
 <table cellspacing="0" cellpadding="4">
- <colgroup><col width="32*">
- <col width="36*">
- <col width="52*">
- <col width="100*">
- <col width="72*">
- </colgroup><tbody>
+ <colgroup>
+	 <col width="32*">
+	 <col width="36*">
+	 <col width="52*">
+	 <col width="100*">
+	 <col width="72*">
+ </colgroup>
+<tbody>
 <tr>
   <td rowspan="24" width="12%"><div style="text-decoration: none;" align="CENTER">
 <i>a3d</i></div>
@@ -345,7 +347,7 @@ The memory layout for the 3-D array <code>a3d</code> will look like this, the in
   <td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
 <i>a3d[0][0]</i></div>
 </td>
-  <td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+  <td width="40%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
 <i>a3d[0][0][0]</i></div>
 </td>
   <td width="28%" valign="TOP"><div align="CENTER">
