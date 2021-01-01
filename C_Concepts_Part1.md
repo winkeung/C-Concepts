@@ -24,7 +24,7 @@ some basic built-in type(s) (+ rule(s))
 
 The general form for variable decleration is:
 <pre>
-DataType_KeyWord   Expression_to_access_the_variable_to_get_the_data_of_type_DataType;
+DataType_KeyWord   Expression_to_access_the_variable_to_get_or_set_the_data_of_the_type_in_front;
 </pre>
 
 Example:
@@ -33,9 +33,9 @@ char **var[12][3];
 
 Explanation:
 "char" is the "DataType_KeyWord".
-"**var[12][3]"	is the "Expression_to_access_the_variable_to_get_the_data_of_type_DataType"
-"**var[12][3]" is converted to "*(*((var[12])[3]))" to emphasis the order of operator evaluation.
-In English, var is an array of 12 elements of array of 3 elements of pointer to pointer to "char".
+"**var[12][3]" is the "Expression_to_access_the_variable_to_get_or_set_the_data_of_type_in_front"
+"**var[12][3]" can be converted to "*(*((var[12])[3]))" to emphasis the order of operator evaluation.
+To state it in English, var is an array of 12 elements of array of 3 elements of pointer to pointer to "char".
 </pre>
 
 In C, there are only 2 main categories of numbers (whole number and floating point number) and under these 2 categories they are sub-divided by their sizes and whether they support sign(positive/negative) or not:
