@@ -291,7 +291,7 @@ Click on the image and click "Raw" button to view the picture in seperate browse
 
 Only the position part is shown. The negative part is just an mirror image of the positive part.
 
-Noted how the no. of bits in exp and fraction fields affect the distribution of marks(the numbers it can represent) in the number line:
+Note how the no. of bits in exp and fraction fields affect the distribution of marks(the numbers it can represent) in the number line:
 
 The no. of the black marks (taller one) (and how far they can extend to the right and how many they can be inerted before the zero point) are affected by the range the number exp field can represent.
 
