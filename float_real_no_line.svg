@@ -133,7 +133,7 @@
   <line fill="none" id="mark_fract" stroke="#0000FF" x1="37.34375" x2="37.34375" y1="40" y2="60"/>
   <line fill="none" id="mark_fract" stroke="#0000FF" x1="39.29688" x2="39.29688" y1="40" y2="60"/>
   <text fill="#ff0000" font-family="serif" font-size="16" id="svg_2" stroke="#0000ff" stroke-width="0" text-anchor="middle" transform="rotate(-89.3489, 23.4, 152.625)" x="23.4" xml:space="preserve" y="158">Sub Normal</text>
-  <text fill="#000000" font-family="serif" font-size="17" font-weight="bold" id="svg_3" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0)" x="1015" xml:space="preserve" y="175.39999">b1.0000 × 2^3</text>
+  <text fill="#000000" font-family="serif" font-size="17" font-weight="bold" id="svg_3" stroke="#000000" stroke-width="0" text-anchor="middle" x="1015" xml:space="preserve" y="175.39999">b1.0000 × 2^3</text>
   <text fill="#000000" font-family="serif" font-size="17" font-weight="bold" id="svg_4" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0)" x="937" xml:space="preserve" y="125.49999">b1.1111 × 2^2</text>
   <text fill="#000000" font-family="serif" font-size="17" font-weight="bold" id="svg_5" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0)" x="1085" xml:space="preserve" y="126.5">b1.0001 × 2^3</text>
   <line fill="none" id="svg_6" stroke="#000000" x1="948" x2="973" y1="98.39999" y2="63.39999"/>
@@ -156,5 +156,7 @@
   <line fill="none" id="svg_23" stroke="#000000" x1="575" x2="594" y1="65.39999" y2="101.39999"/>
   <text fill="#000000" font-family="serif" font-size="13" id="svg_24" stroke="#0000ff" stroke-width="0" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0)" x="2070" xml:space="preserve" y="53.5">Nan</text>
   <path d="m2054.52225,51.62943l24.02313,-61.8513l24.02313,61.8513l-12.01157,0l0,62.14891l-24.02313,0l0,-62.14891l-12.01157,0l0.00001,0z" fill="#000000" fill-opacity="0" id="svg_25" stroke="#0000ff" transform="rotate(90, 2078.55, 51.7773)"/>
+  <line fill="none" id="svg_26" stroke="#000000" x1="1943.66667" x2="1947" y1="139.5" y2="62.5"/>
+  <text fill="#000000" font-family="serif" font-size="17" font-weight="bold" id="svg_27" stroke="#000000" stroke-width="0" style="cursor: move;" text-anchor="middle" x="1954.00003" xml:space="preserve" y="168.33332">b1.1111 × 2^3</text>
  </g>
 </svg>
