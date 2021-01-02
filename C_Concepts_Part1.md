@@ -31,10 +31,15 @@ Example:
 <pre>
 char **var[12][3];
 </pre>
+
 Explanation:
+
 "char" is the "DataType_KeyWord".
+
 "**var[12][3]" is the "Expression_to_access_the_variable_to_get_or_set_the_data_of_type_in_front"
+
 "**var[12][3]" can be rewritten as "*(*((var[12])[3]))" to emphasis the order of operator evaluation.
+
 This expression show how the "var" variable is accessed to get the data of type "char". It is first indexed to get an element that means it is an array of something. And then this "something" is indexed again to get another element so that this "something" is an array also. The element of this "something" is then dereferenced twice to get a "char" type data. Somebody call this way of declaring a variable type as "Declaration by use", telling the compiler what data type a variable is by showing how to access (use) it. To state it in English, var is an array of 12 elements of array of 3 elements of pointer to pointer to "char".
 
 In C, there are only 2 main categories of numbers (whole number and floating point number) and under these 2 categories they are sub-divided by their sizes and whether they support sign(positive/negative) or not:
