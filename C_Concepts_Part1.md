@@ -84,7 +84,7 @@ yes
 
 # **Floating Point Number**
 # Decimal point number to binary point number (floating point number) rounding
-This program shows a float and a double variables both are assiegn with decimal number 0.5 and then do a equal test and see whether they are equal of not. After that, 0.7 is assigned to both of them and do the same test and see if they are equal or not.
+This program shows a float and a double variables both are assiegn with decimal number 0.5 and then do a equality test and see whether they are equal of not. After that, 0.7 is assigned to both of them and do the same test and see if they are equal or not.
 
 <pre>
 float f;
@@ -334,7 +334,7 @@ The memory layout for the 3-D array <code>a3d</code> will look like this, the in
 		<col width="32*">
 		<col width="36*">
 		<col width="52*">
-		<col width="100*">
+		<col width="200*">
 		<col width="72*">
 	</colgroup>
 	<tbody>
