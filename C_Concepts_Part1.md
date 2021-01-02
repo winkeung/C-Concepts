@@ -283,11 +283,13 @@ Using a lesser bit floating point number (this format is not standard but its ru
 | 100      | 2^1  |
 | 101      | 2^2  |
 | 110      | 2^3  |
-| 111      | (inf/nan)  |
+| 111      | inf (when fraction is all '0's) / nan (otherwise)  |
 
 Click on the image and click "Raw" button to view the picture in seperate browser window so that you can zoom in/out:
 
 ![Alt text](./float_real_no_line.svg)
+
+Only the position part is shown. The negative part is just an mirror image of the positive part.
 
 Noted how the no. of bits in exp and fraction fields affect the distribution of marks(the numbers it can represent) in the number line:
 
