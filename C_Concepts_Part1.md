@@ -2,7 +2,7 @@
 
 I found that most of the books or web sites teaching C to beginners doesn&#39;t explain the subtle part of  the concepts in C clear enough or put enough emphasis/warning on them. Those concepts will usually confuse beginners. Once you mastered all these subtle concepts then you will suddenly realize that actually C is a language with just a small number of  keywords and concepts to memorize. And then you will also start to appreciate the minimalist design of C. This series of posts is not intended to be a complete tutorial of the C language but it can be used as supplementary materials to those tutorials.  Lets&#39; talk about data type first...
 
-# **C Only Has One Data Type: Number**
+# **C Has ONLY ONE Data Type: Number**
 
 Do you know what this means?
 <pre>
@@ -10,7 +10,7 @@ char **var[12][3];
 </pre>
 If you know the answer, then skip this part and first half of part 2, if not, after finish reading, you will find it very easy to decode it.
 
-It can be said that C only have one kind of built-in data types which are NUMBERs. User can define new data types using number types as basic building blocks according to some rules which I summarize them into three rules:
+It can be said that C have only one kind of built-in data types which are NUMBERs. User can define new data types using number types as basic building blocks according to some rules which I summarize them into three rules:
 
 1. Grouping data together in some ways (array, structure and union).
 2. Treating the memory location(the address) of data as a kind of data (pointer).
@@ -24,7 +24,7 @@ some basic built-in type(s) (+ rule(s))
 
 The general form for variable decleration is:
 <pre>
-DataType_KeyWord   Expression_to_access_the_variable_to_get_or_set_the_data_of_the_type_in_front;
+DataType_KeyWord   Expression_to_access_the_variable_data_of_the_type_in_front;
 </pre>
 
 Example:
@@ -36,7 +36,7 @@ Explanation:
 
 <code>char</code> is the "DataType_KeyWord".
 
-<code>\*\*var[12][3]</code> is the "Expression_to_access_the_variable_to_get_or_set_the_data_of_type_in_front"
+<code>\*\*var[12][3]</code> is the "Expression_to_access_the_variable_data_of_type_in_front"
 
 <code>\*\*var[12][3]</code> can be rewritten as <code> \*(\*((var[12])[3]))</code> to emphasis the order of operator evaluation.
 
