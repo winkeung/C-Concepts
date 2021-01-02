@@ -331,236 +331,231 @@ Visualizing **<code>a3d[2][3][4]</code>**:
 
 The memory layout for the 3-D array <code>a3d</code> will look like this, the integer on the top will be located at low memory address:
 
+
 <table cellspacing="0" cellpadding="4">
-	<colgroup>
-		<col width="32*">
-		<col width="36*">
-		<col width="52*">
-		<col width="200*">
-		<col width="72*">
-	</colgroup>
 	<tbody>
 		<tr>
-			<td rowspan="24" width="12%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="24" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d</i></div>
 			</td>
-			<td rowspan="12" width="14%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="12" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0]</i></div>
 			</td>
-			<td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="4" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][0]</i></div>
 			</td>
-			<td width="40%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+			<td  valign="TOP"><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][0][0]</i></div>
 			</td>
-			<td width="28%" valign="TOP"><div align="CENTER">
+			<td  valign="TOP"><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][0][1]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][0][2]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][0][3]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr>
-			<td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="4" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][1]</i></div>
 			</td>
-			<td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+			<td  valign="TOP"><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][1][0]</i></div>
 			</td>
-			<td width="28%" valign="TOP"><div align="CENTER">
+			<td  valign="TOP"><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][1][1]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][1][2]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][1][3]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr>
-			<td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="4" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][2]</i></div>
 			</td>
-			<td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+			<td  valign="TOP"><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][2][0]</i></div>
 			</td>
-			<td width="28%" valign="TOP"><div align="CENTER">
+			<td  valign="TOP"><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][2][1]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][2][2]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[0][2][3]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr>
-			<td rowspan="12" width="14%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="12" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1]</i></div>
 			</td>
-			<td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="4" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][0]</i></div>
 			</td>
-			<td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+			<td  valign="TOP"><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][0][0]</i></div>
 			</td>
-			<td width="28%" valign="TOP"><div align="CENTER">
+			<td  valign="TOP"><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][0][1]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][0][2]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][0][3]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr>
-			<td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="4" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][1]</i></div>
 			</td>
-			<td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+			<td  valign="TOP"><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][1][0]</i></div>
 			</td>
-			<td width="28%" valign="TOP"><div align="CENTER">
+			<td  valign="TOP"><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][1][1]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][1][2]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][1][3]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr>
-			<td rowspan="4" width="20%"><div style="text-decoration: none;" align="CENTER">
+			<td rowspan="4" ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][2]</i></div>
 			</td>
-			<td width="25%" valign="TOP"><div style="text-decoration: none;" align="CENTER">
+			<td  valign="TOP"><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][2][0]</i></div>
 			</td>
-			<td width="28%" valign="TOP"><div align="CENTER">
+			<td  valign="TOP"><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][2][1]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][2][2]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 		<tr valign="TOP">
-			<td width="25%"><div style="text-decoration: none;" align="CENTER">
+			<td ><div style="text-decoration: none;" align="CENTER">
 			<i>a3d[1][2][3]</i></div>
 			</td>
-			<td width="28%"><div align="CENTER">
+			<td ><div align="CENTER">
 			<b>int</b></div>
 			</td>
 		</tr>
 	</tbody>
 </table>
+
 
 Total 2x3x4 = 24 integers.
 
