@@ -297,7 +297,7 @@ The no. of the black marks (taller one) (and how far they can extend to the righ
 
 The number of blue marks between black marks is affected by the number of bits in fraction field. The no. of blue marks between any neighbouring black marks are the same.
 
-The largest and smallest(above zero) number and its significant binary digits when written without using exponent.
+The largest and smallest(above zero) number and its significant binary digits when written without using exponent. The digits in red box are the fraction digits. The digit in blue box is the implied MSB. The distance between the blue box digit to the unit digit will be represented by the exp field.
 
 ![Alt text](./digits.svg)
 
