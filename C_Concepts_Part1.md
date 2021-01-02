@@ -36,9 +36,9 @@ Explanation:
 
 <code>char</code> is the "DataType_KeyWord".
 
-<code>**var[12][3]</code> is the "Expression_to_access_the_variable_to_get_or_set_the_data_of_type_in_front"
+<code>\*\*var[12][3]</code> is the "Expression_to_access_the_variable_to_get_or_set_the_data_of_type_in_front"
 
-<code>**var[12][3]</code> can be rewritten as <code> *(*((var[12])[3]))</code> to emphasis the order of operator evaluation.
+<code>\*\*var[12][3]</code> can be rewritten as <code> \*(\*((var[12])[3]))</code> to emphasis the order of operator evaluation.
 
 This expression show how the "var" variable is accessed to get the data of type "char". It is first indexed to get an element that means it is an array of something. And then this "something" is indexed again to get another element so that this "something" is an array also. The element of this "something" is then dereferenced twice to get a "char" type data. Somebody call this way of declaring a variable type as "Declaration by use", telling the compiler what data type a variable is by showing how to access (use) it. To state it in English, var is an array of 12 elements of array of 3 elements of pointer to pointer to "char".
 
