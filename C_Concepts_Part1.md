@@ -84,7 +84,7 @@ yes
 
 # **Floating Point Number**
 # Decimal point number to binary point number (floating point number) rounding
-This program shows a float and a double variables both are assiegn with decimal number 0.5 and then do a equality test and see whether they are equal of not. After that, 0.7 is assigned to both of them and do the same test and see if they are equal or not.
+This program shows a float and a double variables both are assigned with decimal number 0.5 and then do a equality test and see whether they are equal of not. After that, 0.7 is assigned to both of them and do the same test and see if they are equal or not.
 
 <pre>
 float f;
