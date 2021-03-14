@@ -301,8 +301,7 @@ The largest and smallest(above zero) number and its significant binary digits wh
 
 ![Alt text](./digits.svg)
 
-Further Reading:
-
+## Further Reading:
 [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
 
 # **There is ONLY 1-D Array in C. There is no Multi-Dimensional Array in C but Nested 1-D Array**
