@@ -1,5 +1,5 @@
 # C-Concepts
-Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts in C Language. These are based on my experience using this language.
+Articles on Common Mistakes, Subtle Details and Commonly Misunderstood Concepts in C Language that I hope I know it earier in my career as a programmer.
 
 [Part 1](C_Concepts_Part1.md)
 - [Introduction](C_Concepts_Part1.md/#introduction)
